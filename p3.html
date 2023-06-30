@@ -116,117 +116,79 @@
   <script src="assets/js/main.js"></script>
 
  <!-- mappa uomini -->
+ <script src="https://d3js.org/d3.v7.min.js"></script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
  <script>
- $(document).ready(function () {
-   // Creazione della mappa
-   var map = L.map('map').setView([41.9, 12.6], 5);
- 
-   // Aggiunta del tile layer
-   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-     attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
-     maxZoom: 18
-   }).addTo(map);
- 
-   // Array dei dati con coordinate e conteggio
-   var dati = [
-  { coordinates: [7.136047709794425, 45.27996084629203], count: 544 },
-  { coordinates: [7.136014313950868, 45.28039687678416], count: 352 },
-  { coordinates: [7.135847025122491, 45.28122226315353], count: 346 },
-  { coordinates: [6.626621368537682, 35.493691935511414], count: 388 },
-  { coordinates: [18.520381599098922, 47.09178374646217], count: 135 },
-  { coordinates: [10.626621368537682, 40.493691935511414], count: 369 },
-  { coordinates: [9.520381599098922, 42.09178374646217], count: 657 },
-  { coordinates: [12.626621368537682, 37.493691935511414], count: 495 },
-  { coordinates: [13.520381599098922, 44.09178374646217], count: 135 },
-  { coordinates: [11.626621368537682, 43.493691935511414], count: 328 },
-  { coordinates: [8.520381599098922, 39.09178374646217], count: 224 },
-  { coordinates: [10.626621368537682, 41.493691935511414], count: 438 },
-  { coordinates: [9.520381599098922, 36.09178374646217], count: 76 },
-  { coordinates: [13.626621368537682, 45.493691935511414], count: 113 },
-  { coordinates: [16.520381599098922, 40.09178374646217], count: 79 },
-  { coordinates: [12.626621368537682, 43.493691935511414], count: 73 },
-  { coordinates: [14.520381599098922, 42.09178374646217], count: 141 },
-  { coordinates: [9.626621368537682, 40.493691935511414], count: 160 },
-  { coordinates: [11.520381599098922, 41.09178374646217], count: 40 },
-  { coordinates: [7.626621368537682, 45.493691935511414], count: 14 }
+
+var dati = [
+  { regione: 'Campania', count: 544 },
+  { regione: 'Piemonte', count: 352 },
+  { regione: 'Emilia-Romagna', count: 346 },
+  { regione: 'Veneto', count: 388 },
+  { regione: 'Abruzzo', count: 135 },
+  { regione: 'Puglia', count: 369 },
+  { regione: 'Lombardia', count: 657 },
+  { regione: 'Sicilia', count: 495 },
+  { regione: 'Liguria', count: 135 },
+  { regione: 'Toscana', count: 328 },
+  { regione: 'Calabria', count: 224 },
+  { regione: 'Lazio', count: 438 },
+  { regione: 'Trentino-Alto Adige/Südtirol', count: 76 },
+  { regione: 'Friuli-Venezia Giulia', count: 113 },
+  { regione: 'Basilicata', count: 79 },
+  { regione: 'Umbria', count: 73 },
+  { regione: 'Marche', count: 141 },
+  { regione: 'Sardegna', count: 160 },
+  { regione: 'Molise', count: 40 },
+  { regione: "Valle d'Aosta/Vallée d'Aoste", count: 14 }
 ];
 
- 
-   // Caricamento del file regioni.geojson
-   $.getJSON('regioni.geojson', function (data) {
-     // Creazione della mappa choropleth
-     L.geoJSON(data, {
-       style: function (feature) {
-         var coordinates = feature.geometry.coordinates[0];
-         var count = getCountByCoordinates(coordinates);
-         var color = getColor(count);
-         return {
-           fillColor: color,
-           weight: 2,
-           opacity: 1,
-           color: 'white',
-           dashArray: '3',
-           fillOpacity: 0.7
-         };
-       }
-     }).addTo(map);
-   });
- 
-   // Funzione per ottenere il conteggio in base alle coordinate
-   function getCountByCoordinates(coordinates) {
-     var coordinateKey = coordinates.toString();
-     var matchingData = dati.find(function (data) {
-       return data.coordinates.toString() === coordinateKey;
-     });
-     return matchingData ? matchingData.count : 0;
-   }
- 
-   // Funzione per ottenere il colore in base al conteggio
-   function getColor(d) {
-     return d > 600 ? '#800026' :
-            d > 500 ? '#BD0026' :
-            d > 400 ? '#E31A1C' :
-            d > 300 ? '#FC4E2A' :
-            d > 200 ? '#FD8D3C' :
-            d > 100 ? '#FEB24C' :
-                      '#FED976';
-   }
+// Definisci la scala di colori
+var colorScale = d3.scaleSequential(d3.interpolateBlues)
+  .domain([0, d3.max(dati, function(d) { return d.count; })]);
 
-
-   function getCountByCoordinates(coordinates) {
-  var matchingData = dati.find(function (data) {
-    return areCoordinatesEqual(data.coordinates, coordinates);
-  });
-  return matchingData ? matchingData.count : 0;
-}
-
-// Funzione per confrontare due insiemi di coordinate
-function areCoordinatesEqual(coordinates1, coordinates2) {
-  if (coordinates1.length !== coordinates2.length) {
-    return false;
-  }
-
-  for (var i = 0; i < coordinates1.length; i++) {
-    var coordinate1 = coordinates1[i];
-    var coordinate2 = coordinates2[i];
-
-    if (coordinate1.length !== coordinate2.length) {
-      return false;
+Promise.all([
+  d3.json('regioni.geojson'),
+  new Promise(function(resolve) {
+    if (document.readyState === 'complete') {
+      resolve();
+    } else {
+      window.addEventListener('load', resolve);
     }
+  })
+]).then(function(results) {
+  var geojson = results[0];
 
-    for (var j = 0; j < coordinate1.length; j++) {
-      if (coordinate1[j] !== coordinate2[j]) {
-        return false;
-      }
+  // Crea una mappa Leaflet
+  var map = L.map('map').setView([45.5, 9], 6);
+
+  // Aggiungi il layer dei poligoni
+  L.geoJSON(geojson, {
+    style: function(feature) {
+      var nomeRegione = feature.properties.reg_name;
+      var count = dati.find(function(d) {
+        return d.regione === nomeRegione;
+      }).count;
+
+      return {
+        fillColor: colorScale(count),
+        weight: 1,
+        opacity: 1,
+        color: 'white',
+        fillOpacity: 0.7
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      var nomeRegione = feature.properties.reg_name;
+      var count = dati.find(function(d) {
+        return d.regione === nomeRegione;
+      }).count;
+
+      layer.bindPopup("<b>" + nomeRegione + "</b><br>Count: " + count);
     }
-  }
-
-  return true;
-}
- });
-
+  }).addTo(map);
+});
 
 
  </script>
