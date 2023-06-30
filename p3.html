@@ -93,8 +93,17 @@
                 decision-making.</p>
       </div>
       <div class="col-8 chart" data-aos="fade-up">
-        <div id="map"></div>      
+        <label for="genderFilter">Filtro per Genere:</label>
+        <select id="genderFilter">
+          <option value="uomini">Uomini</option>
+          <option value="donne">Donne</option>
+        </select>
+        <div id="map"></div>
+        
+
+
       </div>
+      
     
       </div>
     </div>
@@ -119,81 +128,146 @@
  <script src="https://d3js.org/d3.v7.min.js"></script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
- <script>
-
-var dati = [
+  
+<script>
+  var dati = [
   { regione: 'Campania', count: 544 },
-  { regione: 'Piemonte', count: 352 },
-  { regione: 'Emilia-Romagna', count: 346 },
-  { regione: 'Veneto', count: 388 },
-  { regione: 'Abruzzo', count: 135 },
-  { regione: 'Puglia', count: 369 },
-  { regione: 'Lombardia', count: 657 },
-  { regione: 'Sicilia', count: 495 },
-  { regione: 'Liguria', count: 135 },
-  { regione: 'Toscana', count: 328 },
-  { regione: 'Calabria', count: 224 },
-  { regione: 'Lazio', count: 438 },
-  { regione: 'Trentino-Alto Adige/Südtirol', count: 76 },
-  { regione: 'Friuli-Venezia Giulia', count: 113 },
-  { regione: 'Basilicata', count: 79 },
-  { regione: 'Umbria', count: 73 },
-  { regione: 'Marche', count: 141 },
-  { regione: 'Sardegna', count: 160 },
-  { regione: 'Molise', count: 40 },
-  { regione: "Valle d'Aosta/Vallée d'Aoste", count: 14 }
-];
+    { regione: 'Piemonte', count: 352 },
+    { regione: 'Emilia-Romagna', count: 346 },
+    { regione: 'Veneto', count: 388 },
+    { regione: 'Abruzzo', count: 135 },
+    { regione: 'Puglia', count: 369 },
+    { regione: 'Lombardia', count: 657 },
+    { regione: 'Sicilia', count: 495 },
+    { regione: 'Liguria', count: 135 },
+    { regione: 'Toscana', count: 328 },
+    { regione: 'Calabria', count: 224 },
+    { regione: 'Lazio', count: 438 },
+    { regione: 'Trentino-Alto Adige/Südtirol', count: 76 },
+    { regione: 'Friuli-Venezia Giulia', count: 113 },
+    { regione: 'Basilicata', count: 79 },
+    { regione: 'Umbria', count: 73 },
+    { regione: 'Marche', count: 141 },
+    { regione: 'Sardegna', count: 160 },
+    { regione: 'Molise', count: 40 },
+    { regione: "Valle d'Aosta/Vallée d'Aoste", count: 14 }
+  ];
 
-// Definisci la scala di colori
-var colorScale = d3.scaleSequential(d3.interpolateBlues)
-  .domain([0, d3.max(dati, function(d) { return d.count; })]);
-
-Promise.all([
-  d3.json('regioni.geojson'),
-  new Promise(function(resolve) {
-    if (document.readyState === 'complete') {
-      resolve();
-    } else {
-      window.addEventListener('load', resolve);
-    }
-  })
-]).then(function(results) {
-  var geojson = results[0];
-
-  // Crea una mappa Leaflet
-  var map = L.map('map').setView([45.5, 9], 6);
-
-  // Aggiungi il layer dei poligoni
-  L.geoJSON(geojson, {
-    style: function(feature) {
-      var nomeRegione = feature.properties.reg_name;
-      var count = dati.find(function(d) {
-        return d.regione === nomeRegione;
-      }).count;
-
-      return {
-        fillColor: colorScale(count),
-        weight: 1,
-        opacity: 1,
-        color: 'white',
-        fillOpacity: 0.7
-      };
-    },
-    onEachFeature: function(feature, layer) {
-      var nomeRegione = feature.properties.reg_name;
-      var count = dati.find(function(d) {
-        return d.regione === nomeRegione;
-      }).count;
-
-      layer.bindPopup("<b>" + nomeRegione + "</b><br>Count: " + count);
-    }
-  }).addTo(map);
-});
+  var datiDonne = [
+  { regione: 'Lombardia', count: 62 },
+    { regione: 'Puglia', count: 12 },
+    { regione: "Trentino-Alto Adige/Südtirol", count: 8 },
+    { regione: 'Piemonte', count: 29 },
+    { regione: 'Lazio', count: 91 },
+    { regione: "Friuli-Venezia Giulia", count: 23 },
+    { regione: 'Liguria', count: 24 },
+    { regione: 'Toscana', count: 65 },
+    { regione: 'Campania', count: 47 },
+    { regione: 'Veneto', count: 39 },
+    { regione: 'Marche', count: 20 },
+    { regione: 'Emilia-Romagna', count: 41 },
+    { regione: 'Sicilia', count: 35 },
+    { regione: 'Abruzzo', count: 7 },
+    { regione: 'Umbria', count: 5 },
+    { regione: 'Calabria', count: 14 },
+    { regione: 'Sardegna', count: 14 },
+    { regione: "Valle d'Aosta/Vallée d'Aoste", count: 1 },
+    { regione: 'Basilicata', count: 3 },
+    { regione: 'Molise', count: 2 }
+  ];
 
 
- </script>
- 
+    // Definisci la scala di colori per gli uomini (Blu)
+    var colorScaleUomini = d3.scaleSequential(d3.interpolateBlues)
+      .domain([0, d3.max(dati, function(d) { return d.count; })]);
 
+    // Definisci la scala di colori per le donne (Rosa)
+    var colorScaleDonne = d3.scaleSequential(d3.interpolateRdPu)
+      .domain([0, d3.max(datiDonne, function(d) { return d.count; })]);
+
+    // Carica i dati GeoJSON delle regioni
+    Promise.all([
+      d3.json('regioni.geojson'),
+      new Promise(function(resolve) {
+        if (document.readyState === 'complete') {
+          resolve();
+        } else {
+          window.addEventListener('load', resolve);
+        }
+      })
+    ]).then(function(results) {
+      var geojson = results[0];
+
+      // Crea una mappa Leaflet
+      var map = L.map('map', { 
+        center: [43, 12], 
+        zoom: 6, 
+        zoomControl: false,
+      });
+
+      // Aggiungi il layer dei poligoni
+      function updateMap(data) {
+        // Rimuovi tutti i poligoni dalla mappa
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.GeoJSON) {
+            map.removeLayer(layer);
+          }
+        });
+
+        // Aggiungi i poligoni con lo stile e i popup aggiornati
+        L.geoJSON(geojson, {
+          style: function(feature) {
+            var nomeRegione = feature.properties.reg_name;
+            var count = data.find(function(d) {
+              return d.regione === nomeRegione;
+            }).count;
+
+            var fillColor;
+            if (data === dati) {
+              fillColor = colorScaleUomini(count);
+            } else {
+              fillColor = colorScaleDonne(count);
+            }
+
+            return {
+              fillColor: fillColor,
+              weight: 1,
+              opacity: 1,
+              color: 'white',
+              fillOpacity: 0.7
+            };
+          },
+          onEachFeature: function(feature, layer) {
+            var nomeRegione = feature.properties.reg_name;
+            var count = data.find(function(d) {
+              return d.regione === nomeRegione;
+            }).count;
+
+            layer.bindPopup("<b>" + nomeRegione + "</b><br>Count: " + count);
+          }
+        }).addTo(map);
+      }
+
+      // Inizializza la mappa con i dati degli uomini
+      updateMap(dati);
+
+      // Ottenere il riferimento all'elemento di input del filtro di genere
+      var genderFilter = document.getElementById('genderFilter');
+
+      // Aggiungere un gestore di eventi per l'evento di cambio
+      genderFilter.addEventListener('change', function() {
+        // Ottenere il valore selezionato
+        var selectedGender = genderFilter.value;
+
+        // In base al valore selezionato, mostra i dati corrispondenti
+        if (selectedGender === 'uomini') {
+          updateMap(dati);
+        } else if (selectedGender === 'donne') {
+          updateMap(datiDonne);
+        }
+      });
+    });
+</script>
 </body>
 
 </html>
