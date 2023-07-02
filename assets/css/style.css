@@ -14,7 +14,9 @@ body {
   font-size: 14px;
   color: #2f2f2f;
   background-color: #f9f7f1;
+  overflow-x: hidden;
 }
+
 
 a {
   color: #777;
@@ -32,6 +34,8 @@ h5,
 h6,
 .font-heading {
   font-family: 'Playfair Display', serif;}
+
+
 
 .section {
   margin-top: 40px;
@@ -571,11 +575,24 @@ header{
   
 
 }
+.headp{
+  text-align: center;
+  position: block;
+  text-transform: uppercase;
+  border-bottom: 2px solid #2f2f2f;
+  border-top: 2px solid #2f2f2f;
+  padding: 12px 0 12px 0;
+  display: block;
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 140px;
+  
+} 
 
 
 .head{
   text-align: center;
-  position: relative;
+  position: block;
   text-transform: uppercase;
   border-bottom: 2px solid #2f2f2f;
   border-top: 2px solid #2f2f2f;
@@ -583,6 +600,7 @@ header{
   display: block;
   padding-top: 50px;
   padding-bottom: 50px;
+  
 } 
 
 .page-container {
@@ -620,3 +638,225 @@ header{
 .camerasvg{
   margin-bottom: -120px;
 }
+
+.my-button{ font-size: 15px;
+
+}
+/* Stile della barra di ricerca */
+.my-search-input {
+  background-color: transparent;
+  font-size: 15px;
+  border-radius: 50px;
+  /* Aggiungi qui le tue personalizzazioni */
+}
+/* Stile della barra di ricerca */
+#filter_div input[type="text"] {
+  font-family:'Lucida Sans';
+  color:#2f2f2f;
+  background-color:#f9f7f1;
+  border: 5px solid;
+  border-color:#f9f7f1;
+ padding-right: 60px;
+ padding-bottom: -5px;
+ margin-left: -13px;
+ padding-left: 20px;
+ padding-top: -20px;
+ border-radius: 45px;
+  
+  
+}
+  /* Aggiungi qui le tue personalizzazioni */
+
+
+  #filter_div input.hover{
+    border-color:#2f2f2f
+  }
+
+  
+#piechart{
+  width: 100%;
+  height: 100%;
+}
+
+.chart #regions_div {
+  width: 100%;
+  height: 500px;
+  margin-top: 140px;
+  margin-left: -170px; 
+}
+
+#map {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding-right: 200px;
+  margin-left: -150px;
+  margin-top: 20px;
+
+  
+
+}
+
+
+.filter {
+  text-align: center;
+  margin-top: 20px;
+ 
+}
+
+.chart{
+  margin-top: 250px;
+  margin-right: -150px;
+  padding-bottom: 150px;
+  padding-right: 150px;
+  padding-left: 150px;
+  
+}
+
+.chart #chart_div {
+  width: 100%;
+  height: 100%;
+  margin-top: -250px;
+}
+
+.my-button{
+  margin-top:120px;
+}
+.titleart {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+  border-bottom:2px solid #2f2f2f;
+  text-align: center !important;
+  
+
+}
+
+
+.article2{
+margin-top: 250px;
+margin-left: 100px;
+margin-right: 50px;
+text-align: justify;
+padding-left: 80px;
+padding-right: 80px;
+border-right: 2px solid #2f2f2f;
+}
+
+.titleart {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom:2px  #2f2f2f;
+  text-align: center !important;
+  
+  
+
+}
+
+.article1{
+margin-top: 220px;
+margin-right: 50px;
+text-align: justify;
+padding-left: 80px;
+padding-right: 80px;
+border-right: 2px solid #2f2f2f;
+
+}
+
+.article1 img{
+position:absolute;
+filter: grayscale(100%);
+width: 100px;
+height: auto;
+margin-top: 200px;
+ 
+ }
+
+.article2 img{
+
+  position: relative;
+  padding: 10px;
+  margin-bottom: 10px;
+  align-self: center;
+  filter: grayscale(100%);
+  width: 100%;
+
+
+}
+
+figcaption{
+  color:#2f2f2f;
+  text-align: right;
+  font-style: italic;
+  margin-top: -20px;
+  margin-bottom: 20px;
+
+}
+
+.col-4.article {
+  overflow-y: auto;
+  max-height: 500px;
+  scrollbar-width: thin;
+}
+
+/* Stile della barra di scorrimento */
+.col-4.article::-webkit-scrollbar {
+  width: 8px;
+}
+
+.col-4.article::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Imposta il colore dell'indicatore della scrollbar come trasparente */
+  border-radius: 4px;
+}
+
+.col-4.article::-webkit-scrollbar-track {
+  background-color: transparent; /* Imposta il colore dello sfondo della scrollbar come trasparente */
+}
+
+@keyframes animate-loading {
+  0% { opacity: 0;}
+  50% { opacity: 0.5; }
+  100% { opacity: 1;
+  
+  width: 100%;
+  height: 100%;
+
+
+}
+}
+
+
+
+.col-4.chart {
+  position: relative;
+}
+
+
+canvas {
+  height: 100%;
+  width: 100%;
+  margin-top: 250px;
+  padding-left: 50px;
+  padding-right:50px;
+  padding-bottom: 150px;
+}
+
+#mekkoChart{
+  width: 100%;
+  height: 100%;
+  margin-top:20px;
+}
+
+.filter-container {
+  margin-top: 230px;
+}
+
+.filter-container label {
+  display: block;
+}
+
