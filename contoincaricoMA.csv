@@ -1,98 +1,98 @@
 legislatura,incarico,conto
-legislaturacostituente,VICEPRESIDENTE,31
-legislaturacostituente,SEGRETARIO,31
-legislaturacostituente,QUESTORE,3
-legislaturacostituente,PRESIDENTE,21
-legislaturarepubblica_01,VICEPRESIDENTE,73
-legislaturarepubblica_01,PRESIDENTE,41
-legislaturarepubblica_01,SEGRETARIO,74
-legislaturarepubblica_01,QUESTORE,5
-legislaturarepubblica_01,RELATORE,7
-legislaturarepubblica_02,VICEPRESIDENTE,80
-legislaturarepubblica_02,SEGRETARIO,87
-legislaturarepubblica_02,PRESIDENTE,37
-legislaturarepubblica_02,QUESTORE,3
-legislaturarepubblica_03,VICEPRESIDENTE,63
-legislaturarepubblica_03,PRESIDENTE,43
-legislaturarepubblica_03,SEGRETARIO,64
-legislaturarepubblica_03,QUESTORE,3
-legislaturarepubblica_04,VICEPRESIDENTE,64
-legislaturarepubblica_04,SEGRETARIO,72
-legislaturarepubblica_04,PRESIDENTE,37
-legislaturarepubblica_04,QUESTORE,3
-legislaturarepubblica_05,PRESIDENTE,36
-legislaturarepubblica_05,SEGRETARIO,68
-legislaturarepubblica_05,VICEPRESIDENTE,59
-legislaturarepubblica_05,QUESTORE,3
-legislaturarepubblica_06,SEGRETARIO,67
-legislaturarepubblica_06,VICEPRESIDENTE,57
-legislaturarepubblica_06,PRESIDENTE,40
-legislaturarepubblica_06,QUESTORE,3
-legislaturarepubblica_07,VICEPRESIDENTE,69
-legislaturarepubblica_07,PRESIDENTE,30
-legislaturarepubblica_07,SEGRETARIO,52
-legislaturarepubblica_07,QUESTORE,4
-legislaturarepubblica_08,PRESIDENTE,46
-legislaturarepubblica_08,VICEPRESIDENTE,74
-legislaturarepubblica_08,SEGRETARIO,70
-legislaturarepubblica_08,QUESTORE,3
-legislaturarepubblica_09,PRESIDENTE,34
-legislaturarepubblica_09,VICEPRESIDENTE,51
-legislaturarepubblica_09,SEGRETARIO,72
-legislaturarepubblica_09,QUESTORE,5
-legislaturarepubblica_10,PRESIDENTE,47
-legislaturarepubblica_10,VICEPRESIDENTE,60
-legislaturarepubblica_10,SEGRETARIO,78
-legislaturarepubblica_10,QUESTORE,3
-legislaturarepubblica_11,PRESIDENTE,28
-legislaturarepubblica_11,VICEPRESIDENTE,54
-legislaturarepubblica_11,SEGRETARIO,63
-legislaturarepubblica_11,QUESTORE,2
-legislaturarepubblica_12,PRESIDENTE,29
-legislaturarepubblica_12,QUESTORE,2
-legislaturarepubblica_12,VICEPRESIDENTE,45
-legislaturarepubblica_12,SEGRETARIO,60
-legislaturarepubblica_13,VICEPRESIDENTE,75
-legislaturarepubblica_13,PRESIDENTE,45
-legislaturarepubblica_13,SEGRETARIO,76
-legislaturarepubblica_13,QUESTORE,2
-legislaturarepubblica_14,VICEPRESIDENTE,65
-legislaturarepubblica_14,PRESIDENTE,47
-legislaturarepubblica_14,QUESTORE,2
-legislaturarepubblica_14,CAPOGRUPPO,152
-legislaturarepubblica_14,SEGRETARIO,57
-legislaturarepubblica_14,DELEGATO AL COORDINAMENTO DELLE ATTIVITA',1
-legislaturarepubblica_15,CAPOGRUPPO,196
-legislaturarepubblica_15,VICEPRESIDENTE,49
-legislaturarepubblica_15,QUESTORE,3
-legislaturarepubblica_15,SEGRETARIO,53
-legislaturarepubblica_15,PRESIDENTE,37
-legislaturarepubblica_15,DELEGATO AL COORDINAMENTO DELLE ATTIVITA',1
-legislaturarepubblica_16,CAPOGRUPPO,169
-legislaturarepubblica_16,QUESTORE,3
-legislaturarepubblica_16,VICEPRESIDENTE,60
-legislaturarepubblica_16,PRESIDENTE,43
-legislaturarepubblica_16,SEGRETARIO,61
-legislaturarepubblica_16,COORDINATORE INELEGGIBILITA' E DECADENZE,1
-legislaturarepubblica_16,DELEGATO AL COORDINAMENTO DELLE ATTIVITA',2
-legislaturarepubblica_16,COORDINATORE INCOMPATIBILITA',1
-legislaturarepubblica_17,CAPOGRUPPO,215
-legislaturarepubblica_17,PRESIDENTE,56
-legislaturarepubblica_17,VICEPRESIDENTE,69
-legislaturarepubblica_17,SEGRETARIO,69
-legislaturarepubblica_17,QUESTORE,3
-legislaturarepubblica_17,COORDINATORE INELEGGIBILITA' E DECADENZE,1
-legislaturarepubblica_17,COORDINATORE INCOMPATIBILITA',1
-legislaturarepubblica_18,VICEPRESIDENTE,59
-legislaturarepubblica_18,CAPOGRUPPO,183
-legislaturarepubblica_18,QUESTORE,5
-legislaturarepubblica_18,PRESIDENTE,51
-legislaturarepubblica_18,SEGRETARIO,74
-legislaturarepubblica_18,COORDINATORE INELEGGIBILITA' E DECADENZE,1
-legislaturarepubblica_18,COORDINATORE INCOMPATIBILITA',1
-legislaturarepubblica_19,SEGRETARIO,45
-legislaturarepubblica_19,CAPOGRUPPO,104
-legislaturarepubblica_19,PRESIDENTE,29
-legislaturarepubblica_19,VICEPRESIDENTE,28
-legislaturarepubblica_19,QUESTORE,3
-legislaturarepubblica_19,COORDINATORE INCOMPATIBILITA',1
+legislatura costituente,VICEPRESIDENTE,31
+legislatura costituente,SEGRETARIO,31
+legislatura costituente,QUESTORE,3
+legislatura costituente,PRESIDENTE,21
+legislatura 1,VICEPRESIDENTE,73
+legislatura 1,PRESIDENTE,41
+legislatura 1,SEGRETARIO,74
+legislatura 1,QUESTORE,5
+legislatura 1,RELATORE,7
+legislatura 2,VICEPRESIDENTE,80
+legislatura 2,SEGRETARIO,87
+legislatura 2,PRESIDENTE,37
+legislatura 2,QUESTORE,3
+legislatura 3,VICEPRESIDENTE,63
+legislatura 03,PRESIDENTE,43
+legislatura 3,SEGRETARIO,64
+legislatura 3,QUESTORE,3
+legislatura 4,VICEPRESIDENTE,64
+legislatura 4,SEGRETARIO,72
+legislatura 4,PRESIDENTE,37
+legislatura 4,QUESTORE,3
+legislatura 5,PRESIDENTE,36
+legislatura 5,SEGRETARIO,68
+legislatura 5,VICEPRESIDENTE,59
+legislatura 5,QUESTORE,3
+legislatura 6,SEGRETARIO,67
+legislatura 6,VICEPRESIDENTE,57
+legislatura 6,PRESIDENTE,40
+legislatura 6,QUESTORE,3
+legislatura 7,VICEPRESIDENTE,69
+legislatura 7,PRESIDENTE,30
+legislatura 7,SEGRETARIO,52
+legislatura 7,QUESTORE,4
+legislatura 8,PRESIDENTE,46
+legislatura 8,VICEPRESIDENTE,74
+legislatura 8,SEGRETARIO,70
+legislatura 8,QUESTORE,3
+legislatura 9,PRESIDENTE,34
+legislatura 9,VICEPRESIDENTE,51
+legislatura 9,SEGRETARIO,72
+legislatura 9,QUESTORE,5
+legislatura 10,PRESIDENTE,47
+legislatura 10,VICEPRESIDENTE,60
+legislatura 10,SEGRETARIO,78
+legislatura 10,QUESTORE,3
+legislatura 11,PRESIDENTE,28
+legislatura 11,VICEPRESIDENTE,54
+legislatura 11,SEGRETARIO,63
+legislatura 11,QUESTORE,2
+legislatura 12,PRESIDENTE,29
+legislatura 12,QUESTORE,2
+legislatura 12,VICEPRESIDENTE,45
+legislatura 12,SEGRETARIO,60
+legislatura 13,VICEPRESIDENTE,75
+legislatura 13,PRESIDENTE,45
+legislatura 13,SEGRETARIO,76
+legislatura 13,QUESTORE,2
+legislatura 14,VICEPRESIDENTE,65
+legislatura 14,PRESIDENTE,47
+legislatura 14,QUESTORE,2
+legislatura 14,CAPOGRUPPO,152
+legislatura 14,SEGRETARIO,57
+legislatura 14,DELEGATO AL COORDINAMENTO DELLE ATTIVITA',1
+legislatura 15,CAPOGRUPPO,196
+legislatura 15,VICEPRESIDENTE,49
+legislatura 15,QUESTORE,3
+legislatura 15,SEGRETARIO,53
+legislatura 15,PRESIDENTE,37
+legislatura 15,DELEGATO AL COORDINAMENTO DELLE ATTIVITA',1
+legislatura 16,CAPOGRUPPO,169
+legislatura 16,QUESTORE,3
+legislatura 16,VICEPRESIDENTE,60
+legislatura 16,PRESIDENTE,43
+legislatura 16,SEGRETARIO,61
+legislatura 16,COORDINATORE INELEGGIBILITA' E DECADENZE,1
+legislatura 16,DELEGATO AL COORDINAMENTO DELLE ATTIVITA',2
+legislatura 16,COORDINATORE INCOMPATIBILITA',1
+legislatura 17,CAPOGRUPPO,215
+legislaturar 17,PRESIDENTE,56
+legislatura 17,VICEPRESIDENTE,69
+legislatura 17,SEGRETARIO,69
+legislatura 17,QUESTORE,3
+legislatura 17,COORDINATORE INELEGGIBILITA' E DECADENZE,1
+legislatura 17,COORDINATORE INCOMPATIBILITA',1
+legislatura 18,VICEPRESIDENTE,59
+legislatura 18,CAPOGRUPPO,183
+legislatura 18,QUESTORE,5
+legislatura 18,PRESIDENTE,51
+legislatura 18,SEGRETARIO,74
+legislatura 18,COORDINATORE INELEGGIBILITA' E DECADENZE,1
+legislatura 18,COORDINATORE INCOMPATIBILITA',1
+legislatura 19,SEGRETARIO,45
+legislatura 19,CAPOGRUPPO,104
+legislatura 19,PRESIDENTE,29
+legislatura 19,VICEPRESIDENTE,28
+legislatura 19,QUESTORE,3
+legislatura 19,COORDINATORE INCOMPATIBILITA',1
