@@ -69,11 +69,11 @@ male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Guido_Russo_Perez
 male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Giovanni_Perlingieri
 male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Paolo_Treves
 male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Raffaele_Pio_Petrilli
-male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Adolfo_Quintieri
-male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Luigi_De_Filpo
-male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Alcide_Malagugini
-male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Alessandro_Coppi
-male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Celeste_Bastianetto
+male,legislaturacostituente,Adolfo_Quintieri
+male,legislaturacostituente,Luigi_De_Filpo
+male,legislatura
+male,legislaturacostituente,Alessandro_Coppi
+male,legislatura 
 male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Giovanni_Cuomo
 male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Olindo_Cremaschi
 male,http://dati.camera.it/ocd/legislatura.rdf/costituente,Giuseppe_Notarianni
