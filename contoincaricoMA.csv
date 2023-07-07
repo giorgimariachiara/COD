@@ -1,0 +1,98 @@
+legislatura,incarico,conto
+legislaturacostituente,VICEPRESIDENTE,31
+legislaturacostituente,SEGRETARIO,31
+legislaturacostituente,QUESTORE,3
+legislaturacostituente,PRESIDENTE,21
+legislaturarepubblica_01,VICEPRESIDENTE,73
+legislaturarepubblica_01,PRESIDENTE,41
+legislaturarepubblica_01,SEGRETARIO,74
+legislaturarepubblica_01,QUESTORE,5
+legislaturarepubblica_01,RELATORE,7
+legislaturarepubblica_02,VICEPRESIDENTE,80
+legislaturarepubblica_02,SEGRETARIO,87
+legislaturarepubblica_02,PRESIDENTE,37
+legislaturarepubblica_02,QUESTORE,3
+legislaturarepubblica_03,VICEPRESIDENTE,63
+legislaturarepubblica_03,PRESIDENTE,43
+legislaturarepubblica_03,SEGRETARIO,64
+legislaturarepubblica_03,QUESTORE,3
+legislaturarepubblica_04,VICEPRESIDENTE,64
+legislaturarepubblica_04,SEGRETARIO,72
+legislaturarepubblica_04,PRESIDENTE,37
+legislaturarepubblica_04,QUESTORE,3
+legislaturarepubblica_05,PRESIDENTE,36
+legislaturarepubblica_05,SEGRETARIO,68
+legislaturarepubblica_05,VICEPRESIDENTE,59
+legislaturarepubblica_05,QUESTORE,3
+legislaturarepubblica_06,SEGRETARIO,67
+legislaturarepubblica_06,VICEPRESIDENTE,57
+legislaturarepubblica_06,PRESIDENTE,40
+legislaturarepubblica_06,QUESTORE,3
+legislaturarepubblica_07,VICEPRESIDENTE,69
+legislaturarepubblica_07,PRESIDENTE,30
+legislaturarepubblica_07,SEGRETARIO,52
+legislaturarepubblica_07,QUESTORE,4
+legislaturarepubblica_08,PRESIDENTE,46
+legislaturarepubblica_08,VICEPRESIDENTE,74
+legislaturarepubblica_08,SEGRETARIO,70
+legislaturarepubblica_08,QUESTORE,3
+legislaturarepubblica_09,PRESIDENTE,34
+legislaturarepubblica_09,VICEPRESIDENTE,51
+legislaturarepubblica_09,SEGRETARIO,72
+legislaturarepubblica_09,QUESTORE,5
+legislaturarepubblica_10,PRESIDENTE,47
+legislaturarepubblica_10,VICEPRESIDENTE,60
+legislaturarepubblica_10,SEGRETARIO,78
+legislaturarepubblica_10,QUESTORE,3
+legislaturarepubblica_11,PRESIDENTE,28
+legislaturarepubblica_11,VICEPRESIDENTE,54
+legislaturarepubblica_11,SEGRETARIO,63
+legislaturarepubblica_11,QUESTORE,2
+legislaturarepubblica_12,PRESIDENTE,29
+legislaturarepubblica_12,QUESTORE,2
+legislaturarepubblica_12,VICEPRESIDENTE,45
+legislaturarepubblica_12,SEGRETARIO,60
+legislaturarepubblica_13,VICEPRESIDENTE,75
+legislaturarepubblica_13,PRESIDENTE,45
+legislaturarepubblica_13,SEGRETARIO,76
+legislaturarepubblica_13,QUESTORE,2
+legislaturarepubblica_14,VICEPRESIDENTE,65
+legislaturarepubblica_14,PRESIDENTE,47
+legislaturarepubblica_14,QUESTORE,2
+legislaturarepubblica_14,CAPOGRUPPO,152
+legislaturarepubblica_14,SEGRETARIO,57
+legislaturarepubblica_14,DELEGATO AL COORDINAMENTO DELLE ATTIVITA',1
+legislaturarepubblica_15,CAPOGRUPPO,196
+legislaturarepubblica_15,VICEPRESIDENTE,49
+legislaturarepubblica_15,QUESTORE,3
+legislaturarepubblica_15,SEGRETARIO,53
+legislaturarepubblica_15,PRESIDENTE,37
+legislaturarepubblica_15,DELEGATO AL COORDINAMENTO DELLE ATTIVITA',1
+legislaturarepubblica_16,CAPOGRUPPO,169
+legislaturarepubblica_16,QUESTORE,3
+legislaturarepubblica_16,VICEPRESIDENTE,60
+legislaturarepubblica_16,PRESIDENTE,43
+legislaturarepubblica_16,SEGRETARIO,61
+legislaturarepubblica_16,COORDINATORE INELEGGIBILITA' E DECADENZE,1
+legislaturarepubblica_16,DELEGATO AL COORDINAMENTO DELLE ATTIVITA',2
+legislaturarepubblica_16,COORDINATORE INCOMPATIBILITA',1
+legislaturarepubblica_17,CAPOGRUPPO,215
+legislaturarepubblica_17,PRESIDENTE,56
+legislaturarepubblica_17,VICEPRESIDENTE,69
+legislaturarepubblica_17,SEGRETARIO,69
+legislaturarepubblica_17,QUESTORE,3
+legislaturarepubblica_17,COORDINATORE INELEGGIBILITA' E DECADENZE,1
+legislaturarepubblica_17,COORDINATORE INCOMPATIBILITA',1
+legislaturarepubblica_18,VICEPRESIDENTE,59
+legislaturarepubblica_18,CAPOGRUPPO,183
+legislaturarepubblica_18,QUESTORE,5
+legislaturarepubblica_18,PRESIDENTE,51
+legislaturarepubblica_18,SEGRETARIO,74
+legislaturarepubblica_18,COORDINATORE INELEGGIBILITA' E DECADENZE,1
+legislaturarepubblica_18,COORDINATORE INCOMPATIBILITA',1
+legislaturarepubblica_19,SEGRETARIO,45
+legislaturarepubblica_19,CAPOGRUPPO,104
+legislaturarepubblica_19,PRESIDENTE,29
+legislaturarepubblica_19,VICEPRESIDENTE,28
+legislaturarepubblica_19,QUESTORE,3
+legislaturarepubblica_19,COORDINATORE INCOMPATIBILITA',1
