@@ -1,5 +1,5 @@
 legislatura,incarico,conto
-http://legislatura .camera.it/ocd/legislatura.rdf/costituente,SEGRETARIO,3
+legislatura costituente,SEGRETARIO,3
 http://legislatura .camera.it/ocd/legislatura.rdf/repubblica_01,SEGRETARIO,8
 http://legislatura .camera.it/ocd/legislatura.rdf/repubblica_02,SEGRETARIO,8
 http://legislatura .camera.it/ocd/legislatura.rdf/repubblica_02,VICEPRESIDENTE,1

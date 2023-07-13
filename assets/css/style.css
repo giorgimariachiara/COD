@@ -408,6 +408,8 @@ h6,
   font-size: 1.7rem;
 }
 
+
+
 /* Burger */
 .burger {
   width: 28px;
@@ -851,7 +853,19 @@ canvas {
   height: 100%;
   margin-top:20px;
 }
+#mekkoChartFE{
+  width: 100%;
+  height: 100%;
+  margin-top:20px;
+  margin-bottom: 200px;
+}
 
+#mekkoChartot{
+  width: 100%;
+  height: 100%;
+  margin-top:20px;
+  margin-bottom: 200px;
+}
 .filter-container {
   margin-top: 230px;
 }
@@ -864,3 +878,17 @@ canvas {
   margin-top: 20px;
   margin-left: -200px;
 }
+
+#chartbubble{
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
+
+#timeline {
+  height: 500px;
+}
+
+
+

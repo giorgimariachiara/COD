@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Grafico Ministeri</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>
+  <div id="chart"></div>
+
+  <script>
+    // Leggi il file CSV
+    d3.csv("ministri2.csv").then(function(data) {
+      // Conta il numero di ministeri per tipo
+      var counts = d3.rollup(data, v => v.length, d => d.Ministro);
+
+      // Trasforma i dati in un array di oggetti
+      var chartData = Array.from(counts, ([ministro, count]) => ({ ministro, count }));
+
+      // Ordina i dati per conteggio in ordine decrescente
+      chartData.sort((a, b) => b.count - a.count);
+
+      // Imposta le dimensioni del grafico
+      var margin = { top: 20, right: 20, bottom: 30, left: 40 };
+      var width = 600 - margin.left - margin.right;
+      var height = 400 - margin.top - margin.bottom;
+
+      // Crea il grafico SVG
+      var svg = d3.select("#chart")
+                  .append("svg")
+                  .attr("width", width + margin.left + margin.right)
+                  .attr("height", height + margin.top + margin.bottom)
+                  .append("g")
+                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      // Scala per l'asse x
+      var xScale = d3.scaleBand()
+                     .domain(chartData.map(d => d.ministro))
+                     .range([0, width])
+                     .padding(0.1);
+
+      // Scala per l'asse y
+      var yScale = d3.scaleLinear()
+                     .domain([0, d3.max(chartData, d => d.count)])
+                     .range([height, 0]);
+
+      // Crea le barre del grafico
+      svg.selectAll(".bar")
+         .data(chartData)
+         .enter().append("rect")
+         .attr("class", "bar")
+         .attr("x", d => xScale(d.ministro))
+         .attr("width", xScale.bandwidth())
+         .attr("y", d => yScale(d.count))
+         .attr("height", d => height - yScale(d.count));
+
+      // Aggiungi l'asse x
+      svg.append("g")
+         .attr("transform", "translate(0," + height + ")")
+         .call(d3.axisBottom(xScale));
+
+      // Aggiungi l'asse y
+      svg.append("g")
+         .call(d3.axisLeft(yScale));
+
+      // Aggiungi etichette sull'asse x
+      svg.selectAll(".bar-label")
+         .data(chartData)
+         .enter().append("text")
+         .attr("class", "bar-label")
+         .attr("x", d => xScale(d.ministro) + xScale.bandwidth() / 2)
+         .attr("y", d => yScale(d.count) - 5)
+         .attr("text-anchor", "middle")
+         .text(d => d.count);
+    });
+  </script>
+</body>
+</html>
