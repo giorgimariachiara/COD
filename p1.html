@@ -37,65 +37,83 @@
       </div>
     </div>
     </div>
+    
 
-  <nav class="navbar">
-    <ul class="navbar-nav">
-      <li class="nav-item"><a href="index.html" class="nav-link">I</a></li>
-      <li class="nav-item"><a href="p1.html" class="nav-link">II</a></li>
-      <li class="nav-item"><a href="p2.html" class="nav-link">III</a></li>
-      <li class="nav-item"><a href="p3.html" class="nav-link">IV</a></li>
-      <li class="nav-item"><a href="p4.html" class="nav-link">VI</a></li>
-      <li class="nav-item"><a href="p5.html" class="nav-link">VII</a></li>
-    </ul>
-  </nav>
   
+    <nav class="navbar">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="index.html" class="nav-link">Front page</a></li>
+        <li class="nav-item"><a href="p1.html" class="nav-link">I</a></li>
+        <li class="nav-item"><a href="p2.html" class="nav-link">II</a></li>
+        <li class="nav-item"><a href="p3.html" class="nav-link">III</a></li>
+        <li class="nav-item"><a href="p4.html" class="nav-link">IV</a></li>
+        <li class="nav-item"><a href="p5.html" class="nav-link">V</a></li>
+        <li class="nav-item"><a href="p6.html" class="nav-link">VI</a></li>
+        <li class="nav-item"><a href="p7.html" class="nav-link">VII</a></li>
+        <li class="nav-item"><a href="p8.html" class="nav-link">VIII</a></li>
+        <li class="nav-item"><a href="p9.html" class="nav-link">IX</a></li>
+        <li class="nav-item"><a href="p10.html" class="nav-link">X</a></li>
+
+
+      </ul>
+    </nav>
+ 
+
+
   <div class="page">
-    <div class="row">
-      <div class="col-12 article1">
-          
-
-            <div class="titleart"><h7 class="titleart">Titolo articolo</h7></div>
-          <p>It’s hypothesis-driven analysis. 
-            The designer has a question to 
-            answer, and a hypothesis and wants 
-            to demonstrate. The validation 
-            consists of the visual evidence 
-            of a trend, a behaviour, or a
-             relationship. Outcomes of data 
-             analysis/discovery techniques 
-             fall into two categories: 
-             expected/unexpected; 
-             positive/negative. Unexpected 
-             negative results are the most 
-             insightful patterns to support 
-             decision-making.
-             It’s hypothesis-driven analysis. 
-             The designer has a question to 
-             answer, and a hypothesis and wants 
-             to demonstrate. The validation 
-             consists of the visual evidence 
-             of a trend, a behaviour, or a
-              relationship. Outcomes of data 
-              analysis/discovery techniques 
-              fall into two categories: 
-              expected/unexpected; 
-              positive/negative. Unexpected 
-              negative results are the most 
-              insightful patterns to support 
-              decision-making.</p>
-            </div>
+  <div class="row rigasu">
+    <div class="col-12">
+      <div class="titleart">
+      <h7>Gender Disparities in the Italian Chamber of Deputies</h7> <br>
+      <h8>Analyzing Representation Patterns and Progres</h8>
+      </div>
+    </div>
   </div>
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-2 article1in">
+          <p>
+            The chart provides a detailed breakdown of the representation of male and female deputies in the Italian Chamber of Deputies throughout various legislative terms. Examining the data reveals interesting patterns and disparities in gender representation within the institution.
+          </p>
+      </div>
+      <div class="col-2 article1">
+        <p>In the earlier legislatures, such as the Costituente and Legislatura I, the number of female deputies was relatively low, with 21 and 45 representatives respectively. Over time, the numbers fluctuated, but there was a general upward trend in female representation. Notably, the XVIII Legislature saw the highest number of female deputies with 240 representatives, while the XIX Legislature had 129.
+        </p>
+      </div>
+      <div class="col-2 article1">
+           <p>To gain a better understanding of the gender disparities, it is helpful to calculate the percentages of female and male deputies in each legislature. For example, in the XIX Legislature, out of a total of 400 deputies, women constituted approximately 32.25% of the representatives, while men accounted for about 67.75%.
+           </p>
+      </div>
+      <div class="col-2 article1">
+        <p> The highest percentage of female representation in the chart is found in the XVIII Legislature, where out of a total of 660 deputies, women represented approximately 36.36% of the representatives. On the other hand, the lowest percentage is observed in the Costituente, with women comprising around 3.62% of the 581 deputies.
+        </p>
+      </div>
+      <div class="col-2 article1out">
+             <p> These percentages highlight the varying levels of gender representation throughout the legislative terms. While progress has been made in some legislatures, there are instances where female representation remains significantly low. These disparities underscore the ongoing need for efforts to achieve gender parity and create a more inclusive political environment.
+             In summary, the data presented in the chart demonstrates both historical trends and disparities in the representation of male and female deputies in the Italian Chamber of Deputies. While progress has been made, there is still work to be done to achieve gender parity and promote equal opportunities for women in politics.
+             </p>    
+       <div class="col-1">
+            </div>
+      </div>
+    </div>
 
-  <div class="row">
-
+  <div class="row"> 
       <div class="col-12 chart" data-aos="fade-up">
         <div id="chart_div" class="my-filter-class"></div>
-        <div id="filter_div" class="my-button">
+        <div class="mybutton">
+        <div id="filter_div" >
           <input type="text" id="search_input" class="my-search-input" placeholder="Search">
           <input type="search">
+          </div>
         </div>
       </div>
     </div>
+   <div class="total_chart_div">
+    <div id="total_chart_div"></div>
+   </div>
+
+
   </div>
 
   <!-- Footer -->
@@ -117,8 +135,10 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    google.charts.load('current', {'packages':['corechart', 'controls']});
-    google.charts.setOnLoadCallback(drawChart);
+   google.charts.load('current', {'packages':['corechart', 'controls']});
+  google.charts.setOnLoadCallback(function() {
+    drawChart();
+  });
 
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
@@ -145,6 +165,11 @@
         ['Legislatura XIX', 129, 271, 400]
       ]);
 
+      var totalData = google.visualization.arrayToDataTable([
+  ['Gender', 'Count',  { role: 'style' }],
+  ['Female', 905,'#d95f02'],
+  ['Male', 5204, '#1b9e77']
+]);
       var dashboard = new google.visualization.Dashboard(document.getElementById('chart_div'));
 
       var filter = new google.visualization.ControlWrapper({
@@ -158,11 +183,11 @@
           color: '#333'
         },
           ui: {
-            cssClass: "my-button", // Aggiungi una classe CSS personalizzata
+            cssClass: "mybutton", // Aggiungi una classe CSS personalizzata
             allowMultiple: true,
             allowTyping: true,
             selectedValuesLayout: 'belowStacked',
-            label: 'Filter by Legislature :  :',
+            label: 'Filter by Legislature :  ',
             textStyle: {
             fontName: 'Droid Serif',
             color: '#333', // Cambia il colore del testo
@@ -177,10 +202,10 @@
         containerId: 'chart_div',
         options: {
           chartArea: {
-            width: '80%',
+            width: '70%',
             height: '80%'
           },
-          height: 500,
+          height: 580,
           backgroundColor: "transparent", // Colore di sfondo del grafico
           colors: ['#1b9e77', '#d95f02', '#7570b3'],
           title: 'Total Deputies per Legislature',
@@ -214,9 +239,61 @@
          }
         }
       });
+      var totalChart = new google.visualization.ChartWrapper({
+  chartType: 'ColumnChart',
+  containerId: 'total_chart_div',
+  options: {
+    chartArea: {
+      width: '70%',
+      height: '70%'
+    },
+    height: 200,
+    backgroundColor: "transparent",
+    colors: ['#d95f02', '#1b9e77'],
+    title: 'Total Deputies',
+    hAxis: {
+      title: '',
+      textStyle: {
+        fontName: 'Droid Serif',
+        fontSize: 12,
+        color: '#333'
+      },
+      titleTextStyle: {
+        fontName: 'Droid Serif',
+        fontSize: 14,
+        color: '#333'
+      }
+    },
+    vAxis: {
+      title: 'Count',
+      format: 'decimal',
+      minValue: 0,
+      textStyle: {
+        fontName: 'Droid Serif',
+        fontSize: 12,
+        color: '#333'
+      },
+      titleTextStyle: {
+        fontName: 'Droid Serif',
+        fontSize: 14,
+        color: '#333'
+      },
+      gridlines: {
+        color: '#ddd'
+      }
+    },
+    legend: {
+      position: 'none'
+    }
+  }
+});
+
 
       dashboard.bind(filter, chart);
       dashboard.draw(data);
+      
+      totalChart.setDataTable(totalData);
+      totalChart.draw();
     }
   </script>
 
