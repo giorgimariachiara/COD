@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>MyPortfolio Bootstrap Template - Contact</title>
+  <title>MyPortfolio Bootstrap Template - Work Single</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -21,8 +21,8 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
@@ -35,6 +35,7 @@
 </head>
 
 <body>
+
 
   <div class="container">
     <div class="headp">
@@ -65,217 +66,213 @@
         </ul>
       </nav>
     
-    <div class="page">
-      <div class="row">
-        <div class="col-4 article2">
-          <div class="titleart"><h7 class="titleart">Titolo articolo</h7></div>
-            <img src="./assets/img/chigi.jpeg"   alt="Descrizione dell'immagine" >
-            <figcaption>Didascalia dell'immagine</figcaption>
-            <p>It’s hypothesis-driven analysis. 
-              The designer has a question to 
-              answer, and a hypothesis and wants 
-              to demonstrate. The validation 
-              consists of the visual evidence 
-              of a trend, a behaviour, or a
-               relationship. Outcomes of data 
-               analysis/discovery techniques 
-               fall into two categories: 
-               expected/unexpected; 
-               positive/negative. Unexpected 
-               negative results are the most 
-               insightful patterns to support 
-               decision-making.
-               It’s hypothesis-driven analysis. 
-               The designer has a question to 
-               answer, and a hypothesis and wants 
-               to demonstrate. The validation 
-               consists of the visual evidence 
-               of a trend, a behaviour, or a
-                relationship. Outcomes of data 
-                analysis/discovery techniques 
-                fall into two categories: 
-                expected/unexpected; 
-                positive/negative. Unexpected 
-                negative results are the most 
-                insightful patterns to support 
-                decision-making.</p>
-      </div>
-      <div class="col-8 chart" data-aos="fade-up">
-        <label for="genderFilter">Filtro per Genere:</label>
-        <select id="genderFilter">
-          <option value="uomini">Uomini</option>
-          <option value="donne">Donne</option>
-        </select>
-        <div id="map"></div>
-        
-
-
-      </div>
+        <div class="page">
+          <div class="row rigasu">
+            <div class="col-12">
+              <div class="titleart">
+              <h7>Gender and Education</h7> <br>
+              <h8>Analyzing the Educational Background of Deputies</h8>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3 article3">
+            <p>The third research question focuses on the educational background of deputies, both male and female, and seeks to determine the proportion of representatives who hold a higher education degree. By examining the data, we can gain insights into the educational qualifications of deputies across different legislatures and explore any disparities between genders.
+              Analyzing the data for male deputies, we observe variations in the number of graduates and non-graduates across different legislatures. In the Costituente legislature, 413 male deputies were graduates, while 151 were non-graduates. This pattern continues in subsequent legislatures, with fluctuating numbers of graduates and non-graduates. For example, in the 19th legislature, there are 187 male graduates and 83 non-graduates. These figures indicate a consistent trend of a higher number of male deputies holding a higher education degree compared to those without, with some fluctuations over time.</p>
+            </div>
+                <div class="col-8">
+                <div class="filter-container"></div>
+                <div id="mekkoChart"></div>
+            </div>
+          </div>
       
-    
+   
+        <div class="row">
+          <div class="col-3 mekkoChartFE">
+            <p>Turning to female deputies, we find a similar pattern of variations in educational qualifications across different legislatures. In the Costituente legislature, 12 female deputies were graduates, while 8 were non-graduates. Similar to male deputies, the number of female graduates increases in recent legislatures. For example, in the 19th legislature, there are 92 female graduates and 37 non-graduates. This suggests progress in educational qualifications among female representatives over time, albeit with smaller numbers compared to male deputies.
+              Examining the total figures for all legislatures combined, we find that out of a total of 5,226 male deputies, 3,361 (approximately 64.28%) are graduates, while 1,865 (approximately 35.72%) are non-graduates. On the other hand, out of 883 female deputies, 572 (approximately 64.77%) are graduates, while 311 (approximately 35.23%) are non-graduates. These percentages reveal a similar proportion of male and female deputies holding higher education degrees, indicating a relatively balanced educational profile.
+              </p>
+          </div>
+              <div class="col-8">
+                <div class="filter-container"></div>
+              <div id="mekkoChartFE" ></div>       
+            </div>    
+          </div>
+       
+        
+        <div class="row">
+          <div class="col-4 article3">
+            <p>Overall, the data highlights a positive trend in the educational qualifications of deputies, both male and female, with an increasing number of graduates observed in recent legislatures. While there are still disparities between male and female deputies, the proportion of graduates among both genders is relatively balanced.
+              To gain a comprehensive understanding of the educational backgrounds of deputies, it would be beneficial to further analyze the data in conjunction with additional factors such as the parties they belong to or their roles within the Chamber of Deputies. This would provide deeper insights into the relationship between educational qualifications and political representation, shedding light on potential barriers or biases that may affect access to political positions.
+              In conclusion, the provided data offers detailed insights into the educational profiles of male and female deputies in the Italian Chamber of Deputies, legislature by legislature. While there are variations across different legislatures, there is an overall positive trend in the number of graduates among both genders. By addressing any existing disparities and promoting equal access to education, Italy can further enhance the representation of highly educated individuals within its political landscape.
+              </p>
+          </div>
+              <div class="col-8">
+                <div class="filter-container"></div>
+                <div id="mekkoChartot"></div>
+              </div>
+          
+        </div>
+     
       </div>
-    </div>
-  
-  
 
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>      
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="assets/js/main.js"></script>
+        
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['bar']});
+          google.charts.setOnLoadCallback(drawChart);
+      
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Legislatura', 'Graduated', 'Non Graduated'],
+              ['Costituente', 413, 151],
+              ['1', 409, 167],
+              ['2', 411, 178],
+              ['3', 417, 187],
+              ['4', 452, 197],
+              ['5', 436, 206],
+              ['6', 432, 204],
+              ['7', 391, 210],
+              ['8', 402, 219],
+              ['9', 405, 219],
+              ['10', 383, 213],
+              ['11', 404, 198],
+              ['12', 375, 171],
+              ['13', 403, 182],
+              ['14', 404, 171],
+              ['15', 358, 187],
+              ['16', 347, 201],
+              ['17', 301, 167],
+              ['18', 267, 155],
+              ['19', 187, 83]
+            ]);
 
-
-
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
- <!-- mappa uomini -->
- <script src="https://d3js.org/d3.v7.min.js"></script>
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  
-<script>
-  var dati = [
-  { regione: 'Campania', count: 544 },
-    { regione: 'Piemonte', count: 352 },
-    { regione: 'Emilia-Romagna', count: 346 },
-    { regione: 'Veneto', count: 388 },
-    { regione: 'Abruzzo', count: 135 },
-    { regione: 'Puglia', count: 369 },
-    { regione: 'Lombardia', count: 657 },
-    { regione: 'Sicilia', count: 495 },
-    { regione: 'Liguria', count: 135 },
-    { regione: 'Toscana', count: 328 },
-    { regione: 'Calabria', count: 224 },
-    { regione: 'Lazio', count: 438 },
-    { regione: 'Trentino-Alto Adige/Südtirol', count: 76 },
-    { regione: 'Friuli-Venezia Giulia', count: 113 },
-    { regione: 'Basilicata', count: 79 },
-    { regione: 'Umbria', count: 73 },
-    { regione: 'Marche', count: 141 },
-    { regione: 'Sardegna', count: 160 },
-    { regione: 'Molise', count: 40 },
-    { regione: "Valle d'Aosta/Vallée d'Aoste", count: 14 }
-  ];
-
-  var datiDonne = [
-  { regione: 'Lombardia', count: 62 },
-    { regione: 'Puglia', count: 12 },
-    { regione: "Trentino-Alto Adige/Südtirol", count: 8 },
-    { regione: 'Piemonte', count: 29 },
-    { regione: 'Lazio', count: 91 },
-    { regione: "Friuli-Venezia Giulia", count: 23 },
-    { regione: 'Liguria', count: 24 },
-    { regione: 'Toscana', count: 65 },
-    { regione: 'Campania', count: 47 },
-    { regione: 'Veneto', count: 39 },
-    { regione: 'Marche', count: 20 },
-    { regione: 'Emilia-Romagna', count: 41 },
-    { regione: 'Sicilia', count: 35 },
-    { regione: 'Abruzzo', count: 7 },
-    { regione: 'Umbria', count: 5 },
-    { regione: 'Calabria', count: 14 },
-    { regione: 'Sardegna', count: 14 },
-    { regione: "Valle d'Aosta/Vallée d'Aoste", count: 1 },
-    { regione: 'Basilicata', count: 3 },
-    { regione: 'Molise', count: 2 }
-  ];
-
-
-    // Definisci la scala di colori per gli uomini (Blu)
-    var colorScaleUomini = d3.scaleSequential(d3.interpolateBlues)
-      .domain([0, d3.max(dati, function(d) { return d.count; })]);
-
-    // Definisci la scala di colori per le donne (Rosa)
-    var colorScaleDonne = d3.scaleSequential(d3.interpolateRdPu)
-      .domain([0, d3.max(datiDonne, function(d) { return d.count; })]);
-
-    // Carica i dati GeoJSON delle regioni
-    Promise.all([
-      d3.json('regioni.geojson'),
-      new Promise(function(resolve) {
-        if (document.readyState === 'complete') {
-          resolve();
-        } else {
-          window.addEventListener('load', resolve);
-        }
-      })
-    ]).then(function(results) {
-      var geojson = results[0];
-
-      // Crea una mappa Leaflet
-      var map = L.map('map', { 
-        center: [43, 12], 
-        zoom: 6, 
-        zoomControl: false,
-      });
-
-      // Aggiungi il layer dei poligoni
-      function updateMap(data) {
-        // Rimuovi tutti i poligoni dalla mappa
-        map.eachLayer(function(layer) {
-          if (layer instanceof L.GeoJSON) {
-            map.removeLayer(layer);
-          }
-        });
-
-        // Aggiungi i poligoni con lo stile e i popup aggiornati
-        L.geoJSON(geojson, {
-          style: function(feature) {
-            var nomeRegione = feature.properties.reg_name;
-            var count = data.find(function(d) {
-              return d.regione === nomeRegione;
-            }).count;
-
-            var fillColor;
-            if (data === dati) {
-              fillColor = colorScaleUomini(count);
-            } else {
-              fillColor = colorScaleDonne(count);
-            }
-
-            return {
-              fillColor: fillColor,
-              weight: 1,
-              opacity: 1,
-              color: 'white',
-              fillOpacity: 0.7
+      
+            var options = {
+              chartArea: { backgroundColor: 'transparent' },
+              backgroundColor: 'transparent',
+              isStacked: true,
+              colors: ['#4FC0C0', '#FF6384'],
+              bars: 'vertical', 
+              vAxis: {
+                title: 'Count',
+                minValue: 0
+              },
+              hAxis: {
+                title: 'Legislatura'
+              }
             };
-          },
-          onEachFeature: function(feature, layer) {
-            var nomeRegione = feature.properties.reg_name;
-            var count = data.find(function(d) {
-              return d.regione === nomeRegione;
-            }).count;
-
-            layer.bindPopup("<b>" + nomeRegione + "</b><br>Count: " + count);
+      
+            var chart = new google.charts.Bar(document.getElementById('mekkoChart'));
+            chart.draw(data, google.charts.Bar.convertOptions(options));
           }
-        }).addTo(map);
-      }
+        </script>
+ 
+      
+        <!-- 68 NaN uomini -->
+      
+       
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['bar']});
+          google.charts.setOnLoadCallback(drawChart);
+      
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Legislatura', 'Graduated', 'Non Graduated'],
+              ['Costituente', 12, 8],
+              ['1', 24, 20],
+              ['2', 15, 17],
+              ['3', 12, 13],
+              ['4', 15, 14],
+              ['5', 10, 8],
+              ['6', 13, 13],
+              ['7', 32, 23],
+              ['8', 32, 26],
+              ['9', 27, 27],
+              ['10', 42, 33],
+              ['11', 37, 16],
+              ['12', 66, 31],
+              ['13', 50, 23],
+              ['14', 54, 20],
+              ['15', 80, 31],
+              ['16', 98, 41],
+              ['17', 149, 57],
+              ['18', 171, 68],
+              ['19', 92, 37]
+            ]);
+   
+      
+            var options = {
+              chartArea: { backgroundColor: 'transparent' },
+              isStacked: true,
+              backgroundColor: 'transparent',
+              colors: ['#E75A7C', '#3AB5C0'],
 
-      // Inizializza la mappa con i dati degli uomini
-      updateMap(dati);
+              bars: 'vertical', 
 
-      // Ottenere il riferimento all'elemento di input del filtro di genere
-      var genderFilter = document.getElementById('genderFilter');
+              vAxis: {
+                title: 'Count',
+                minValue: 0
+              },
+              hAxis: {
+                title: 'Legislatura'
+              }
+            };
+      
+            var chart = new google.charts.Bar(document.getElementById('mekkoChartFE'));
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+          }
+        </script>
+ 
+ <!-- 17 NaN donne -->
 
-      // Aggiungere un gestore di eventi per l'evento di cambio
-      genderFilter.addEventListener('change', function() {
-        // Ottenere il valore selezionato
-        var selectedGender = genderFilter.value;
 
-        // In base al valore selezionato, mostra i dati corrispondenti
-        if (selectedGender === 'uomini') {
-          updateMap(dati);
-        } else if (selectedGender === 'donne') {
-          updateMap(datiDonne);
-        }
-      });
-    });
+
+
+
+ <script>
+  // Load the Visualization API and corechart package
+  google.charts.load('current', { packages: ['corechart'] });
+
+  // Create the Google Chart
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    // Define the data
+    var data = google.visualization.arrayToDataTable([
+  ['Gender', 'Graduated', {role: 'style'}, 'Non-Graduated', {role: 'style'}, 'Tot', {role: 'style'}],
+  ['Male', 3361, 'color: blue', 1865, 'color: green', 5226, 'color: red'],
+  ['Female', 572, 'color: orange', 311, 'color: purple', 883, 'color: yellow']
+]);
+
+
+    // Set chart options
+    var options = {
+     
+      title: 'Proportion of Graduated and Non-Graduated Deputies by Gender',
+      backgroundColor: 'transparent',
+
+      hAxis: {
+        title: 'Gender',
+      },
+      vAxis: {
+        title: 'Number of Deputies',
+      },
+      isStacked: true,
+};
+
+    // Create and draw the chart
+    var chart = new google.visualization.ColumnChart(document.getElementById('mekkoChartot'));
+    chart.draw(data, options);
+  }
 </script>
-</body>
-
+  </body>
 </html>
+
+

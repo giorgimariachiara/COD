@@ -22,7 +22,7 @@
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
@@ -37,14 +37,14 @@
 <body>
 
   <div class="container">
-    <div class="headp">
-      <div class="row align-items-center">
-        <div class="col-12 camerasvg" data-aos="fade-up">
-         <header>Chamber of deputies</header>
+      <div class="row">
+        <div class="col-12 headersec" data-aos="fade-up">
+         <h11>Chamber of deputies</h11>
+         <p>  Demography </p>
         </div> 
         </div>
       </div>
-      </div>
+     
   
     
       <nav class="navbar">
@@ -66,46 +66,71 @@
       </nav>
     
     <div class="page">
+      <div class="row rigasu">
+        <div class="col-12">
+          <div class="titleart">
+          <h7>Geographical Distribution of Male and Female Deputies </h7> <br>
+          <h8>Uncovering Regional Representation Disparities</h8>
+          </div>
+        </div>
+      </div>
       <div class="row">
-        <div class="col-4 article2">
-          <div class="titleart"><h7 class="titleart">Titolo articolo</h7></div>
-            <img src="./assets/img/chigi.jpeg"   alt="Descrizione dell'immagine" >
-            <figcaption>Didascalia dell'immagine</figcaption>
-            <p>It’s hypothesis-driven analysis. 
-              The designer has a question to 
-              answer, and a hypothesis and wants 
-              to demonstrate. The validation 
-              consists of the visual evidence 
-              of a trend, a behaviour, or a
-               relationship. Outcomes of data 
-               analysis/discovery techniques 
-               fall into two categories: 
-               expected/unexpected; 
-               positive/negative. Unexpected 
-               negative results are the most 
-               insightful patterns to support 
-               decision-making.
-               It’s hypothesis-driven analysis. 
-               The designer has a question to 
-               answer, and a hypothesis and wants 
-               to demonstrate. The validation 
-               consists of the visual evidence 
-               of a trend, a behaviour, or a
-                relationship. Outcomes of data 
-                analysis/discovery techniques 
-                fall into two categories: 
-                expected/unexpected; 
-                positive/negative. Unexpected 
-                negative results are the most 
-                insightful patterns to support 
-                decision-making.</p>
+        <div class="col-2 occhiello">
+          <p>The geographical distribution of male and female deputies in the Italian Chamber of Deputies is a key aspect to consider in assessing regional representation within the institution. This question aims to explore the regional origins of deputies and investigate potential correlations between geographical distribution and gender representation. The hypothesis posits that there may be a higher concentration of deputies coming from the northern regions of Italy.
+            Analyzing the provided data on male and female representation across different regions, we can gain valuable insights into the geographical distribution of deputies. The choropleth map presents a visual representation of the data, allowing us to compare and contrast the number of male and female deputies in each region.
+          </p>
+        </div>
+        <div class="col-4 occhiello">
+          <img src="geopic.jpg"   alt="Descrizione dell'immagine" >
+        </div>
+          <div class="col-2 articlesenza">
+          <p> Examining the remaining regions, we observe varying levels of gender representation. <br>
+            Some regions, such as <b>Trentino-Alto Adige/Südtirol</b> and <b>Basilicata</b>, have relatively low overall representation, both for male and female deputies. <br>
+            Other regions, like <b>Emilia-Romagna</b> and <b>Veneto</b>, have a more balanced representation, with approximately <b>10.60%</b> and <b>9.12%</b> of deputies being female, respectively. <br>
+             <h13 style="text-transform: uppercase;">North, center, south</h13> <p>When considering the North, Central, and South regions of Italy, we can observe variations in the percentages of female deputies. In the North, approximately 34.41% of the deputies are female, indicating a relatively higher representation compared to the Central and South regions. The Central region has approximately 27.02% female deputies, while the South region has the lowest representation at approximately 8.32%.
+              Overall, the data suggests that while there may be variations in gender representation among different regions, the hypothesis of a higher concentration of deputies from the northern regions is not entirely confirmed. While some regions show a more balanced gender representation, others exhibit clear gender disparities.</p>
+            </p>
+          </div>
+         <div class="col-1 articlesenza2">
+         </div>
+       </div>
+
+
+   <div class="row">
+    <div class="col-2 articlemap">
+      <p>Upon examining the data, several observations can be made:<br>
+        <b>Lombardia</b>: Lombardia has the highest number of male deputies, with <b>657</b> representatives. Meanwhile, it also has a relatively significant number of female deputies, totaling <b>62</b>. This suggests a relatively balanced representation in this region, with approximately <b>9.45%</b> of deputies being female.<br>
+        <b>Puglia</b>: Puglia has a <b>high number of male</b> deputies, with <b>369</b> representatives. However, the number of <b>female</b> deputies is considerably lower at <b>12</b>, representing approximately <b>3.15%</b> of the total. <br>
+        <b>Lazio</b>: Lazio has a relatively high number of male deputies, with 438 representatives. In terms of female representation, Lazio fares better with 91 deputies, accounting for approximately 17.18% of the total.
+      </p>
+    </div>
+      <div class="col-4 mapg" data-aos="fade-up">
+        <div class="genderFilter">
+        <label for="genderFilter">Filtro per Genere:</label>
+        <select id="genderFilter">
+          <option value="uomini">Uomini</option>
+          <option value="donne">Donne</option>
+        </select>
       </div>
-      <div class="col-8 chart" data-aos="fade-up">
-        <div id="piechart"></div>
+        <div id="map" class="map"></div>
       </div>
-    
+      </div>
+
+      <div class="row">
+        
+        <div class="col-5 map-containerMA">
+          <h13 style="text-transform: uppercase;">Male map filtred for city</h13>
+          <iframe src="mapMA.html" width="100%" height="100%"></iframe>
+        </div>
+        
+        <div class="col-5 map-container">
+          <h13 style="text-transform: uppercase;">Female map filtred for city</h13> 
+          <iframe src="mapFE.html" width="100%" height="100%"></iframe>
+        </div>
       </div>
     </div>
+
+
   
   
 
@@ -123,82 +148,162 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+ <!-- mappa uomini -->
+ <script src="https://d3js.org/d3.v7.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  
+<script>
+  var dati = [
+  { regione: 'Campania', count: 544 },
+    { regione: 'Piemonte', count: 352 },
+    { regione: 'Emilia-Romagna', count: 346 },
+    { regione: 'Veneto', count: 388 },
+    { regione: 'Abruzzo', count: 135 },
+    { regione: 'Puglia', count: 369 },
+    { regione: 'Lombardia', count: 657 },
+    { regione: 'Sicilia', count: 495 },
+    { regione: 'Liguria', count: 135 },
+    { regione: 'Toscana', count: 328 },
+    { regione: 'Calabria', count: 224 },
+    { regione: 'Lazio', count: 438 },
+    { regione: 'Trentino-Alto Adige/Südtirol', count: 76 },
+    { regione: 'Friuli-Venezia Giulia', count: 113 },
+    { regione: 'Basilicata', count: 79 },
+    { regione: 'Umbria', count: 73 },
+    { regione: 'Marche', count: 141 },
+    { regione: 'Sardegna', count: 160 },
+    { regione: 'Molise', count: 40 },
+    { regione: "Valle d'Aosta/Vallée d'Aoste", count: 14 }
+  ];
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", { packages: ["corechart"] });
-      google.charts.setOnLoadCallback(drawChart);
-  
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ["Presidente", "Percentuale", { role: "tooltip", p: { html: true } }],
-          ["Alcide De Gasperi", 22.58, "<b>Alcide De Gasperi</b><br>7 mandati"], // 7 mandati su 31
-          ["Amintore Fanfani", 19.35, "<b>Amintore Fanfani</b><br>6 mandati"], // 6 mandati su 31
-          ["Matteo Renzi", 3.23, "<b>Matteo Renzi</b><br>1 mandato"], // 1 mandato su 31
-          ["Antonio Segni", 6.45, "<b>Antonio Segni</b><br>2 mandati"], // 2 mandati su 31
-          ["Ferdinando Tambroni Armagno", 3.23, "<b>Ferdinando Tambroni Armagno</b><br>1 mandato"], // 1 mandato su 31
-          ["Giovanni Leone", 6.45, "<b>Giovanni Leone</b><br>2 mandati"], // 2 mandati su 31
-          ["Aldo Moro", 16.13, "<b>Aldo Moro</b><br>5 mandati"], // 5 mandati su 31
-          ["Mariano Rumor", 16.13, "<b>Mariano Rumor</b><br>5 mandati"], // 5 mandati su 31
-          ["Emilio Colombo", 3.23, "<b>Emilio Colombo</b><br>1 mandato"], // 1 mandato su 31
-          ["Giulio Andreotti", 6.45, "<b>Giulio Andreotti</b><br>2 mandati"], // 2 mandati su 31
-          ["Francesco Cossiga", 6.45, "<b>Francesco Cossiga</b><br>2 mandati"], // 2 mandati su 31
-          ["Arnaldo Forlani", 3.23, "<b>Arnaldo Forlani</b><br>1 mandato"], // 1 mandato su 31
-          ["Giovanni Spadolini", 6.45, "<b>Giovanni Spadolini</b><br>2 mandati"], // 2 mandati su 31
-          ["Benedetto Craxi", 6.45, "<b>Benedetto Craxi</b><br>2 mandati"], // 2 mandati su 31
-          ["Giovanni Goria", 3.23, "<b>Giovanni Goria</b><br>1 mandato"], // 1 mandato su 31
-          ["Luigi Ciriaco De Mita", 3.23, "<b>Luigi Ciriaco De Mita</b><br>1 mandato"], // 1 mandato su 31
-          ["Giuliano Amato", 6.45, "<b>Giuliano Amato</b><br>2 mandati"], // 2 mandati su 31
-          ["Carlo Azeglio Ciampi", 3.23, "<b>Carlo Azeglio Ciampi</b><br>1 mandato"], // 1 mandato su 31
-          ["Silvio Berlusconi", 12.9, "<b>Silvio Berlusconi</b><br>4 mandati"], // 4 mandati su 31
-          ["Lamberto Dini", 3.23, "<b>Lamberto Dini</b><br>1 mandato"], // 1 mandato su 31
-          ["Giuseppe Pella", 3.23, "<b>Giuseppe Pella</b><br>1 mandato"], // 1 mandato su 31
-          ["Romano Prodi", 6.45, "<b>Romano Prodi</b><br>2 mandati"], // 2 mandati su 31
-          ["Massimo D'Alema", 6.45, "<b>Massimo D'Alema</b><br>2 mandati"], // 2 mandati su 31
-          ["Mario Monti", 3.23, "<b>Mario Monti</b><br>1 mandato"], // 1 mandato su 31
-          ["Mario Scelba", 3.23, "<b>Mario Scelba</b><br>1 mandato"], // 1 mandato su 31
-          ["Enrico Letta", 3.23, "<b>Enrico Letta</b><br>1 mandato"], // 1 mandato su 31
-          ["Adone Zoli", 3.23, "<b>Adone Zoli</b><br>1 mandato"], // 1 mandato su 31
-          ["Giuseppe Conte", 6.45, "<b>Giuseppe Conte</b><br>2 mandati"], // 2 mandati su 31
-          ["Paolo Gentiloni Silveri", 3.23, "<b>Paolo Gentiloni Silveri</b><br>1 mandato"], // 1 mandato su 31
-          ["Mario Draghi", 3.23, "<b>Mario Draghi</b><br>1 mandato"], // 1 mandato su 31
-          ["Giorgia Meloni", 3.23, "<b>Giorgia Meloni</b><br>1 mandato"], // 1 mandato su 31
-        ]);
-  
-        var options = {
-          title: "Presidenti del Consiglio Italiani",
-          legend: "Presidente",
-          pieSliceText: "none",
-          fontName: 'Droid Serif',
-          fontSize: 18,
-          chartArea: { left: 10, top: 80, width: '80%', height: '80%' },
-          is3D: true,
-          
-          tooltip: {
-            isHtml: true
+  var datiDonne = [
+  { regione: 'Lombardia', count: 62 },
+    { regione: 'Puglia', count: 12 },
+    { regione: "Trentino-Alto Adige/Südtirol", count: 8 },
+    { regione: 'Piemonte', count: 29 },
+    { regione: 'Lazio', count: 91 },
+    { regione: "Friuli-Venezia Giulia", count: 23 },
+    { regione: 'Liguria', count: 24 },
+    { regione: 'Toscana', count: 65 },
+    { regione: 'Campania', count: 47 },
+    { regione: 'Veneto', count: 39 },
+    { regione: 'Marche', count: 20 },
+    { regione: 'Emilia-Romagna', count: 41 },
+    { regione: 'Sicilia', count: 35 },
+    { regione: 'Abruzzo', count: 7 },
+    { regione: 'Umbria', count: 5 },
+    { regione: 'Calabria', count: 14 },
+    { regione: 'Sardegna', count: 14 },
+    { regione: "Valle d'Aosta/Vallée d'Aoste", count: 1 },
+    { regione: 'Basilicata', count: 3 },
+    { regione: 'Molise', count: 2 }
+  ];
+
+
+    // Definisci la scala di colori per gli uomini (Blu)
+    var colorScaleUomini = d3.scaleSequential(d3.interpolateBlues)
+      .domain([0, d3.max(dati, function(d) { return d.count; })]);
+
+    // Definisci la scala di colori per le donne (Rosa)
+    var colorScaleDonne = d3.scaleSequential(d3.interpolateRdPu)
+      .domain([0, d3.max(datiDonne, function(d) { return d.count; })]);
+
+    // Carica i dati GeoJSON delle regioni
+    Promise.all([
+      d3.json('regioni.geojson'),
+      new Promise(function(resolve) {
+        if (document.readyState === 'complete') {
+          resolve();
+        } else {
+          window.addEventListener('load', resolve);
+        }
+      })
+    ]).then(function(results) {
+      var geojson = results[0];
+
+      // Crea una mappa Leaflet
+      var map = L.map('map', { 
+        center: [43, 12], 
+        zoom: 6, 
+        height: 500,
+        width: 500,
+        zoomControl: false,
+        scrollWheelZoom: false,
+      
+      });
+      var customZoomControl = L.control.zoom({
+      position: 'topright', // Posiziona il controllo di zoom in alto a destra
+      zoomInText: '+', // Testo per il pulsante di zoom in avanti
+     zoomOutText: '-', 
+    });
+
+    customZoomControl.addTo(map); //
+
+      // Aggiungi il layer dei poligoni
+      function updateMap(data) {
+        // Rimuovi tutti i poligoni dalla mappa
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.GeoJSON) {
+            map.removeLayer(layer);
+          }
+        });
+
+        // Aggiungi i poligoni con lo stile e i popup aggiornati
+        L.geoJSON(geojson, {
+          style: function(feature) {
+            var nomeRegione = feature.properties.reg_name;
+            var count = data.find(function(d) {
+              return d.regione === nomeRegione;
+            }).count;
+
+            var fillColor;
+            if (data === dati) {
+              fillColor = colorScaleUomini(count);
+            } else {
+              fillColor = colorScaleDonne(count);
+            }
+
+            return {
+              fillColor: fillColor,
+              weight: 1,
+              opacity: 1,
+              color: 'white',
+              fillOpacity: 0.7
+            };
           },
-          
-          slices: {
-            30: { offset: 0.2 } // Offset per Giorgia Meloni
-          },
-          animation: { duration: 500, easing: 'out', startup: true },
-         
-          backgroundColor: "transparent", // Colore di sfondo del grafico
-          colors: ["#A9FF38", "#98E533", "#84C72C", "#71AA25", "#649820", "#56821C", "#34861F", "#40A027", "#2C7419", "#2C8F60", "#237B51", "#27CA7C", "#12CD73", "#529E79", "#9ACD32", "#063C25", "#04673D", "8CC3AC", "A8EBCF", "#66B17C", "1BAC46", "#18933D", "#0D8030", "#064E1C", "#2C643D", "#688771", "#2DA92A", "#44801B", "#5DC815", "#34531F", "#CC2210"]
-        };
-  
-        var chart = new google.visualization.PieChart(document.getElementById("piechart"));
-        chart.draw(data, options);
+          onEachFeature: function(feature, layer) {
+            var nomeRegione = feature.properties.reg_name;
+            var count = data.find(function(d) {
+              return d.regione === nomeRegione;
+            }).count;
+
+            layer.bindPopup("<b>" + nomeRegione + "</b><br>Count: " + count);
+          }
+        }).addTo(map);
       }
-    </script>
 
+      // Inizializza la mappa con i dati degli uomini
+      updateMap(dati);
 
+      // Ottenere il riferimento all'elemento di input del filtro di genere
+      var genderFilter = document.getElementById('genderFilter');
+      genderFilter.style.marginTop = '-100px';
+      genderFilter.setAttribute('style', 'background-color: #F2F2F2; color: #333333; border: 1px solid #CCCCCC; padding: 5px; width: 100px; border-radius: 5px; font-size: 14px;');
+      // Aggiungere un gestore di eventi per l'evento di cambio
+      genderFilter.addEventListener('change', function() {
+        // Ottenere il valore selezionato
+        var selectedGender = genderFilter.value;
 
-  
-
-
-
-
+        // In base al valore selezionato, mostra i dati corrispondenti
+        if (selectedGender === 'uomini') {
+          updateMap(dati);
+        } else if (selectedGender === 'donne') {
+          updateMap(datiDonne);
+        }
+      });
+    });
+</script>
 </body>
 
 </html>
