@@ -1,48 +1,82 @@
-import csv
-import os
-import math
+import pandas as pd
+import plotly.graph_objects as go
 
-def count_graduation(file):
-    graduated_count = 0
-    non_graduated_count = 0
-    nan_count = 0
+# Read the CSV dataset using Pandas
+data = pd.read_csv('graduatedMA.csv')
 
-    with open(file, 'r') as f:
-        reader = csv.reader(f)
-        next(reader)  # Salta l'intestazione
-        for row in reader:
-            graduated = row[1]
-            if graduated == 'yes':
-                graduated_count += 1
-            elif graduated == 'no':
-                non_graduated_count += 1
-            elif isinstance(graduated, str) and graduated.lower() == 'nan':
-                nan_count += 1
+# Definisci un dizionario che mappa le etichette di legislatura con il corrispondente numero
+legislature_mapping = {
+    'legislaturaCostituente': 0,
+    'legislatura01': 1,
+    'legislatura02': 2,
+    'legislatura03': 3,
+    'legislatura04': 4,
+    'legislatura05': 5,
+    'legislatura06': 6,
+    'legislatura07': 7,
+    'legislatura08': 8,
+    'legislatura09': 9,
+    'legislatura10': 10,
+    'legislatura11': 11,
+    'legislatura12': 12,
+    'legislatura13': 13,
+    'legislatura14': 14,
+    'legislatura15': 15,
+    'legislatura16': 16,
+    'legislatura17': 17,
+    'legislatura18': 18,
+    'legislatura19': 19
+}
 
-    return graduated_count, non_graduated_count, nan_count
+# Definisci una funzione per ottenere il numero della legislatura da una stringa
+def get_legislature_number(legislature_str):
+    return legislature_mapping[legislature_str]
 
-def create_contolegF_files():
-    # Crea un dizionario per tenere traccia dei conteggi delle legislature
-    legislatura_counts = {}
+# Aggiungi una nuova colonna "legislature_number" con i numeri di legislatura
+data['legislature_number'] = data['legislatura'].apply(get_legislature_number)
 
-    # Ottieni tutti i file "legislatura_x_M.csv" nella directory corrente
-    files = [f for f in os.listdir('.') if f.startswith('legislatura_') and f.endswith('_F.csv')]
+# Ordina i dati in base al numero di legislatura
+data = data.sort_values(by='legislature_number')
 
-    # Calcola i conteggi delle lauree per ogni legislatura
-    for file in files:
-        legislatura = file.split('_')[1]
-        graduated_count, non_graduated_count, nan_count = count_graduation(file)
-        legislatura_counts[legislatura] = (graduated_count, non_graduated_count, nan_count)
+# Calcola il numero totale di deputati per ogni legislatura
+legislature_counts = data['legislatura'].value_counts()
 
-    # Crea un file contolegM.csv per ogni legislatura
-    for legislatura, counts in legislatura_counts.items():
-        output_file = f"contolegF_{legislatura}.csv"
-        graduated_count, non_graduated_count, nan_count = counts
+# Calcola il numero di deputati laureati e non laureati per ogni legislatura
+graduated_counts = data[data['graduated'] == 'yes']['legislatura'].value_counts()
+non_graduated_counts = legislature_counts - graduated_counts
 
-        with open(output_file, 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(['graduated', 'non graduated', 'NaN'])
-            writer.writerow([graduated_count, non_graduated_count, nan_count])
+# Calcola la percentuale di deputati laureati per ogni legislatura
+percentage_graduated = (graduated_counts / legislature_counts) * 100
 
-# Chiamata alla funzione per creare i file "contolegM.csv" per ogni legislatura
-create_contolegF_files()
+# Crea il grafico Mekko usando Plotly
+fig = go.Figure(data=[
+    go.Bar(
+        x=graduated_counts.index,
+        y=graduated_counts.values,
+        name='Graduated',
+        marker=dict(color='green'),
+        text=percentage_graduated.values.round(2),
+        textposition='auto',
+        texttemplate='%{text:.2f}%',
+        hovertemplate='%{y} Graduated<br>%{text} of Total<br>',
+    ),
+    go.Bar(
+        x=non_graduated_counts.index,
+        y=non_graduated_counts.values,
+        name='Non-Graduated',
+        marker=dict(color='purple'),
+        hovertemplate='%{y} Non-Graduated<br>',
+    )
+])
+
+# Personalizza il layout del grafico
+fig.update_layout(
+    title='Proportion of Graduated and Non-Graduated Deputies by Legislature',
+    xaxis=dict(title='Legislature'),
+    yaxis=dict(title='Number of Deputies'),
+    barmode='stack',
+    legend=dict(title='Status'),
+)
+
+# Mostra il grafico
+fig.show()

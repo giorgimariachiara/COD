@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Carica i dati dal primo file CSV
-df1 = pd.read_csv('graduationfemale.csv')
+df1 = pd.read_csv('graduation.csv')
 
 # Carica i dati dal secondo file CSV
 df2 = pd.read_csv('deputatiperlegislatura.csv')
@@ -13,4 +13,8 @@ merged_df = pd.merge(df1, df2, on='Persona')
 merged_df = merged_df[['Persona', 'legislatura', 'graduated']]
 
 # Salva il risultato in un nuovo file CSV
-merged_df.to_csv('graduatedFE.csv', index=False)
+merged_df.to_csv('graduatedMA.csv', index=False)
+
+
+
+#da graduationfemale.csv (file senza lrgislature) ho creato graduatedFE.csv che ha le legislature
