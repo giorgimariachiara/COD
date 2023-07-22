@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 
 # Read the CSV dataset using Pandas
-data = pd.read_csv('mergedgraduationtot.csv')
+data = pd.read_csv('data.csv')
 
 # Calculate the total number of deputies by gender
 gender_counts = data['gender'].value_counts()
