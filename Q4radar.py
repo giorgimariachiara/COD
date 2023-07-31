@@ -9,9 +9,9 @@ df_donne = pd.read_csv('incaricoFEMALE.csv')
 legislature_list = df_uomini['legislatura'].unique()
 legislature_order = ['costituente', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']
 
-# Funzione per impostare la scala dell'asse radiale da 0 a 200 con step di 10
+# Funzione per impostare la scala dell'asse radiale con dtick condizionale
 def set_radial_axis_scale():
-    return [0, 200]
+    return [0, 50, 200], 10 if df_uomini['incarico'].max() <= 50 else 50
 
 # Crea la radar chart iniziale
 def update_radar_chart(selected_legislatura):
@@ -42,7 +42,7 @@ def update_radar_chart(selected_legislatura):
     # Aggiungi le informazioni per il layout del grafico
     fig.update_layout(
         polar=dict(
-            radialaxis=dict(visible=True, range=set_radial_axis_scale(), dtick=10, tickfont=dict(size=12)),
+            radialaxis=dict(visible=True, range=set_radial_axis_scale()[0], dtick=set_radial_axis_scale()[1], tickfont=dict(size=12)),
         ),
         showlegend=True,
         title='Incarichi per Legislatura',
