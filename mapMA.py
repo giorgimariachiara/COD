@@ -172,40 +172,12 @@ ne = df_cord[['lat', 'lon']].max().values.tolist()
 m.fit_bounds([sw, ne])
 m.save('map.html')
 
+from google.colab import files
+files.download('map.html')
+
+
+from IPython.display import HTML
+HTML('<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.11/iframeResizer.min.js"></script>')
+
 # Display the map in a Jupyter notebook using an IFrame
 display(IFrame(src='map.html', width=800, height=500))
-
-
-
-
-"""
-endpoint = "https://dati.camera.it/sparql"
-
-q4 = select ?nome ?cognome ?città?regione where {
-  ?persona foaf:gender "female".
-  ?persona foaf:firstName ?nome. 
-  ?persona foaf:surname ?cognome. 
-  ?persona <http://purl.org/vocab/bio/0.1/Birth> ?nascita.
-  ?nascita ocd:rif_luogo ?luogoNascitaUri.
-  ?luogoNascitaUri rdfs:label ?luogoNascita.
-  ?luogoNascitaUri dc:title ?città.
- OPTIONAL { ?luogoNascitaUri ocd:parentADM3 ?regione .}
-}
-df = sparql_dataframe.get(endpoint, q4)
-dataframecities = df["città"]
-
-# count the frequency of each city and create a new dataframe
-city_counts = df['città'].value_counts().reset_index()
-city_counts.columns = ['città', 'count']
-
-# write the result to a CSV file
-city_counts.to_csv('femalecities.csv', index=False)
-
-
-
-
-#for idx, row in merged.iterrows():
-  #  ax.annotate(text=str(row['count']), xy=row['geometry'].centroid.coords[0], fontsize=8)
-
-
-"""
