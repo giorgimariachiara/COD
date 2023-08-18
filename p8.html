@@ -117,34 +117,18 @@
              In summary, the data presented in the chart demonstrates a significant 
              increase in female representation from Legislature I to Legislature XVIII. 
              owever, there was a sharp decline in female representation in Legislature XIX, 
-             which warrants further investigation into potential reasons for this drop.</p>
-             <h6>Analysis of Total Female and Male Deputies</h6>
-             <p class="capital"> In the following bar chart representing the total number of male and female deputies 
-             across all legislative periods, it is evident that there is a significant 
-             gender disparity in the representation. The data shows that there are 905
-             female deputies, while the number of male deputies is substantially higher, 
-             reaching 5204.
-             </p>    
+             which warrants further investigation into potential reasons for this drop.</p>    
        <div class="col-1">
             </div>
       </div>
     </div>
 
-  <div class="row"> 
+    <div class="row"> 
       <div class="col-12 chart" data-aos="fade-up">
-        <div id="chart_div" class="my-filter-class"></div>
-        <div class="mybutton">
-        <div id="filter_div" >
-          <input type="text" id="search_input" class="my-search-input" placeholder="Search">
-          <input type="search">
-          </div>
-        </div>
+        <div id="bubble_chart_div"></div>
       </div>
     </div>
-   <div class="total_chart_div">
-    <div id="total_chart_div"></div>
-   </div>
-
+  </div>
 
   </div>
 
@@ -166,15 +150,14 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-   <!-- Plotly JS -->
-   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/2.23.0/index.umd.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
    
   <div id="bubble_chart_div" class="my-filter-class">
   <script>
     // Carica i dati dal file CSV
-    Papa.parse('.\presidenticamera.csv', {
+    Papa.parse('./presidenticamera.csv', {
       download: true,
       header: true,
       complete: function(results) {
@@ -183,7 +166,7 @@
         // Funzione per il parsing della data con formato personalizzato
         function custom_date_parser(date_str) {
           try {
-            return parse(date_str, { dayfirst: true });
+            return window.dateFns.parse(date_str, 'dd/MM/yyyy', new Date(), { locale: window.dateFns.localeIT });
           } catch {
             // In caso di errore, prova a gestire manualmente il formato della data
             const months = {
@@ -238,11 +221,8 @@
           hovermode: 'closest'
         };
 
-        const config = {
-          responsive: true
-        };
-
-        Plotly.newPlot('chart', [trace], layout, config);
+        const chartContainer = document.getElementById('bubble_chart_div');
+        Plotly.newPlot(chartContainer, [trace], layout, config);
       }
     });
   </script>
