@@ -1258,19 +1258,6 @@ text-align: justify;
 
 }
 
-
-<<<<<<< HEAD
-/* classi p8.html presidenti camera dei deputati*/
-
-#bubble_chart_div {
-  margin-left: 120px;/* Larghezza al 100% della larghezza del suo contenitore (ad esempio, la larghezza del body o di un altro elemento padre) */
-  /* Altezza specifica (puoi utilizzare un valore in pixel o percentuale) */
-=======
-#bubble_chart_div {
-  width: 100%; /* Larghezza al 100% della larghezza del suo contenitore (ad esempio, la larghezza del body o di un altro elemento padre) */
-  height: 500px; /* Altezza specifica (puoi utilizzare un valore in pixel o percentuale) */
-
-}
 /* classi p5.html incarico*/
 
 .chart6{
@@ -1319,5 +1306,6 @@ text-align: justify;
   height: 100%;
   margin-bottom: 300px;
   margin-left: 400px;
->>>>>>> 706f8256651ee89fefcd7fdc1d018f415b967d90
 }
+
+/* classi p8.html presidenti camera*/
