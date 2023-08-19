@@ -1259,7 +1259,7 @@ text-align: justify;
 }
 
 
-/* classi p6.html incarico*/
+/* classi p5.html incarico*/
 
 .chart6{
   margin-top:300px;
@@ -1286,4 +1286,25 @@ text-align: justify;
   width: 100%;
   height: 100%;
 
+}
+
+/* classi p6.html presidente*/
+.article6i{
+  margin-top: 300px;
+  margin-left:100px;
+  margin-right:10 px;
+}
+
+.article6m{
+  margin-top:300px;
+  margin-right:10px;
+
+}
+
+.piechart{
+  width: 100%;
+  height: 100%;
+  margin-bottom:300px;
+  margin-left:400px;
+  
 }
