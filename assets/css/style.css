@@ -17,6 +17,10 @@ body {
   overflow-x: hidden;
 }
 
+.custom-cursor {
+  cursor: url(path/to/logo-image.png), auto;
+}
+
 
 a {
   color: #777;
@@ -1309,3 +1313,28 @@ text-align: justify;
 }
 
 /* classi p8.html presidenti camera*/
+
+#bubble_chart_div{
+
+width: 100%; 
+border: 2px solid black;
+
+}
+
+.article8{
+margin-bottom: 200px;
+}
+
+.titleart8 {
+  font-size: 30px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom:2px  #2f2f2f;
+  text-align: center !important;
+  margin-top:-260px;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+}
+
