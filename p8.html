@@ -154,78 +154,167 @@
   
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
    
-  <div id="bubble_chart_div" class="my-filter-class">
+
   <script>
-    // Carica i dati dal file CSV
-    Papa.parse('./presidenticamera.csv', {
-      download: true,
-      header: true,
-      complete: function(results) {
-        const df = results.data;
-
-        // Funzione per il parsing della data con formato personalizzato
-        function custom_date_parser(date_str) {
-          try {
-            return window.dateFns.parse(date_str, 'dd/MM/yyyy', new Date(), { locale: window.dateFns.localeIT });
-          } catch {
-            // In caso di errore, prova a gestire manualmente il formato della data
-            const months = {
-              'gennaio': 'January', 'febbraio': 'February', 'marzo': 'March', 'aprile': 'April',
-              'maggio': 'May', 'giugno': 'June', 'luglio': 'July', 'agosto': 'August',
-              'settembre': 'September', 'ottobre': 'October', 'novembre': 'November', 'dicembre': 'December'
-            };
-            for (const [month_it, month_en] of Object.entries(months)) {
-              if (date_str.includes(month_it)) {
-                date_str = date_str.replace(month_it, month_en);
-                break;
-              }
-            }
-            return parse(date_str, { dayfirst: true });
-          }
+    function formatFullName(nome, cognome) {
+        var fullName = nome + ' ' + cognome;
+        return fullName.trim();
+    }
+    var data = [
+    {
+            'Presidente': 'Brunetto Bucciarelli Ducci',
+            'Durata': 1784,
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Alessandro Pertini',
+            'Durata': 1449,
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Leonilde Iotti',
+            'Durata': 1482,  // Durata del mandato in giorni
+            'Gender': 'female'
+        },
+        {
+            'Presidente': 'Oscar Luigi Scalfaro',
+            'Durata': 31,
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Pier Ferdinando Casini',
+            'Durata': 1792,  // Durata del mandato in giorni
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Giuseppe Sagarat',
+            'Durata': 226,
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Umberto Terracini',
+            'Durata': 357,  // Durata del mandato in giorni
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Giovanni Gronchi',
+            'Durata': 1873,
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Giovanni Leone',
+            'Durata': 1128,  // Durata del mandato in giorni
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Pietro Ingrao',
+            'Durata': 1079,
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Giorgio Napolitano',
+            'Durata': 680,  // Durata del mandato in giorni
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Irene Pivetti',
+            'Durata': 753,
+            'Gender': 'female'
+        },
+        {
+            'Presidente': 'Fausto Bertinotti',
+            'Durata': 730,  // Durata del mandato in giorni
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Gianfranco Fini',
+            'Durata': 1779,  // Durata del mandato in giorni
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Laura Boldrini',
+            'Durata': 1832,  // Durata del mandato in giorni
+            'Gender': 'female'
+        },
+        {
+            'Presidente': 'Roberto Fico',
+            'Durata': 1663,  // Durata del mandato in giorni
+            'Gender': 'male'
+        },
+        {
+            'Presidente': 'Lorenzo Fontana',
+            'Durata': 309,  // Durata del mandato in giorni
+            'Gender': 'male'
         }
+        
+    ];
 
-        // Converti le colonne "Inizio" e "Fine" nel formato "dd/mm/yyyy" usando la funzione personalizzata
-        df['Inizio'] = df['Inizio'].map(x => custom_date_parser(x).toLocaleDateString('it-IT'));
-        df['Fine'] = df['Fine'].map(x => x === "in carica" ? new Date().toLocaleDateString('it-IT') : custom_date_parser(x).toLocaleDateString('it-IT'));
+    // Calcola le dimensioni delle bolle e definisci i colori in base al genere
+    var size_scaling_factor = 2;
 
-        // Calcola la durata del mandato in giorni
-        df['durata_giorni'] = df['Fine'].map((x, i) => (new Date(x).getTime() - new Date(df['Inizio'][i]).getTime()) / (1000 * 3600 * 24));
+    var colori = {
+        'male': 'rgba(150, 191, 228, 1)',
+        'female': 'rgba(246, 173, 210, 0.7)'
+    };
 
-        // Definisci i colori delle bolle in base al genere (pastello)
-        const colori = { 'male': 'rgba(150, 191, 228, 1)', 'female': 'rgba(246, 173, 210, 0.7)' };
-        df['colore_genere'] = df['Gender'].map(colori);
+    var traces = [];
 
-        // Crea la chart a bolle
-        const trace = {
-          x: df['durata_giorni'],
-          y: df['Nome Presidente'] + ' ' + df['Cognome Presidente'],
-          mode: 'markers',
-          marker: {
-            size: df['marker_size'],
-            symbol: 'circle',
-            color: df['marker_color'],
+for (var i = 0; i < data.length; i++) {
+    var colore = colori[data[i].Gender];
+    var durata = data[i].Durata;
+    var size = Math.max(5, size_scaling_factor * (1 + durata / 100));
+
+    var trace = {
+        x: [durata],
+        y: [data[i].Presidente],
+        mode: 'markers',
+        type: 'scatter',
+        text: 'Genere: ' + data[i].Gender + '<br>Durata: ' + durata + ' giorni',
+        hoverinfo: 'text',
+        marker: {
+            size: size,
+            color: colore,
+            opacity: 0.7,
             line: {
-              width: 2,
-              color: 'black'
+                width: 2,
+                color: 'black'
             }
-          },
-          text: df['text'],
-          hoverinfo: 'text'
-        };
+        }
+    };
+    traces.push(trace);
+}
 
-        const layout = {
-          title: 'Presidenti della Camera dei Deputati',
-          xaxis: { title: 'Durata del mandato (giorni)' },
-          yaxis: { title: 'Presidente' },
-          showlegend: false,
-          hovermode: 'closest'
-        };
+var layout = {
+        title: 'Presidenti della Camera dei Deputati',
+        xaxis: { title: 'Durata del mandato (giorni)' },
+        yaxis: {
+            title: 'Presidente',
+            tickvals: data.map(entry => entry.Presidente),
+            ticktext: data.map(entry => entry.Presidente),
+            gridcolor: 'rgba(150, 150, 150, 0.3)',
+            gridwidth: 1,
+            automargin: true,  // Aggiunge margini automaticamente per evitare tagli
+            margin: {
+                t: 100,
+                r:150  // Aggiungi un margine superiore all'asse Y
+            }
+        },
+        showlegend: false,
+        hovermode: 'closest',
+        paper_bgcolor: 'rgba(0, 0, 0, 0)',  // Sfondo trasparente
+        plot_bgcolor:'rgba(0, 0, 0, 0)',
+        gridcolor: 'rgba(150, 150, 150, 0.3)',  // Colore delle griglie sull'asse Y
+        gridwidth: 1, 
+        margin: {
+            t: 50,  // Margin top
+            b: 50,  // Margin bottom
+            l: 50, // Margin left
+            r: 30   // Margin right
+        }
+    };
 
-        const chartContainer = document.getElementById('bubble_chart_div');
-        Plotly.newPlot(chartContainer, [trace], layout, config);
-      }
-    });
-  </script>
-  </div>
+Plotly.newPlot('bubble_chart_div', traces, layout);
+</script>
+
 </body>
 </html>
