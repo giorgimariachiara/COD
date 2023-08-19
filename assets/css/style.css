@@ -1259,6 +1259,11 @@ text-align: justify;
 }
 
 
+#bubble_chart_div {
+  width: 100%; /* Larghezza al 100% della larghezza del suo contenitore (ad esempio, la larghezza del body o di un altro elemento padre) */
+  height: 500px; /* Altezza specifica (puoi utilizzare un valore in pixel o percentuale) */
+
+
 /* classi p6.html incarico*/
 
 .chart6{
@@ -1285,5 +1290,6 @@ text-align: justify;
 .barchart5{
   width: 100%;
   height: 100%;
+
 
 }
