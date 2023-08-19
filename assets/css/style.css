@@ -1257,3 +1257,33 @@ text-align: justify;
   text-align: justify;
 
 }
+
+
+/* classi p6.html incarico*/
+
+.chart6{
+  margin-top:300px;
+  margin-left:150px;
+  margin-right: -150px;
+  width: 40%;
+  height: 40%;
+}
+
+.article5{
+  margin-left:100px;
+  margin-top:300px;
+  text-align: justify;
+
+}
+
+.article5m{
+  margin-top:300px;
+  text-align: justify;
+
+}
+
+.barchart5{
+  width: 100%;
+  height: 100%;
+
+}
