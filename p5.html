@@ -158,8 +158,8 @@
               label: 'Donne',
               data: [322, 285, 87, 162, 0, 4, 1], // Inserire qui i dati degli incarichi delle donne
               backgroundColor: 'rgba( 220, 20, 60, 0.2 )',
-              borderColor: 'rgba( 128, 128, 128, 1 )',
-              borderWidth: 6 ,
+              borderColor: 'red',
+              borderWidth: 2,
               pointBackgroundColor: 'rgba(220, 20, 60, 1)',
             }
           ]
@@ -273,13 +273,6 @@
       </script>
 
 
-var ctx = document.getElementById('pyramidChart').getContext('2d');
-new Chart(ctx, {
-    type: 'bar',
-    data: data,
-    options: options
-});
-</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
