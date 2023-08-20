@@ -17,11 +17,6 @@ body {
   overflow-x: hidden;
 }
 
-.custom-cursor {
-  cursor: url(.\logodeputati.png), auto;
-}
-
-
 a {
   color: #777;
   text-decoration: none;
