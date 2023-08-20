@@ -18,7 +18,7 @@ body {
 }
 
 .custom-cursor {
-  cursor: url(path/to/logo-image.png), auto;
+  cursor: url(.\logodeputati.png), auto;
 }
 
 
@@ -1316,25 +1316,28 @@ text-align: justify;
 
 #bubble_chart_div{
 
-width: 100%; 
+width: 100%;
 border: 2px solid black;
+
+
 
 }
 
 .article8{
-margin-bottom: 200px;
-}
+  margin-bottom: 200px;
+  margin-top: -10px;
+  }
 
-.titleart8 {
-  font-size: 30px;
-  text-transform: uppercase;
-  padding-bottom: 10px;
-  border-bottom:2px  #2f2f2f;
-  text-align: center !important;
-  margin-top:-260px;
-  font-family: "Arial", sans-serif;
-  font-weight: bold;
-  letter-spacing: 1px;
-
-}
+  .titleart8 {
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom:2px  #2f2f2f;
+    text-align: center !important;
+    margin-top:-260px;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+  
+  }
 
