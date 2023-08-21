@@ -107,6 +107,7 @@ h5,
   margin-right: 30px;
   width: 300px; /* Aggiunto per definire la larghezza del cerchio */
   height: 300px;
+
 }
 
 .item .item-wrap:after {
@@ -828,6 +829,7 @@ canvas {
 #clients .img-fluid {
   max-width: 180%;
   height: auto;
+
 }
 
 
@@ -843,11 +845,22 @@ canvas {
 }
 
 .documentationpp {
-  margin-top: 10px;
+  margin-top: 30px;
   margin-bottom: 20px;
   padding: 30px;
-  text-align: justify;
+  margin-left: 60px;
+  text-align: center; /* Centra il testo orizzontalmente */
+  align-items: center; /
   
+}
+.documentationpp p {
+  text-align: justify; /* Giustifica il testo all'interno del colonna */
+}
+
+.documentationpp .col-md-5.documentationpp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .docu{
@@ -870,7 +883,13 @@ canvas {
   align-items: center;
   text-align: center;
 }
-
+.thome{
+  border-top: solid 1px black;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: justify;
+}
 h9 {
   font-size: 24px;
   font-weight: bold;
@@ -1329,13 +1348,9 @@ text-align: justify;
 /* classi p8.html presidenti camera*/
 
 #bubble_chart_div{
-
-width: 100%;
-border: 2px solid black;
-
-
-
+  border: 3px solid black;
 }
+
 
 .article8{
   margin-bottom: 200px;
@@ -1355,15 +1370,40 @@ border: 2px solid black;
   
   }
 
-/* prima pagina sezione Knowledge*/
+/* prima pagina*/
 
-
-.kn{
-  border: 2px solid #0a0707;
+.col-md-1.custom-border {
+  position: relative;
+  outline: 3px solid #000000 !important;
   margin-top: 10px;
-
 }
 
+.col-md-1.custom-border::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -2px;
+  bottom: -2px;
+  outline: 3px solid #FF0000 !important;
+}
+
+
+.col-md-1.custom-border2 {
+  position: relative;
+  outline: 3px solid #000000 !important;
+  margin-top: 10px;
+}
+
+.col-md-1.custom-border2::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -2px;
+  outline: 3px solid #FF0000 !important;
+}
 .immagine {
   width:150px; 
   height:150px;
@@ -1372,32 +1412,83 @@ border: 2px solid black;
 }
 
 
-/*per creare angoli ai bordi prima pagina*/
+/*per creare angoli ai bordi  degli articoli prima pagina*/
 .ang {
-  position: relative; /* Necessario per l'uso dei pseudoelementi */
+  position: relative;
   padding: 15px;
-  border: 3px solid transparent; /* Bordo trasparente per il contenitore principale */
+  border: 3px solid transparent;
 }
 
 .ang::before,
 .ang::after {
-  content: ""; /* Aggiungi il contenuto vuoto per gli pseudoelementi */
-  position: absolute; /* Posiziona gli pseudoelementi in relazione al contenitore */
-  border: 3px solid #0a0707; /* Bordo nero */
-  width: 10px;
-  height: 10px;
+  content: "";
+  position: absolute;
+  border: 5px solid #0a0707;
+  width: 30px;
+  height: 30px;
+  transform: rotate(180deg); /* Ruota l'angolo di 45 gradi */
 }
 
 .ang::before {
-  top: -3px;
-  left: -3px;
+  top: -7px; /* Muovi il bordo verso l'alto */
+  left: -7px; /* Muovi il bordo verso sinistra */
   border-top: none;
   border-left: none;
 }
 
 .ang::after {
-  bottom: -3px;
-  right: -3px;
+  bottom: -7px; /* Muovi il bordo verso il basso */
+  right: -7px; /* Muovi il bordo verso destra */
   border-bottom: none;
   border-right: none;
+}
+
+.article-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.divider {
+  border-top: 1px solid #000;
+  margin: 10px 0;
+}
+
+.author {
+  font-size: 13px;
+  font-style: italic;
+  text-align: left;
+}
+.author b {
+  color: black; /* Imposta il colore predefinito del testo */
+}
+
+.author b:nth-child(1),
+.author b:nth-child(2) {
+  color: red; /* Imposta il colore rosso solo per i primi due elementi <b> all'interno di .author */
+}
+
+.continue-link a {
+  color: black;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+  margin-left: 250px;
+}
+
+.continue-link a i {
+  margin-right: 8px;
+}
+
+.continue-link a span {
+  margin-left: 4px;
+}
+
+.firma {
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+}
+.firma strong {
+  color: red;
 }

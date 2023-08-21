@@ -81,11 +81,11 @@
               highest office. The chart showcases the male and
           </p>
       </div>
-      <div class="col-9 chart" data-aos="fade-up">
+      <div class="col-md-8" data-aos="fade-up">
         <div id="bubble_chart_div"></div>
       </div>
-    <div class="col-1">
-    </div>
+      <div class="col-1">
+      </div>
   </div>
   <div class="row">
     <div class="col-1">
@@ -145,13 +145,13 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
   <!-- Google Charts JS -->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/2.23.0/index.umd.min.js"></script>
   
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
@@ -314,7 +314,7 @@ var layout = {
             r: 30   // Margin right
         }
     };
-
+    
 Plotly.newPlot('bubble_chart_div', traces, layout);
 </script>
 
