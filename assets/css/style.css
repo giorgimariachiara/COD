@@ -17,6 +17,11 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  cursor: url('assets\img\cerchio.png') 20 20, auto;
+}
+
+
 a {
   color: #777;
   text-decoration: none;
@@ -100,6 +105,8 @@ h5,
   border-radius: 250px;
   margin-left: 30px;
   margin-right: 30px;
+  width: 300px; /* Aggiunto per definire la larghezza del cerchio */
+  height: 300px;
 }
 
 .item .item-wrap:after {
@@ -119,6 +126,7 @@ h5,
 .item .item-wrap img {
   transition: 0.3s transform ease;
   transform: scale(1);
+  
 }
 
 .item .item-wrap>.work-info {
@@ -830,8 +838,18 @@ canvas {
   padding-bottom: 30px;
   padding-left: 30px;
   padding-right: 30px;
-  justify-content: center;
+  text-align: justify; 
+  
 }
+
+.documentationpp {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 30px;
+  text-align: justify;
+  
+}
+
 .docu{
   padding-top:10px;
   padding-left: 10px;
@@ -839,7 +857,9 @@ canvas {
   margin-bottom:10px;
 }
 
-
+.quote{
+  font-size: 15px;
+}
 
 .t{
   border-top: solid 1px black;
@@ -849,7 +869,6 @@ canvas {
   justify-content: center;
   align-items: center;
   text-align: center;
-
 }
 
 h9 {
@@ -1336,3 +1355,49 @@ border: 2px solid black;
   
   }
 
+/* prima pagina sezione Knowledge*/
+
+
+.kn{
+  border: 2px solid #0a0707;
+  margin-top: 10px;
+
+}
+
+.immagine {
+  width:150px; 
+  height:150px;
+  display: block; /* Imposta l'immagine come blocco per centrarla */
+  margin: 0 auto;
+}
+
+
+/*per creare angoli ai bordi prima pagina*/
+.ang {
+  position: relative; /* Necessario per l'uso dei pseudoelementi */
+  padding: 15px;
+  border: 3px solid transparent; /* Bordo trasparente per il contenitore principale */
+}
+
+.ang::before,
+.ang::after {
+  content: ""; /* Aggiungi il contenuto vuoto per gli pseudoelementi */
+  position: absolute; /* Posiziona gli pseudoelementi in relazione al contenitore */
+  border: 3px solid #0a0707; /* Bordo nero */
+  width: 10px;
+  height: 10px;
+}
+
+.ang::before {
+  top: -3px;
+  left: -3px;
+  border-top: none;
+  border-left: none;
+}
+
+.ang::after {
+  bottom: -3px;
+  right: -3px;
+  border-bottom: none;
+  border-right: none;
+}
