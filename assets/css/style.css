@@ -15,10 +15,7 @@ body {
   color: #2f2f2f;
   background-color: #f9f7f1;
   overflow-x: hidden;
-}
-
-body {
-  cursor: url('assets\img\cerchio.png') 20 20, auto;
+  cursor: url('assets\css\cursor.svg'), auto;
 }
 
 
@@ -1409,6 +1406,7 @@ text-align: justify;
   height:150px;
   display: block; /* Imposta l'immagine come blocco per centrarla */
   margin: 0 auto;
+  
 }
 
 
@@ -1491,4 +1489,13 @@ text-align: justify;
 }
 .firma strong {
   color: red;
+}
+
+.red-text {
+  color: red;
+}
+
+.backgroundhome {
+  background-color: rgba(185, 154, 107, 0.1); /* Cambia i valori RGB per ottenere il colore desiderato */
+  padding: 20px; /* Aggiungi spazio intorno al contenuto del col */
 }
