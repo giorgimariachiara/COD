@@ -868,7 +868,7 @@ canvas {
 }
 
 .quote{
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .t{
@@ -1345,13 +1345,13 @@ text-align: justify;
 /* classi p8.html presidenti camera*/
 
 #bubble_chart_div{
-  border: 3px solid black;
+  width: 100%;
+  height: 100%;
 }
 
-
 .article8{
-  margin-bottom: 200px;
-  margin-top: -10px;
+  margin-bottom: 150px;
+  margin-top: 10px;
   }
 
   .titleart8 {
@@ -1373,6 +1373,7 @@ text-align: justify;
   position: relative;
   outline: 3px solid #000000 !important;
   margin-top: 10px;
+
 }
 
 .col-md-1.custom-border::before {
@@ -1383,8 +1384,26 @@ text-align: justify;
   right: -2px;
   bottom: -2px;
   outline: 3px solid #FF0000 !important;
+  padding-left: 10px;
 }
 
+.custom-border {
+  position: relative;
+  outline: 3px solid #FF0000 !important;
+  margin-top: 10px;
+
+}
+
+.custom-border::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -2px;
+  bottom: -2px;
+  outline: 3px solid #000000 !important;
+  padding-left: 10px;
+}
 
 .col-md-1.custom-border2 {
   position: relative;
@@ -1498,4 +1517,13 @@ text-align: justify;
 .backgroundhome {
   background-color: rgba(185, 154, 107, 0.1); /* Cambia i valori RGB per ottenere il colore desiderato */
   padding: 20px; /* Aggiungi spazio intorno al contenuto del col */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombra leggera */
+}
+
+
+/* Stile del bordo particolare */
+.special-border {
+  border: 2px solid red;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombra leggera */
 }
