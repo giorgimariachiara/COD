@@ -40,11 +40,13 @@
     <div class="row">
       <div class="col-12 headersec" data-aos="fade-up">
        <h11>Chamber of deputies</h11>
+       <p>  Power </p>
        <p>  Assignment </p>
       </div> 
       </div>
     </div>
    
+  
       <nav class="navbar">
         <ul class="navbar-nav">
           <li class="nav-item"><a href="index.html" class="nav-link">Front page</a></li>
@@ -63,6 +65,89 @@
         </ul>
       </nav>
     <div class="page">
+      <div class="row rigasu">
+        <div class="col-12">
+          <div class="titleart">
+          <h7>Unveiling Power Imbalances </h7> <br>
+          <h8>Investigating Gender Disparities in Influential Roles Among Deputies in the Italian Chamber of Deputies</h8>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 article5">
+          <h6>What roles do the deputies hold within the Chamber of Deputies?
+          </h6>
+            <p class="capital">The fifth research question explores the roles held by male and 
+              female deputies within the Chamber of Deputies, aiming to identify
+               potential disparities in the distribution of influential or leadership 
+               positions. The provided data represents the roles held by deputies in 
+               each legislature, categorized by gender.
+              Analyzing the data, we can observe the following trends:
+              Male Deputies: Across the legislatures, male deputies have held a 
+              diverse range of roles within the Chamber of Deputies. These roles
+               include Vice President, President, Secretary, Questore, Capogruppo 
+               (group leader), and coordinators for activities such as ineligibility, 
+               incompatibility, and coordination. Notably, male deputies have consistently 
+               occupied influential positions. For example, in the 19th legislature, there
+                were 215 male Capogruppo, accounting for approximately 83.33% of the total Capogruppo positions.
+             Female Deputies: The data indicates that female deputies have also been appointed 
+        to various roles within the Chamber of Deputies, albeit with fewer representatives. 
+        These roles include Vice President, President, Secretary, Questore, and Capogruppo.
+         While the numbers of female deputies in leadership positions are lower compared to 
+         male deputies, there has been progress over time. 
+              </p>
+      </div>
+      <div class="col-2 article5m">
+        <p>In the 19th legislature, there
+          were 47 female Capogruppo, constituting approximately 16.67% of the total Capogruppo positions.
+        Comparative Analysis: Comparing the roles held by male and female deputies, it is 
+        evident that there is a gender disparity in terms of representation in influential 
+        positions. Male deputies consistently outnumber female deputies in leadership roles
+         across all legislatures. However, it is important to note the positive trend of
+          increased female representation over time.
+        Overall, the data highlights the need to continue promoting gender equality in terms
+         of leadership positions within the Chamber of Deputies. While progress has been made
+          in increasing female representation, there is still work to be done to ensure a more 
+          balanced and inclusive distribution of influential roles.
+        In conclusion, the data demonstrates the distribution of roles held by male and female 
+        deputies in the Italian Chamber of Deputies. It emphasizes the importance of striving 
+        for gender equality in leadership positions, thereby fostering a more inclusive and 
+        representative political environment.</p>
+      </div>  
+      <div class="col-5 radar" data-aos="fade-up">
+        <div class="fileradar">
+            <label for="legislatura">Seleziona legislatura:</label>
+            <select id="legislatura" onchange="updateChart()">
+              <option value="tutte">Tutte</option>
+              <option value="costituente">Costituente</option>
+              <option value="1">I</option>
+              <option value="2">II</option>
+              <option value="3">III</option>
+              <option value="4">IV</option>
+              <option value="5">V</option>
+              <option value="6">VI</option>
+              <option value="7">VII</option>
+              <option value="8">VII</option>
+              <option value="9">IX</option>
+              <option value="10">X</option>
+              <option value="11">XI</option>
+              <option value="12">XII</option>
+              <option value="13">XIII</option>
+              <option value="14">XIV</option>
+              <option value="15">XV</option>
+              <option value="16">XVI</option>
+              <option value="17">XVII</option>
+              <option value="18">XVIII</option>              
+              <option value="19">XIX</option>
+
+
+              <!-- Aggiungi qui le altre opzioni per le legislature -->
+            </select>
+          </div>
+          <canvas id="radarChart"></canvas>
+        
+      </div>
+    
       <div class="titleart">
         <h7>Analyzing Gender Disparities in Leadership Roles: </h7> <br>
         <h8> Deputies in Italy's Chamber of Deputies</h8>
@@ -134,6 +219,9 @@
   
 
 
+
+
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -156,6 +244,7 @@
               label: 'Donne',
               data: [322, 285, 87, 162, 0, 4, 1], // Inserire qui i dati degli incarichi delle donne
               backgroundColor: 'rgba( 220, 20, 60, 0.2 )',
+              borderColor: 'rgba( 220, 20, 60, 1 )',
               borderColor: 'red',
               borderWidth: 2,
               pointBackgroundColor: 'rgba(220, 20, 60, 1)',
@@ -269,6 +358,7 @@
           radarChart.update();
         }
       </script>
+
 
 
 

@@ -1284,6 +1284,35 @@ text-align: justify;
 
 }
 
+/* classi p4.html tot deputies graduation*/
+
+
+
+/* classi p5.html tot deputies graduation*/
+.article5{
+  margin-left:100px;
+  margin-top:-100px;
+  text-align: justify;
+  margin-bottom: 300px;
+}
+
+.col-2.article5m{
+ margin-top:-100px;
+ margin-left: 5px;
+ margin-top:5px; 
+ text-align: justify;
+ margin-bottom: 300px;
+}
+#radarChart{
+  width: 100%;
+  height: 100%;
+  margin-right: 50px;
+  margin-left: 100px;
+  margin-top:-50px;
+}
+#filteradar{
+margin-top:-100px;
+}
 /* classi p5.html incarico*/
 
 .chart6{

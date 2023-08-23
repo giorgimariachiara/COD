@@ -29,3 +29,6 @@ with open('totdep.csv', 'w', newline='') as file:
     writer.writerow(['female', count_female])
 
 print("Elaborazione completata. Il file 'totdep.csv' è stato creato.")
+
+
+#conto totale presenza deputati maschi e femmine per chart tot su html. 
