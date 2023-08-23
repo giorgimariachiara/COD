@@ -15,6 +15,7 @@ body {
   color: #2f2f2f;
   background-color: #f9f7f1;
   overflow-x: hidden;
+  cursor: url('assets\css\cursor.svg'), auto;
 }
 
 
@@ -101,6 +102,9 @@ h5,
   border-radius: 250px;
   margin-left: 30px;
   margin-right: 30px;
+  width: 300px; /* Aggiunto per definire la larghezza del cerchio */
+  height: 300px;
+
 }
 
 .item .item-wrap:after {
@@ -120,6 +124,7 @@ h5,
 .item .item-wrap img {
   transition: 0.3s transform ease;
   transform: scale(1);
+  
 }
 
 .item .item-wrap>.work-info {
@@ -821,6 +826,7 @@ canvas {
 #clients .img-fluid {
   max-width: 180%;
   height: auto;
+
 }
 
 
@@ -831,8 +837,29 @@ canvas {
   padding-bottom: 30px;
   padding-left: 30px;
   padding-right: 30px;
-  justify-content: center;
+  text-align: justify; 
+  
 }
+
+.documentationpp {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 30px;
+  margin-left: 60px;
+  text-align: center; /* Centra il testo orizzontalmente */
+  align-items: center; /
+  
+}
+.documentationpp p {
+  text-align: justify; /* Giustifica il testo all'interno del colonna */
+}
+
+.documentationpp .col-md-5.documentationpp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .docu{
   padding-top:10px;
   padding-left: 10px;
@@ -840,7 +867,9 @@ canvas {
   margin-bottom:10px;
 }
 
-
+.quote{
+  font-size: 17px;
+}
 
 .t{
   border-top: solid 1px black;
@@ -850,9 +879,14 @@ canvas {
   justify-content: center;
   align-items: center;
   text-align: center;
-
 }
-
+.thome{
+  border-top: solid 1px black;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: justify;
+}
 h9 {
   font-size: 24px;
   font-weight: bold;
@@ -1016,7 +1050,7 @@ h6{
   
 
   }
-h13{
+h13 {
   font-family:  'Droid Serif', serif;
   text-transform:uppercase;
   font-weight: 400;
@@ -1108,13 +1142,15 @@ figcaption{
   width: 600px;
   height: 600px;
   margin-right: 100px;
+  margin-bottom: 150px;
  
 }
 
 .map-containerMA {
   width: 600px;
   height: 600px;
-  margin-left: 100px;
+  margin-left: 50px;
+  margin-bottom: 150px;
 
 }
 .map-containerMA h13{
@@ -1127,19 +1163,9 @@ figcaption{
   margin-bottom: 200px;
 
 }
-.map-container h13{
-  font-family:  'Droid Serif', serif;
-  text-transform:uppercase;
-  font-weight: 400;
-  font-size: 20px;
-  text-align: right;
-
-}
 
 iframe {
   border: none;
-
-
 }
 
 h10{
@@ -1258,12 +1284,6 @@ text-align: justify;
 
 }
 
-
-#bubble_chart_div {
-  width: 100%; /* Larghezza al 100% della larghezza del suo contenitore (ad esempio, la larghezza del body o di un altro elemento padre) */
-  height: 500px; /* Altezza specifica (puoi utilizzare un valore in pixel o percentuale) */
-
-}
 /* classi p5.html incarico*/
 
 .chart6{
@@ -1312,4 +1332,194 @@ text-align: justify;
   height: 100%;
   margin-bottom: 300px;
   margin-left: 400px;
+}
+
+/* classi p8.html presidenti camera*/
+
+#bubble_chart_div{
+  width: 100%;
+  height: 100%;
+}
+
+.article8{
+  margin-bottom: 150px;
+  margin-top: 10px;
+  }
+
+  .titleart8 {
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom:2px  #2f2f2f;
+    text-align: center !important;
+    margin-top: -260px;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+  
+  }
+  
+.special-border {
+  border: 2px solid red;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+.up{
+  margin-top: -90px;
+}
+/* prima pagina*/
+
+.col-md-1.custom-border {
+  position: relative;
+  outline: 3px solid #000000 !important;
+  margin-top: 10px;
+
+}
+
+.col-md-1.custom-border::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -2px;
+  bottom: -2px;
+  outline: 3px solid #FF0000 !important;
+  padding-left: 10px;
+}
+
+.custom-border {
+  position: relative;
+  outline: 3px solid #FF0000 !important;
+  margin-top: 10px;
+
+}
+
+.custom-border::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -2px;
+  bottom: -2px;
+  outline: 3px solid #000000 !important;
+  padding-left: 10px;
+}
+
+.col-md-1.custom-border2 {
+  position: relative;
+  outline: 3px solid #000000 !important;
+  margin-top: 10px;
+}
+
+.col-md-1.custom-border2::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -2px;
+  outline: 3px solid #FF0000 !important;
+}
+.immagine {
+  width:150px; 
+  height:150px;
+  display: block;
+  margin: 0 auto;
+  
+}
+
+
+/*per creare angoli ai bordi  degli articoli prima pagina*/
+.ang {
+  position: relative;
+  padding: 15px;
+  border: 3px solid transparent;
+}
+
+.ang::before,
+.ang::after {
+  content: "";
+  position: absolute;
+  border: 5px solid #0a0707;
+  width: 30px;
+  height: 30px;
+  transform: rotate(180deg); 
+}
+
+.ang::before {
+  top: -7px; 
+  left: -7px; 
+  border-top: none;
+  border-left: none;
+}
+
+.ang::after {
+  bottom: -7px;
+  right: -7px; 
+  border-bottom: none;
+  border-right: none;
+}
+
+.article-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.divider {
+  border-top: 1px solid #000;
+  margin: 10px 0;
+}
+
+.author {
+  font-size: 13px;
+  font-style: italic;
+  text-align: left;
+}
+.author b {
+  color: black; 
+}
+
+.author b:nth-child(1),
+.author b:nth-child(2) {
+  color: red; 
+}
+
+.continue-link a {
+  color: black;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+  margin-left: 250px;
+}
+
+.continue-link a i {
+  margin-right: 8px;
+}
+
+.continue-link a span {
+  margin-left: 4px;
+}
+
+.firma {
+  text-align: right;
+  font-style: italic;
+  margin-top: 10px;
+}
+.firma strong {
+  color: red;
+}
+
+.red-text {
+  color: red;
+}
+
+.backgroundhome {
+  background-color: rgba(185, 154, 107, 0.1); 
+  padding: 20px; 
+}
+
+.shadow{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
