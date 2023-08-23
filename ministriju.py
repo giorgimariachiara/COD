@@ -1,4 +1,3 @@
-
 import pandas as pd
 import sys
 import dash 
@@ -6,7 +5,7 @@ from dash import dcc, html, dash_table
 from dash.dependencies import Input, Output
 
 # Leggi il file CSV
-df = pd.read_csv('/content/ministre.csv')  # Assicurati di utilizzare il percorso corretto del file
+df = pd.read_csv('ministre.csv')  # Assicurati di utilizzare il percorso corretto del file
 
 # Rimuovi le colonne 'nome' e 'cognome'
 df = df.drop(columns=['nome', 'cognome'])
@@ -28,7 +27,7 @@ app.layout = html.Div([
     ),
     dash_table.DataTable(
         id='table',
-        columns=[{'name': col, 'id': col} for col in df.columns],
+        columns=[{'name': col, 'id': col} for col in df.columns if col != 'legislatura'],  # Exclude 'legislatura'
         style_table={'overflowX': 'auto'},
         style_header={
             'backgroundColor': '#f5f5f5',
