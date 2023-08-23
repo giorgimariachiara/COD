@@ -91,7 +91,7 @@ for index, row in df.iterrows():
     else:
         getLoc = geocode_with_cache(geolocator, city)
         geocoded_locations[city] = getLoc
-    
+
     if getLoc is not None:
         lat.append(getLoc.latitude)
         lon.append(getLoc.longitude)
@@ -172,5 +172,13 @@ ne = df_cord[['lat', 'lon']].max().values.tolist()
 m.fit_bounds([sw, ne])
 m.save('map.html')
 
+from google.colab import files
+files.download('map.html')
+
+
+from IPython.display import HTML
+HTML('<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.11/iframeResizer.min.js"></script>')
+
 # Display the map in a Jupyter notebook using an IFrame
 display(IFrame(src='map.html', width=800, height=500))
+

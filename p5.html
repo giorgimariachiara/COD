@@ -41,6 +41,7 @@
       <div class="col-12 headersec" data-aos="fade-up">
        <h11>Chamber of deputies</h11>
        <p>  Power </p>
+       <p>  Assignment </p>
       </div> 
       </div>
     </div>
@@ -147,6 +148,71 @@
         
       </div>
     
+      <div class="titleart">
+        <h7>Analyzing Gender Disparities in Leadership Roles: </h7> <br>
+        <h8> Deputies in Italy's Chamber of Deputies</h8>
+        </div>
+      <div class="row">
+        <div class="col-2 article5">
+          <h6>What is the geographical distribution of male and female deputies? Analysis through the italian regions.</h6>
+
+            <p class="capital">The fifth research question explores the roles held by male and female deputies within the Chamber of Deputies, aiming to identify potential disparities in the distribution of influential or leadership positions. The provided data represents the roles held by deputies in each legislature, categorized by gender.
+              Analyzing the data, we can observe the following trends:
+              Male Deputies: Across the legislatures, male deputies have held a diverse range of roles within the Chamber of Deputies. These roles include Vice President, President, Secretary, Questore, Capogruppo (group leader), and coordinators for activities such as ineligibility, incompatibility, and coordination. Notably, male deputies have consistently occupied influential positions. For example, in the 19th legislature, there were 215 male Capogruppo, accounting for approximately 83.33% of the total Capogruppo positions.
+            Female Deputies: The data indicates that female deputies have also been appointed to various roles within the Chamber of Deputies, albeit with fewer representatives. These roles include Vice President, President, Secretary, Questore, and Capogruppo. While the numbers of female deputies in leadership positions are lower compared to male deputies, there has been progress over time. In the 19th legislature, there were 47 female Capogruppo, constituting approximately 16.67% of the total Capogruppo positions.
+
+              
+      </div>
+      <div class="col-2 article5m">
+<p>            Comparative Analysis: Comparing the roles held by male and female deputies, it is evident that there is a gender disparity in terms of representation in influential positions. Male deputies consistently outnumber female deputies in leadership roles across all legislatures. However, it is important to note the positive trend of increased female representation over time.
+            Overall, the data highlights the need to continue promoting gender equality in terms of leadership positions within the Chamber of Deputies. While progress has been made in increasing female representation, there is still work to be done to ensure a more balanced and inclusive distribution of influential roles.
+            In conclusion, the data demonstrates the distribution of roles held by male and female deputies in the Italian Chamber of Deputies. It emphasizes the importance of striving for gender equality in leadership positions, thereby fostering a more inclusive and representative political environment.
+            
+            
+    </div>
+      <div class="col-6 chart6" data-aos="fade-up">
+        <div>
+            <label for="legislatura">Seleziona legislatura:</label>
+            <select id="legislatura" onchange="updateChart()">
+              <option value="tutte">Tutte</option>
+              <option value="costituente">Costituente</option>
+              <option value="1">I</option>
+              <option value="2">II</option>
+              <option value="3">III</option>
+              <option value="4">IV</option>
+              <option value="5">V</option>
+              <option value="6">VI</option>
+              <option value="7">VII</option>
+              <option value="8">VII</option>
+              <option value="9">IX</option>
+              <option value="10">X</option>
+              <option value="11">XI</option>
+              <option value="12">XII</option>
+              <option value="13">XIII</option>
+              <option value="14">XIV</option>
+              <option value="15">XV</option>
+              <option value="16">XVI</option>
+              <option value="17">XVII</option>
+              <option value="18">XVIII</option>              
+              <option value="19">XIX</option>
+
+
+              <!-- Aggiungi qui le altre opzioni per le legislature -->
+            </select>
+          </div>
+          <canvas id="radarChart"></canvas>
+      </div>
+    
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 barchart5">
+          <label for="legislatureSelect">Seleziona una legislatura:</label>
+           <select id="legislatureSelect"></select>
+         <canvas id="barChart"></canvas>
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
       </div>
     </div>
   
@@ -162,6 +228,7 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
@@ -178,6 +245,8 @@
               data: [322, 285, 87, 162, 0, 4, 1], // Inserire qui i dati degli incarichi delle donne
               backgroundColor: 'rgba( 220, 20, 60, 0.2 )',
               borderColor: 'rgba( 220, 20, 60, 1 )',
+              borderColor: 'red',
+              borderWidth: 2,
               pointBackgroundColor: 'rgba(220, 20, 60, 1)',
             }
           ]
@@ -289,6 +358,235 @@
           radarChart.update();
         }
       </script>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+ const dataByLegislature = {
+ "costituente": [
+   [0, 1], [0, 1], [0, 1], [33, 0], [0, 1], [20, 0], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [18, 0], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [16, 0], [1, 0], [0, 1]
+ ],
+ "1": [
+   [0, 1], [1, 0], [0, 1], [54, 0], [0, 1], [13, 0], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [11, 0], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [13, 0], [1, 0], [0, 1]
+ ],
+ "2": [
+   [0, 1], [0, 1], [0, 1], [90, 0], [0, 1], [12, 0], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [15, 0], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [16, 0], [4, 0], [0, 1]
+ ],
+ "3": [
+   [0, 1], [0, 1], [0, 1], [91, 1], [0, 1], [12, 1], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [17, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [12, 1], [2, 1], [0, 1]
+ ],
+ "4": [
+   [0, 1], [0, 1], [0, 1], [102, 1], [0, 1], [14, 1], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [18, 1], [2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [22, 1], [3, 1], [0, 1]
+ ],
+ "5": [
+   [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [15, 1], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [20, 1], [2, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [21, 1], [1, 1], [0, 1]
+ ],
+ "6": [
+   [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [14, 1], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [23, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [23, 1], [0, 1], [0, 1]
+ ],
+ "7": [
+   [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [19, 1], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [14, 1], [1, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [20, 1], [0, 1], [0, 1]
+ ],
+ "8": [
+   [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [14, 1], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [22, 1], [3, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [24, 1], [0, 1], [0, 1]
+ ],
+ "9": [
+   [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [17, 1], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [23, 1], [2, 1], [0, 1], [0, 1], [0, 1], [1, 1], [0, 1], [26, 1], [0, 1], [0, 1]
+ ],
+ "10": [
+   [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [23, 1], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [0, 1], [41, 1], [0, 1], [0, 1]
+ ],
+ "11": [
+   [0, 1], [0, 1], [0, 1], [31, 1], [1, 1], [22, 1], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [12, 1], [2, 1], [1, 1], [0, 1], [0, 1], [0, 1], [3, 1], [24, 1], [0, 1], [0, 1]
+ ],
+ "12": [
+   [0, 1], [0, 1], [0, 1], [46, 1], [0, 1], [20, 1], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [5, 1], [3, 1], [0, 1], [1, 1], [2, 1], [5, 1], [0, 1], [32, 1], [0, 1], [0, 1]
+ ],
+ "13": [
+   [1, 1], [0, 1], [0, 1], [95, 1], [0, 1], [18, 1], [0, 1], [0, 1], [0, 1], [0, 1],
+   [0, 1], [0, 1], [12, 1], [7, 1], [0, 1], [0, 1], [6, 1], [12, 1], [0, 1], [51, 1],
+   [0, 1], [0, 1]
+ ],
+ "14": [
+   [0, 1], [0, 1], [21, 1], [121, 1], [0, 1], [12, 1], [0, 1], [0, 1], [0, 1], [9, 1],
+   [0, 1], [0, 1], [6, 1], [2, 1], [0, 1], [0, 1], [3, 1], [3, 1], [0, 1], [41, 1],
+   [0, 1], [0, 1]
+ ],
+ "15": [
+   [0, 1], [12, 1], [22, 1], [12, 1], [0, 1], [16, 1], [0, 1], [0, 1], [0, 1], [10, 1],
+   [0, 1], [0, 1], [6, 1], [1, 1], [0, 1], [0, 1], [4, 1], [5, 1], [0, 1], [33, 1],
+   [0, 1], [0, 1]
+ ],
+ "16": [
+   [0, 1], [1, 1], [22, 1], [64, 1], [1, 1], [15, 1], [0, 1], [0, 1], [0, 1], [10, 1],
+   [0, 1], [0, 1], [8, 1], [1, 1], [1, 1], [0, 1], [7, 1], [13, 1], [0, 1], [38, 1],
+   [0, 1], [2, 1]
+ ],
+ "17": [
+   [0, 1], [0, 0], [31, 1], [17, 1], [2, 1], [25, 1], [0, 1], [1, 1], [10, 1],
+   [1, 1], [12, 1], [0, 1], [2, 1], [0, 1], [23, 1], [12, 1], [13, 1], [41, 1],
+   [0, 1], [1, 1]
+ ],
+ "18": [
+   [0, 1], [0, 0], [21, 1], [1, 1], [1, 1], [12, 1], [1, 1], [0, 1], [17, 1],
+   [0, 1], [0, 0], [15, 1], [0, 1], [4, 1], [0, 1], [14, 1], [12, 1], [0, 1],
+   [50, 1], [0, 1], [0, 1]
+ ],
+ "19": [
+   [0, 1], [0, 0], [13, 1], [0, 1], [0, 1], [8, 1], [1, 1], [0, 1], [2, 1],
+   [0, 1], [0, 0], [7, 1], [0, 1], [2, 1], [0, 1], [7, 1], [5, 1], [0, 1],
+   [17, 1], [0, 1], [0, 1]
+ ],
+};
+
+
+
+ const labels = [
+   "CONSIGLIERE", "DELEGATO D'AULA", "MEMBRO DEL C.D.", "PRESIDENTE", "PRESIDENTE - PORTAVOCE",
+   "RAPPRESENTANTE COMPONENTE GRUPPO MISTO", "SEGRETARIO", "SEGRETARIO AMM.", "SEGRETARIO D'AULA",
+   "TESORIERE", "VICEPRES. VICARIO", "VICEPRES. VICARIO - PORTAVOCE", "VICEPRESIDENTE", "VICESEGRETARIO"
+ ];
+
+ const legislatures = [
+   "costituente", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+   "14", "15", "16", "17", "18", "19"
+ ];
+ 
+
+ 
+ const select = document.getElementById('legislatureSelect');
+    legislatures.forEach((legislature, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = `Legislatura ${legislature}`;
+        select.appendChild(option);
+    });
+
+    let barChart;
+    const initialLegislatureIndex = 0;
+    const ctx = document.getElementById('barChart').getContext('2d');
+
+    barChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Uomini',
+                    data: [],
+                    backgroundColor: 'blue',
+           
+                },
+                {
+                    label: 'Donne',
+                    data: [],
+                    backgroundColor: 'pink',
+                    
+                },
+            ],
+        },
+        options: {
+            responsive: false,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                  stacked:false,
+                    grouped: true,
+                },
+                y: {
+                    stacked: true,
+                    stacked:false,
+
+                },
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Legislatura',
+                },
+                datalabels: {
+                    display: true,
+                    color: 'black',
+                    formatter: function (value, context) {
+                        return value, 0;
+                    },
+                },
+            },
+            tooltip: {
+    callbacks: {
+        label: function (context) {
+            const label = context.dataset.label || '';
+            const value = context.parsed.y;
+
+            // Verifica se il valore è uguale a 0
+            if (value === 0) {
+                return '0'; // Restituisci "0" quando il valore è zero
+            }
+
+            return label + ': ' + value;
+        },
+    },
+},
+
+        },
+    });
+
+    select.addEventListener('change', (event) => {
+        updateChart(event.target.value);
+    });
+
+    function updateChart(selectedIndex) {
+    const selectedLegislature = legislatures[selectedIndex];
+    const data = dataByLegislature[selectedLegislature];
+
+    if (barChart) {
+        const maleData = [];
+        const femaleData = [];
+
+        data.forEach(item => {
+            maleData.push(item[0]);
+            femaleData.push(item[1]);
+        });
+
+        // Imposta un'altezza minima per tutte le barre
+        const minHeight = 0.4; // Puoi regolare questa altezza minima in base alle tue preferenze
+
+        const maleDataHeight = maleData.map(value => Math.max(value, minHeight));
+        const femaleDataHeight = femaleData.map(value => Math.max(value, minHeight));
+
+        barChart.data.labels = labels;
+        barChart.data.datasets[0].data = maleDataHeight;
+        barChart.data.datasets[1].data = femaleDataHeight;
+
+        barChart.options.plugins.title.text = `Legislatura ${selectedLegislature}`;
+
+        // Aggiorna solo la configurazione del grafico
+        barChart.update({
+            preservation: true,
+        });
+    }
+}
+
+    // Chiama updateChart con la legislatura iniziale
+    updateChart(initialLegislatureIndex);
+});
+</script>
+
 
 </body>
 
