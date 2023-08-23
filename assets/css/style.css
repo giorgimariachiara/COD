@@ -11,7 +11,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: 'Droid Serif', serif;
-  font-size: 14px;
+  font-size: 15px;
   color: #2f2f2f;
   background-color: #f9f7f1;
   overflow-x: hidden;
@@ -102,8 +102,8 @@ h5,
   border-radius: 250px;
   margin-left: 30px;
   margin-right: 30px;
-  width: 300px; /* Aggiunto per definire la larghezza del cerchio */
-  height: 300px;
+  width: 200px; /* Aggiunto per definire la larghezza del cerchio */
+  height: 200px;
 
 }
 
@@ -868,7 +868,7 @@ canvas {
 }
 
 .quote{
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .t{
@@ -1472,7 +1472,7 @@ margin-top:-100px;
 }
 
 .red-text {
-  color: red;
+  color: #A34E1F;
 }
 
 .backgroundhome {
@@ -1482,4 +1482,64 @@ margin-top:-100px;
 
 .shadow{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+
+.vignetta{
+  margin-top: 50px;
+  margin-left:30px;
+  margin-right: 10px ;
+
+}
+.indexart{
+  text-align: justify;
+  margin-left:40px;
+  margin-right: -40px;
+  margin-top: 50px;
+
+}
+
+.indexm{
+  text-align: justify;
+  margin-left: -40px;
+  margin-top: 50px;
+
+}
+
+.indexf{
+  text-align: justify;
+  margin-top: 50px;
+
+}
+
+.indexart2{
+  text-align: justify;
+  margin-left: 40px;
+  margin-top:-165px;
+
+}
+
+.indexart2i{
+  text-align: justify;
+  margin-top:-100px;
+  font-size: 15px;
+
+}
+
+.indexart2m{
+  text-align: justify;
+  margin-top:-100px;
+  font-size: 15px;
+}
+
+
+.indexart2f{
+  text-align: justify;
+  margin-top:-100px;
+  font-size: 15px;
+}
+
+.no-gutter{
+  margin-left:100px;
+  margin-right:100px;
 }
