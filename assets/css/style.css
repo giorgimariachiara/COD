@@ -1247,6 +1247,9 @@ margin-top:-100px;
 }
 /* classi p5.html incarico*/
 
+#radarChart{
+  margin-top:50px;
+}
 .chart6{
   margin-top:300px;
   margin-left:150px;
@@ -1515,7 +1518,7 @@ margin-top:-100px;
 .indexart2{
   text-align: justify;
   margin-left: 40px;
-  margin-top:-165px;
+  margin-top:-10px;
 
 }
 
