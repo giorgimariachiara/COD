@@ -1,4 +1,4 @@
-"""import csv
+import csv
 
 def conto_incarichi_per_legislatura(file_csv, output_csv):
     conto_incarichi = {}
@@ -33,11 +33,11 @@ conto_incarichi_per_legislatura('incaricouomini.csv', 'contoincaricoMA.csv')
 # Esempio di utilizzo per il file incaricodonne.csv
 conto_incarichi_per_legislatura('incaricodonne.csv', 'contoincaricoFE.csv')
 
-
+"""
 qui conta
 
 
-"""
+
 
 
 #cambia formato legislature 
@@ -79,3 +79,4 @@ df_donne['legislatura'] = df_donne['legislatura'].map(legislature_dict)
 # Salva i DataFrame con i dati modificati in due nuovi file CSV
 df_uomini.to_csv('incaricoMALE.csv', index=False)
 df_donne.to_csv('incaricoFEMALE.csv', index=False)
+"""
