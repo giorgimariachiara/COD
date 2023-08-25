@@ -22,7 +22,7 @@
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
@@ -38,15 +38,15 @@
 
 
     <div class="container">
-    <div class="row">
-      <div class="col-12 headersec" data-aos="fade-up">
-       <h11>Chamber of deputies</h11>
-       <p>  Power </p>
-      </div> 
-      </div>
+        <div class="row">
+          <div class="col-12 headersec" data-aos="fade-up">
+           <h11>Chamber of deputies</h11>
+           <p>  Power </p>
+          </div> 
+          </div>
     </div>
-    
-      <nav class="navbar">
+
+    <nav class="navbar">
         <ul class="navbar-nav">
           <li class="nav-item"><a href="index.html" class="nav-link">Front page</a></li>
           <li class="nav-item"><a href="p1.html" class="nav-link">I</a></li>
@@ -63,50 +63,54 @@
   
         </ul>
       </nav>
-    
-    <div class="page">
-      <div class="titleart">
-        <h7>Analyzing Gender Disparities in Leadership Roles: </h7> <br>
-        <h8> Deputies in Italy's Chamber of Deputies</h8>
+
+      <div class="page">
+        <div class="row rigasu2">
+          <div class="col-md-12">
+            <div class="titleart2">
+            <h7>Analyzing Gender Disparities in Leadership Roles: </h7> <br>
+            <h8>Deputies in Italy's Chamber of Deputies</h8>
+            </div>
+          </div>
         </div>
-      <div class="row">
-        <div class="col-2 article6i">
-          <h6>What is the geographical distribution of male and female deputies? Analysis through the italian regions.</h6>
-            <p class="capital">The sixth research question focuses on the gender distribution of prime ministers in Italy, highlighting the concept of the "glass ceiling" theory. It aims to determine the number of female prime ministers compared to their male counterparts, shedding light on the gender representation at the highest level of political leadership.
-            </p>
-      </div>
-      <div class="col-2 article6m">
-        <p>Analyzing the provided data, it becomes evident that there has been a significant disparity in terms of gender representation among prime ministers in Italy, supporting the notion of a glass ceiling effect. Out of the listed prime ministers, only one, Giorgia Meloni, is female. This data point stands out prominently in the pie chart representation, emphasizing the challenges women face in breaking through barriers to reach top political positions.
-        </p>
-      </div>
-        <div class="col-2 article6m">
-          <p>The overwhelming majority of prime ministers in Italy have been male, reflecting a historical trend and the persistence of gender inequality in leadership roles. This underrepresentation of women in the highest political office aligns with the glass ceiling theory, which suggests that invisible barriers, such as societal norms, stereotypes, and structural obstacles, impede women's progress and limit their access to positions of power.
-          </p>
-      </div>
-      <div class="col-2 article6m">
-      <p>  The presence of only one female prime minister further highlights the need for concerted efforts to dismantle the barriers that hinder women's advancement in politics. It requires creating inclusive environments, addressing gender biases, and implementing policies that promote equal opportunities for women to reach top leadership positions.
-      </p>
-    </div>
-    
-    <div class="col-2 article6m">
-    <p> This data underscores the importance of actively supporting and empowering women in politics, challenging traditional norms and structures, and fostering a more inclusive and diverse political landscape. By breaking the glass ceiling and promoting gender parity in political leadership, Italy can harness the full potential of its talent pool and ensure that decision-making processes are representative of the entire population.
-         </p>
-    </div>
-   </div>
-
-    <div class="row">
-    
-      <div class="col-8 chart" data-aos="fade-up">
-        <div class="piechart">
-        <div id="piechart"></div>
-      </div>
-      </div>
-    </div>
-    </div>
-  
-  
-
-
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-2 article6">
+              <h6>How many of the <span class="red-text">Presidents of the Council</span> have been women, and how many have been men?</h6>
+                <p class="capital">The sixth research question focuses on <span class="red-text"><b>the gender distribution of prime ministers in Italy</b></span>, highlighting 
+                  the concept of the "glass ceiling" theory. It aims to determine the number of female prime ministers compared to their male 
+                  counterparts, shedding light on the gender representation at the highest level of political leadership.
+                  Analyzing the provided data, it becomes evident that there has been a significant disparity in terms of gender representation
+                   among prime ministers in Italy, supporting the notion of a glass ceiling effect. Out of the listed prime ministers, only one,
+                    Giorgia Meloni, is female. This data point stands out prominently in the <span class="red-text"><b>pie chart representation</b></span>, emphasizing the challenges
+                  women face in breaking through barriers to reach top political positions. The overwhelming majority of prime ministers in Italy have been male, reflecting a
+                   historical trend and 
+                </p>
+          </div>
+          <div class="col-md-2 article6">
+              <p>  
+                the persistence of gender inequality in leadership roles. This underrepresentation of women in the highest political office aligns with the glass ceiling theory, which suggests
+                  that invisible barriers, such as societal norms, stereotypes, and structural obstacles, impede women's progress and limit their access to
+                 positions of power. 
+                 The presence of only one female prime minister further highlights the need for concerted efforts to dismantle the barriers that hinder women's
+                  advancement in politics. It requires creating inclusive environments, addressing gender biases, and implementing policies that promote equal
+                   opportunities for women to reach top leadership positions.
+                   This data underscores the importance of actively supporting and empowering women in politics, challenging traditional norms and structures, 
+                   and fostering a more inclusive and diverse political landscape. By breaking the glass ceiling and promoting gender parity in political leadership,
+                    Italy can harness the full potential of its talent pool and ensure that decision-making processes are representative of the entire population.
+              </p>
+        </div>
+            <div class="col-md-6 chart" data-aos="fade-up">
+              <div class="piechart special-border ">
+              <div id="piechart"></div>
+            </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+            
+          </div>
+          </div>
 
 
 
@@ -167,8 +171,8 @@
           legend: "Presidente",
           pieSliceText: "none",
           fontName: 'Droid Serif',
-          fontSize: 18,
-          chartArea: { left: 10, top: 80, width: '100%', height: '100%' },
+          fontSize: 16,
+          chartArea: {top: 80, left:40,  width: '60%', height: '60%' },
           is3D: true,
           
           tooltip: {
