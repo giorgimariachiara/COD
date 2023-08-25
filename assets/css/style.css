@@ -686,8 +686,8 @@ header{
   /* Aggiungi qui le tue personalizzazioni */
 
 #piechart{
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: 170%;
 }
 
 .chart #regions_div {
@@ -1069,14 +1069,12 @@ h13 {
 
 
 .occhiello {
-  /* Assicurati che il contenitore abbia una larghezza massima per evitare che l'immagine si espanda troppo */
   max-width: 100%;
 }
 .occhiello img{
   filter: grayscale(100%);
   width: 100%;
   height: auto;
-
 }
 
 figcaption{
@@ -1247,6 +1245,9 @@ margin-top:-100px;
 }
 /* classi p5.html incarico*/
 
+#radarChart{
+  margin-top:50px;
+}
 .chart6{
   margin-top:300px;
   margin-left:150px;
@@ -1276,23 +1277,17 @@ margin-top:-100px;
 }
 
 /* classi p6.html presidente*/
-.article6i {
-  margin-top: 300px;
-  margin-left:100px;
-  margin-right:10 px;
+.article6{
+  text-align: justify;
+  margin-bottom: 10px;
 }
 
-.article6m{
-  margin-top:300px;
-  margin-right:10px;
-
-}
 
 .piechart{
-  width: 100%;
-  height: 100%;
-  margin-bottom: 300px;
-  margin-left: 400px;
+  width: 120%; /* Imposta la larghezza desiderata */
+  height: 70%;
+  margin-top: 60px;
+  
 }
 
 /* classi p8.html presidenti camera*/
@@ -1321,7 +1316,7 @@ margin-top:-100px;
   }
   
 .special-border {
-  border: 2px solid red;
+  border: 3px solid #A34E1F;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
@@ -1468,7 +1463,7 @@ margin-top:-100px;
   margin-top: 10px;
 }
 .firma strong {
-  color: red;
+  color: #A34E1F;
 }
 
 .red-text {
@@ -1515,7 +1510,7 @@ margin-top:-100px;
 .indexart2{
   text-align: justify;
   margin-left: 40px;
-  margin-top:-165px;
+  margin-top:-10px;
 
 }
 
