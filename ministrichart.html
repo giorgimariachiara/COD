@@ -10,7 +10,7 @@
 
   <script>
     // Leggi il file CSV
-    d3.csv("ministri2.csv").then(function(data) {
+    d3.csv("ministre.csv").then(function(data) {
       // Conta il numero di ministeri per tipo
       var counts = d3.rollup(data, v => v.length, d => d.Ministro);
 
