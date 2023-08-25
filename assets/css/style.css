@@ -1481,9 +1481,8 @@ margin-top:-100px;
 
 
 .vignetta{
-  margin-top: 50px;
-  margin-left:30px;
-  margin-right: 10px ;
+  max-width: 100%;
+  max-height: 100%;
 
 }
 .indexart{
@@ -1493,6 +1492,12 @@ margin-top:-100px;
   margin-top: 50px;
 
 }
+
+.articlehome{
+  text-align: justify;
+  margin-left: 10px;
+}
+
 
 .indexm{
   text-align: justify;
