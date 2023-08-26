@@ -73,7 +73,7 @@ h5,
   right: 10px;
   bottom: 0;
   height: 1px;
-  background-color: #f9f7f1;
+  background-color: #ffffff;
 
 }
 
@@ -87,7 +87,7 @@ h5,
   right: 10px;
   bottom: 0;
   height: 1px;
-  background-color: #f9f7f1;
+  background-color: #ffffff;
 }
 
 .item {
@@ -989,6 +989,7 @@ div.row {
   font-family:'Lucida Sans';
   color:#2f2f2f;
   background-color:transparent;
+  margin-top: 0px;
 }
 
 
@@ -1317,7 +1318,7 @@ margin-top:-100px;
   
 .special-border {
   border: 3px solid #A34E1F;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  
 }
 
 .up{
@@ -1483,6 +1484,7 @@ margin-top:-100px;
 .vignetta{
   max-width: 100%;
   max-height: 100%;
+  margin-top: 40px;
 
 }
 .indexart{
@@ -1548,7 +1550,109 @@ margin-top:-100px;
 
 /* classi p7.html incarichi*/
 .tableM{
-  margin-top: 200px;
   width: 80%;
   height: 80%;
 }
+/* Stile per la tabella */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+  
+  margin-bottom: 100px;
+}
+
+/* Stile per le intestazioni di colonna */
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Stile per le righe */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Stile per le celle */
+td {
+  padding: 8px;
+}
+
+th, td {
+  border: 1px solid #A34E1F;
+  padding: 8px;
+  text-align: center; /* Centra il testo orizzontalmente */
+  vertical-align: middle; /* Centra il testo verticalmente */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+.ministry-list {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+.ministry {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  transition: transform 0.3s ease-in-out;
+}
+
+.ministry:last-child {
+  border-bottom: none; /* Rimuove la riga inferiore dall'ultimo elemento */
+}
+
+.ministry:hover {
+  transform: translateY(-5px);
+}
+
+.ministry-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4d3636;
+  margin-bottom: 4px;
+}
+
+
+
+/* Stessi stili CSS precedenti */
+
+.ministry-name-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  color: #4d3636;
+  margin-bottom: 4px;
+}
+
+.ministry-description {
+  display: none;
+  font-size: 12px;
+  color: #6d5959;
+}
+
+.ministry.active .ministry-description {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
