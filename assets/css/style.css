@@ -978,10 +978,9 @@ div.row {
   border-color:transparent;
  padding-right: 60px;
  padding-bottom: -5px;
- margin-left: -13px;
  padding-left: 20px;
  border-radius: 45px;
-  margin-top: 80px;
+  margin-top: 100px;
 
 }
 
@@ -989,6 +988,7 @@ div.row {
   font-family:'Lucida Sans';
   color:#2f2f2f;
   background-color:transparent;
+  margin-top: 0px;
 }
 
 
@@ -1002,7 +1002,7 @@ div.row {
   }
   
   .total_chart_div{ 
-    margin-left:1100px;
+    margin-left:1130px;
     height: 50%;
     width: 50%;
     margin-top:-520px;
@@ -1095,6 +1095,10 @@ figcaption{
 .mapg{
   position: relative; /* Imposta la posizione relativa */
   height: 600px;
+  margin-top: 25px;
+}
+.su {
+  margin-bottom: 40px;
 }
 
 iframe {
@@ -1113,6 +1117,13 @@ h10{
 .su2{
   padding-bottom:100px;
 }
+
+/* Stili per il filtro di genere personalizzato */
+
+.custom-select option {
+  text-align: center;
+}
+
 
 /* classi p3.html tot deputies graduation*/
 
@@ -1290,11 +1301,66 @@ margin-top:-100px;
   
 }
 
+/* Stili per la chart */
+.chart {
+  position: relative;
+}
+
+.piechart.special-border6 {
+  position: relative;
+}
+
+.piechart.special-border6::before,
+.piechart.special-border6::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #d6893b;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.piechart.special-border6::before {
+  top: 0;
+}
+
+.piechart.special-border6::after {
+  bottom: 0;
+}
 /* classi p8.html presidenti camera*/
 
-#bubble_chart_div{
+/* Stili per il contenitore della chart */
+.special-border8 {
+  position: relative;
+}
+
+/* Pseudoelementi per le righe sopra e sotto la chart */
+.special-border8::before,
+.special-border8::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #d6893b;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.special-border8::before {
+  top: 10;
+}
+
+.special-border8::after {
+  bottom: 10;
+}
+
+/* Stili per la chart */
+#bubble_chart_div {
   width: 100%;
   height: 100%;
+  padding-bottom:30px;
+  padding-top:30px;
 }
 
 .article8{
@@ -1314,12 +1380,15 @@ margin-top:-100px;
     letter-spacing: 1px;
   
   }
-  
-.special-border {
-  border: 3px solid #A34E1F;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
-}
+  .special-border {
+    border: 5px solid transparent;
+    box-shadow: inset 0 0 0 5px #d2cfc7;
+  }
 
+  .genderFilter{
+    margin-bottom: 5px;
+  }
+  
 .up{
   margin-top: -90px;
 }
@@ -1481,9 +1550,9 @@ margin-top:-100px;
 
 
 .vignetta{
-  margin-top: 50px;
-  margin-left:30px;
-  margin-right: 10px ;
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 40px;
 
 }
 .indexart{
@@ -1493,6 +1562,13 @@ margin-top:-100px;
   margin-top: 50px;
 
 }
+
+.articlehome{
+  text-align: justify;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
 
 .indexm{
   text-align: justify;
@@ -1543,7 +1619,103 @@ margin-top:-100px;
 
 /* classi p7.html incarichi*/
 .tableM{
-  margin-top: 200px;
   width: 80%;
   height: 80%;
 }
+/* Stile per la tabella */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+  
+  margin-bottom: 100px;
+}
+
+/* Stile per le intestazioni di colonna */
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Stile per le righe */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Stile per le celle */
+td {
+  padding: 8px;
+}
+
+th, td {
+  border: 1px solid #A34E1F;
+  padding: 8px;
+  text-align: center; /* Centra il testo orizzontalmente */
+  vertical-align: middle; /* Centra il testo verticalmente */
+}
+
+
+.ministry-list {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+.ministry {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  transition: transform 0.3s ease-in-out;
+}
+
+.ministry:last-child {
+  border-bottom: none; /* Rimuove la riga inferiore dall'ultimo elemento */
+}
+
+.ministry:hover {
+  transform: translateY(-5px);
+}
+
+.ministry-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4d3636;
+  margin-bottom: 4px;
+}
+
+
+
+/* Stessi stili CSS precedenti */
+
+.ministry-name-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  color: #4d3636;
+  margin-bottom: 4px;
+}
+
+.ministry-description {
+  display: none;
+  font-size: 12px;
+  color: #6d5959;
+}
+
+.ministry.active .ministry-description {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
