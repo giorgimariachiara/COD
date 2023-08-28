@@ -958,12 +958,12 @@ div.row {
      }
 
      .chart{
-  margin-right: -200px;
-  padding-bottom: 150px;
-  padding-right: 170px;
-  padding-left: 100px;
-  
-}
+      margin-right: -200px;
+      padding-bottom: 150px;
+      padding-right: 170px;
+      padding-left: 100px;
+      
+    }
 
 .chart #chart_div {
   width: 90%;
@@ -980,7 +980,7 @@ div.row {
  padding-bottom: -5px;
  padding-left: 20px;
  border-radius: 45px;
-  margin-top: 100px;
+  margin-top: 130px;
 
 }
 
@@ -988,7 +988,7 @@ div.row {
   font-family:'Lucida Sans';
   color:#2f2f2f;
   background-color:transparent;
-  margin-top: 0px;
+
 }
 
 
@@ -1295,9 +1295,10 @@ margin-top:-100px;
 
 
 .piechart{
-  width: 120%; /* Imposta la larghezza desiderata */
+  width: 90%; /* Imposta la larghezza desiderata */
   height: 70%;
   margin-top: 60px;
+  margin-left: 30px;
   
 }
 
@@ -1315,7 +1316,7 @@ margin-top:-100px;
   content: "";
   display: block;
   height: 2px;
-  background-color: #d6893b;
+  background-color: #Ed7670;
   position: absolute;
   left: 0;
   right: 0;
@@ -1341,7 +1342,7 @@ margin-top:-100px;
   content: "";
   display: block;
   height: 2px;
-  background-color: #d6893b;
+  background-color: #Ed7670;
   position: absolute;
   left: 0;
   right: 0;
@@ -1536,7 +1537,7 @@ margin-top:-100px;
 }
 
 .red-text {
-  color: #A34E1F;
+  color: #Ed7670;
 }
 
 .backgroundhome {
