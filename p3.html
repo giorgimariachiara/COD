@@ -202,29 +202,10 @@
             <div class = "col-2 article3su"><p> 
               It is noteworthy that despite this progress, both male and female deputies have faced challenges in achieving educational parity, 
               as evidenced by the proportion of "Non Graduated" representatives remaining above 10% in several legislative periods. </p>
-              
-
-              <section id="stats-counter" class="stats-counter">
-                <div class="container" data-aos="fade-up">
-          
-                  
-          
-                      <div class="stats-item d-flex align-items-center">
-                        <span data-purecounter-start="0" data-purecounter-end="9300" data-purecounter-duration="1" class="purecounter"></span>
-                      </div><!-- End Stats Item -->
-          
-                      <div class="stats-item d-flex align-items-center">
-                        <span data-purecounter-start="0" data-purecounter-end="1857" data-purecounter-duration="1" class="purecounter"></span>
-                      </div><!-- End Stats Item -->
-          
-                      <div class="stats-item d-flex align-items-center">
-                        <span data-purecounter-start="0" data-purecounter-end="1500" data-purecounter-duration="1" class="purecounter"></span>
-                      </div><!-- End Stats Item -->
-          
-            
-                </div>
-              </section>
-            </div>
+      <div class="imgscalacont"> 
+<img class="imgscala" src="./assets/img/scala.jpg">
+      </div>            
+    </div>
         </div>
         <div class="row">
           <div class="col-4 articlem">
@@ -380,8 +361,8 @@
     // Define the data
     var data = google.visualization.arrayToDataTable([
   ['Gender', 'Graduated', {role: 'style'}, 'Non-Graduated', {role: 'style'}, 'Tot', {role: 'style'}],
-  ['Male', 3361, 'color: blue', 1865, 'color: green', 5226, 'color: red'],
-  ['Female', 572, 'color: orange', 311, 'color: purple', 883, 'color: yellow']
+  ['Male', 3361, 'color:#00745E', 1865, 'color:#5FBBA2', 5226, 'color: #Ed7670'],
+  ['Female', 572, 'color: #94497E', 311, 'color: #B283A2', 883, 'color:  #Ed7670']
 ]);
 
 
@@ -397,7 +378,12 @@
       vAxis: {
         title: 'Number of Deputies',
       },
-      isStacked: true,
+      isStacked: true, isStacked: true,
+  series: {
+    0: { color: '#00745E', label: 'Tot' },  // Colore verde per la serie 'Graduated'
+    1: { color: '#B283A2', label: 'Female'},  // Colore verde per la serie 'Non-Graduated'
+    2: { color: '#Ed7670', label: 'Male'}   // Colore verde per la serie 'Tot'
+  }
 };
 
     // Create and draw the chart

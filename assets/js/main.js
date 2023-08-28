@@ -20,12 +20,7 @@
     }
   }
  
- /**
-  * / * Initiate Pure Counter
-  */
- new PureCounter();
 
- /**
   /*
    * Easy event listener function
    */
@@ -142,6 +137,12 @@
       once: true,
       mirror: false
     })
+
+
+
+ new PureCounter();
+
+
   });
 
 })()

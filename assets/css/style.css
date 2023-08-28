@@ -1274,7 +1274,16 @@ padding-bottom: 50px;
   text-align: justify;
 
 }
+.imgscalacont{
+  width: 79%;
+  height: 70%;
+  margin-right:-200px;
+}
+.imgscala{
+  width: 130%;
+  height: 70%;
 
+}
 
 /*--------------------------------------------------------------
 # Stats Counter Section
