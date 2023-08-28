@@ -18,6 +18,9 @@ body {
   cursor: url('assets\css\cursor.svg'), auto;
 }
 
+p{
+  text-align: justify;
+}
 
 a {
   color: #777;
@@ -921,7 +924,7 @@ div.row {
 
 
 .article1in{
-  margin-left: 5px;
+  margin-left: 100px;
   margin-right: 5px;
   text-align: justify;
   padding-left: 2px;
@@ -932,7 +935,7 @@ div.row {
 
 .article1out{
   margin-left: 5px;
-  margin-right: 65px;
+  margin-right: 100px;
   text-align: justify;
   padding-left: 2px;
   padding-right: 2px;
@@ -968,9 +971,22 @@ div.row {
 .chart #chart_div {
   width: 90%;
   height: 100%;
-  margin-top: -300px;
+  margin-top: -360px;
   margin-left:-10px;
+  padding-left: -50px;
+  padding-right: -50px;
 }
+
+
+#chart_div{
+  border-bottom: 2px solid black;
+  border-top:  2px solid black;
+  margin-left:400px;
+  margin-right:400px;
+  
+  
+}
+
 .mybutton{
   font-family:'Lucida Sans';
   color:#2f2f2f;
@@ -1002,10 +1018,10 @@ div.row {
   }
   
   .total_chart_div{ 
-    margin-left:1130px;
+    margin-left:1050px;
     height: 50%;
     width: 50%;
-    margin-top:-520px;
+    margin-top:-540px;
     position:static;
   
   }
@@ -1041,7 +1057,9 @@ h6{
 
 /* classi p2.html mappe
  titleart h7 h8*/
-
+.menomarg{
+  margin-top: -50px;
+}
  .rigasu2{
   margin-top:200px;
   margin-bottom: 30px;
@@ -1082,10 +1100,11 @@ figcaption{
   text-align: right;
   font-style: italic;
   margin-bottom: 50px;
-  margin-top: -40px;
+  margin-top: -60px;
 
 }
 #map {
+  
   background-color: transparent;
   width: 100%;
   height: 100%;
@@ -1095,7 +1114,12 @@ figcaption{
 .mapg{
   position: relative; /* Imposta la posizione relativa */
   height: 600px;
-  margin-top: 25px;
+  margin-top: 10px;
+  padding-top:50px;
+  padding-bottom:50px;
+  border-top: 2px solid black;
+  border-bottom:2px solid black;
+  
 }
 .su {
   margin-bottom: 40px;
@@ -1110,10 +1134,11 @@ h10{
 }
 
 .article2{
-
+  margin-top: -10px;
   text-align: justify;
   }
-  
+ 
+
 .su2{
   padding-bottom:100px;
 }
@@ -1145,8 +1170,8 @@ text-align: justify;
     text-align: justify;
     }
 
-.secondar  .article3{
- margin-top:-40px;
+.secondar .article3{
+ margin-top:-95px;
  margin-left: 100px;
   text-align: justify;
       }
@@ -1159,7 +1184,7 @@ text-align: justify;
         }
       
  .secondar .article3f{
- margin-top:50px;
+ margin-top: -10px;
  margin-right:100px;
  text-align: justify;
 
@@ -1174,7 +1199,7 @@ text-align: justify;
 }
 
 .articlef{
-  margin-top:60px;
+  margin-top:50px;
 margin-right:100px;
 text-align: justify;
 
@@ -1182,10 +1207,21 @@ text-align: justify;
 
 .rigas .articlei{
   margin-left:100px;
-  margin-top:-130px;
+  margin-top:-40px;
   margin-bottom:100px;
   text-align: justify;
 
+}
+.rigas .article3m{
+  margin-top: -170px;
+  margin-right: -5px;
+  margin-left: 2px;
+ 
+}
+
+.rigas .article3su{
+  margin-left: 10px;
+  margin-top:-250px;
 }
 
 .rigas .articlef{
@@ -1196,19 +1232,28 @@ text-align: justify;
   
 }
 #mekkoChart{
-margin-top:-300px;
+margin-top:-320px;
 width: 100%;
 height: 120%;
 text-align: justify;
+border-top: 2px solid black;
+border-bottom:2px solid black;
+padding-top: 50px;
+padding-bottom: 50px;
 
 
 
 }
 
 #mekkoChartFE{
-  margin-top:-120px;
+  margin-top:-175px;
   width: 100%;
   height: 70%;
+  border-top: 2px solid black;
+  border-bottom:2px solid black;
+  padding-top: 50px;
+padding-bottom: 50px;
+
 
 }
 
@@ -1216,6 +1261,11 @@ text-align: justify;
   margin-top:-300px;
   width: 100%;
   height: 100%;
+  border-top: 2px solid black;
+  border-bottom:2px solid black;
+  padding-top: 50px;
+padding-bottom: 50px;
+
 }
 
 .articlem{
@@ -1224,6 +1274,60 @@ text-align: justify;
   text-align: justify;
 
 }
+.imgscalacont{
+  width: 79%;
+  height: 70%;
+  margin-right:-200px;
+}
+.imgscala{
+  width: 130%;
+  height: 70%;
+
+}
+
+/*--------------------------------------------------------------
+# Stats Counter Section
+--------------------------------------------------------------*/
+.stats-counter {
+  padding: 5px 0;
+}
+
+.stats-counter .stats-item {
+  padding: 5px 0;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.stats-counter .stats-item .purecounter {
+  min-width: 40px;
+  padding-right: 3px;
+}
+
+.stats-counter .stats-item i {
+  font-size: 12px;
+  line-height: 0;
+  margin-right: 3px;
+}
+
+.stats-counter .stats-item span {
+  font-size: 12px;
+  display: block;
+  font-weight: 100;
+  color: var(--color-primary);
+  line-height: 40px;
+}
+
+.stats-counter .stats-item p {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: 14px;
+}
+
+
+
+
+
+
+
 
 /* classi p4.html tot deputies graduation*/
 
@@ -1316,7 +1420,7 @@ margin-top:-100px;
   content: "";
   display: block;
   height: 2px;
-  background-color: #Ed7670;
+  background-color: black;
   position: absolute;
   left: 0;
   right: 0;
@@ -1342,7 +1446,7 @@ margin-top:-100px;
   content: "";
   display: block;
   height: 2px;
-  background-color: #Ed7670;
+  background-color: black;
   position: absolute;
   left: 0;
   right: 0;

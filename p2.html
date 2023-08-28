@@ -69,7 +69,7 @@
         <div class="page">
             <div class="row rigasu2">
               <div class="col-md-12">
-                <div class="titleart2">
+                <div class="titleart2 menomarg">
                 <h7>Geographical Distribution of Male and Female Deputies </h7> <br>
                 <h8>Uncovering Regional Representation Disparities</h8>
                 </div>
@@ -78,7 +78,7 @@
 
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-2 article2 ">
+                <div class="col-md-2 article2">
                   <h6>What is the <span class="red-text">geographical distribution</span> of male and female deputies? Analysis through the italian regions.</h6>
                   <p class="capital">The geographical distribution of male and female deputies in the Italian Chamber of Deputies
                      is a key aspect to consider in assessing regional representation within the institution.<br>
@@ -86,9 +86,7 @@
                       distribution and gender representation. <br> The hypothesis posits that there may be a higher concentration of
                        deputies coming from the northern regions of Italy, due to the sizable socio-economic development. 
                     <br> The choropleth map presents a visual representation of the data, allowing us to compare and contrast
-                      the number of male and female deputies in each region. <b>Puglia</b>: Puglia has a <b>high number of male</b> deputies, 
-                      with <b>369</b> representatives. However, the number of <b>female</b> 
-                      deputies is considerably
+                      the number of male and female deputies in each region. 
                   </p>
                 </div>
                 <div class="col-md-8 mapg" data-aos="fade-up">
@@ -107,11 +105,12 @@
             <div class="row su">
                 <div class="col-md-1"></div>
                 <div class="col-md-2 article2">
-                    <p>
-                         lower at <b>12</b>, representing approximately <b>3.15%</b> of the total. 
-                        <b>Lazio</b>: Lazio has a comparatively high number of male deputies, with 438 representatives. In terms of female representation, 
-            Lazio fares better with 91 deputies, accounting for approximately 17.18% of the total, the highest percentage for female provenance. 
-            Examining the remaining regions, we observe varying levels of gender representation.  
+                    <p><b>Puglia</b>: Puglia has a <b>high number of male</b> deputies, 
+                      with <b class="red-text">369</b> representatives. However, the number of <b>female</b> 
+                      deputies is considerably
+                         lower at <b class="red-text">12</b>, representing approximately <b class="red-text">3.15%</b> of the total. 
+                        <b>Lazio</b>: Lazio has a comparatively high number of male deputies, with <b class="red-text">438 </b>representatives. In terms of female representation, 
+            Lazio fares better with <b class="red-text" > 91</b> deputies, accounting for approximately 17.18% of the total, the highest percentage for female provenance. 
                     </p>
                 </div>
                 <div class="col-md-2 article2">
@@ -225,12 +224,16 @@
 
 
     // Definisci la scala di colori per gli uomini (Blu)
-    var colorScaleUomini = d3.scaleSequential(d3.interpolateBlues)
-      .domain([0, d3.max(dati, function(d) { return d.count; })]);
+    var colorScaleUomini = d3.scaleSequential()
+  .domain([0, d3.max(dati, function(d) { return d.count; })])
+  .interpolator(d3.interpolateRgbBasis([ '#98B0A8', '#D0EE8D', '#00745E', '#003928']));
+
 
     // Definisci la scala di colori per le donne (Rosa)
-    var colorScaleDonne = d3.scaleSequential(d3.interpolateRdPu)
-      .domain([0, d3.max(datiDonne, function(d) { return d.count; })]);
+    var colorScaleDonne = d3.scaleSequential()
+  .domain([0, d3.max(datiDonne, function(d) { return d.count; })])
+  .interpolator(d3.interpolateRgbBasis(['#D5C9EE', '#C6A7FF', '#94497E', '#504766']));
+
 
     // Carica i dati GeoJSON delle regioni
     Promise.all([
