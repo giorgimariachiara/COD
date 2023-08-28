@@ -19,10 +19,18 @@
       return document.querySelector(el)
     }
   }
+ 
+ /**
+  * / * Initiate Pure Counter
+  */
+ new PureCounter();
 
-  /**
+ /**
+  /*
    * Easy event listener function
    */
+
+
   const on = (type, el, listener, all = false) => {
     let selectEl = select(el, all)
     if (selectEl) {
