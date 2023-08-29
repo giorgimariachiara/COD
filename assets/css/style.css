@@ -1323,71 +1323,78 @@ padding-bottom: 50px;
 }
 
 
+/* classi p4.html partiti*/
 
 
 
-
-
-
-/* classi p4.html tot deputies graduation*/
-
-
-
-/* classi p5.html tot deputies graduation*/
-.article5{
+/* classi p5.html tot deputies incarico */
+.article5i{
   margin-left:100px;
+  text-align: justify;
   margin-top:-100px;
-  text-align: justify;
-  margin-bottom: 300px;
-}
-
-.col-2.article5m{
- margin-top:-100px;
- margin-left: 5px;
- margin-top:5px; 
- text-align: justify;
- margin-bottom: 300px;
-}
-#radarChart{
-  width: 100%;
-  height: 100%;
-  margin-right: 50px;
-  margin-left: 100px;
-  margin-top:-50px;
-}
-#filteradar{
-margin-top:-100px;
-}
-/* classi p5.html incarico*/
-
-#radarChart{
-  margin-top:50px;
-}
-.chart6{
-  margin-top:300px;
-  margin-left:150px;
-  margin-right: -150px;
-  width: 40%;
-  height: 40%;
-}
-
-.article5{
-  margin-left:100px;
-  margin-top:300px;
-  text-align: justify;
-
 }
 
 .article5m{
-  margin-top:300px;
+ margin-top:-100px;
+ text-align: justify;
+
+}
+
+.radar{
+  margin-top:-90px;
+  width: 50%;
+  height: 50%;
+  padding-top: 80px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+
+}
+
+#radarChart{
+  width: 120%;
+  height: 120%;
+  margin-left: 20px;
+  margin-right: 30px;
+
+  margin-bottom:-50px;
+}
+.filteradar{
+margin-left: 100px;
+margin-bottom: 50px;
+}
+.riga2 .article5i{
+  margin-left:100px;
+  margin-top:50px;
   text-align: justify;
 
 }
 
-.barchart5{
-  width: 100%;
-  height: 100%;
 
+.riga2 .article5m{
+  margin-top:50px;
+  text-align: justify;
+}
+
+.riga2 .article5f{
+  margin-right:100px;
+  margin-top:50px;
+  text-align: justify;
+
+}
+.barchart5{
+  width: 85%;
+  height: 85%;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 30px;
+}
+#barChartinc{
+ width:  100%;
+ height:  100%;
+}
+ .filter5{
+margin-left:100px;
+margin-bottom: -200px;
 
 }
 
