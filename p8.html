@@ -30,7 +30,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-12 headersec" data-aos="fade-up">
+      <div class="col-12 headersec">
        <h11>Chamber of deputies</h11>
        <p>  Numbers </p>
       </div> 
@@ -67,22 +67,24 @@
     <div class="row up">
       <div class="col-1">
       </div>
-      <div class="col-md-2"  data-aos="fade-up">
+      <div class="col-md-2 giu">
             <h6>How Many <span class="red-text">Women</span> Have Served as <span class="red-text">Presidents of the Chamber of Deputies</span>? And How About Men?</h6>
             <p class="capital">
-              In the realm of <b>political leadership</b>, the <b>Italian Chamber of Deputies</b> has long played a significant 
+              In the realm of <span class="red-text"><b>political leadership</b></span>, the <span class="red-text"><b>Italian Chamber of Deputies</b></span> has long played a significant 
               role in shaping the nation's legislative landscape. The tenure of each president holds a unique story, 
               reflecting the challenges and triumphs of their respective eras.
               However, beneath the surface, an intriguing 
-              story emerges when examining the <b>gender diversity</b> among these presidents and the duration of their mandates.
+              story emerges when examining the <span class="red-text"><b>gender diversity</b> </span>among these presidents and the duration of their mandates.
         
-              The visual representation provided by the <b>bubble chart</b> delves into this captivating narrative, 
+              The visual representation provided by the <span class="red-text"><b>bubble chart</b></span> delves into this captivating narrative, 
               offering a comprehensive snapshot of the historical gender gap in the Italian Chamber of Deputies' 
               highest office. The chart showcases the male and female presidents who have held the prestigious position, 
-              shedding light on the dynamics of their representation
+              shedding light on the dynamics of their representation over time.
+              The <span class="red-text"><b>bubble chart</b></span> provides an illuminating perspective on the
+               spectrum of presidents based on their gender. 
           </p>
       </div>
-      <div class="col-md-8 special-border8" data-aos="fade-up">
+      <div class="col-md-8 special-border8">
         <div id="bubble_chart_div"></div>
       </div>
       <div class="col-1">
@@ -91,42 +93,41 @@
   <div class="row">
     <div class="col-1">
     </div>
-    <div class="col-md-2 article8"  data-aos="fade-up">
+    <div class="col-md-2 article8">
           <p>
-            over time.
-            The <b>bubble chart</b> provides an illuminating perspective on the
-             spectrum of presidents based on their gender. 
         Each bubble signifies an individual president, varying in size 
-        to mirror the length of their tenure in office.
+        to mirror the length of their tenure in office. The color palette further distinguishes between male and female presidents-shades of blue for male leaders and 
+        hues of pink for female leaders. This visual demarcation underscores the disparities that have marked the course
+         of the Chamber's history.
         </p>
     </div>
-    <div class="col-md-2 article8"  data-aos="fade-up">
+    <div class="col-md-2 article8">
       <p>
-        The color palette further distinguishes between male and female presidents-shades of blue for male leaders and 
-        hues of pink for female leaders. This visual demarcation underscores the disparities that have marked the course
-         of the Chamber's history. As we traverse the chart's landscape, it becomes evident that a palpable gender disparity
-         has charact- 
+         As we traverse the chart's landscape, it becomes evident that a palpable gender disparity
+         has characterized the role of the Italian Chamber of Deputies' president. The prevalence of male presidents 
+         points to a historical discrepancy, prompting reflection on the societal dynamics that may have contributed to 
+         this gender gap. This exploration encourages us to consider 
     </p>
 </div>
-    <div class="col-md-2 article8" data-aos="fade-up">
-      <p>erized the role of the Italian Chamber of Deputies' president. The prevalence of male presidents 
-      points to a historical discrepancy, prompting reflection on the societal dynamics that may have contributed to 
-      this gender gap. This exploration encourages us to consider the historical factors influencing leadership selection 
-      and the challenges women 
+    <div class="col-md-2 article8">
+      <p> the historical factors influencing leadership selection 
+      and the challenges women may have faced in attaining this pinnacle of power.
+      <h6>Duration of Leadership</h6>
+          Beyond the gender lens, the visualization delves into the temporal dimension of leadership.
+          
       </p>
       </div>
-      <div class="col-md-2 article8" data-aos="fade-up">
-        <p>may have faced in attaining this pinnacle of power.
-          <h6>Duration of Leadership</h6>
-          Beyond the gender lens, the visualization delves into the temporal dimension of leadership. 
-          The bubble size directly 
+      <div class="col-md-2 article8">
+        <p>
+           
+          The bubble size directly corresponds to the length of each president's tenure, creating an engaging 
+          visual narrative of their time in office. This feature invites us to compare the durations of male and female presidents, 
+          shedding light on the diversity of leadership experience and the contributions made by leaders of all genders. 
+          One striking observation
         </p>
         </div>
-        <div class="col-md-2 article8" data-aos="fade-up">
-          <p>corresponds to the length of each president's tenure, creating an engaging 
-            visual narrative of their time in office. This feature invites us to compare the durations of male and female presidents, 
-            shedding light on the diversity of leadership experience and the contributions made by leaders of all genders. 
-            One striking observation is that while the visual may initially emphasize a disparity in numbers, it also unveils a nuanced 
+        <div class="col-md-2 article8">
+          <p>  is that while the visual may initially emphasize a disparity in numbers, it also unveils a nuanced 
             perspective. Female presidents, although fewer in number, have, in certain instances, showcased tenures that rival or even
              surpass those of their male counterparts. This underscores the significance of the individual's impact over the traditional 
              constraints of gender.
@@ -260,8 +261,8 @@
     var size_scaling_factor = 2;
 
     var colori = {
-        'male': 'rgba(150, 191, 228, 1)',
-        'female': 'rgba(246, 173, 210, 0.7)'
+        'male': 'rgba(82, 108, 0, 1)',
+        'female': 'rgba(148, 73, 126, 0.7)'
     };
 
     var traces = [];

@@ -1437,27 +1437,12 @@ margin-top:-100px;
 
 /* Stili per il contenitore della chart */
 .special-border8 {
-  position: relative;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
-/* Pseudoelementi per le righe sopra e sotto la chart */
-.special-border8::before,
-.special-border8::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background-color: black;
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-.special-border8::before {
-  top: 10;
-}
-
-.special-border8::after {
-  bottom: 10;
+.giu{
+  margin-top: 30px;
 }
 
 /* Stili per la chart */
