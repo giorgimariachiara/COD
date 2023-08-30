@@ -1666,17 +1666,17 @@ margin-bottom: -200px;
 .indexartdx{
   text-align: justify;
   margin-top: 20px;
-  margin-left: 5px;
+  margin-left: -50px;
 }
 .indexartsx{
   text-align: justify;
   margin-top: 20px;
+  margin-right: -50px;
 }
 
 .articlehome{
   text-align: justify;
-  margin-left: 30px;
-  margin-bottom: 30px;
+  margin-left: 70px;
 }
 
 
@@ -1760,7 +1760,7 @@ td {
 }
 
 th, td {
-  border: 1px solid #A34E1F;
+  border: 2px solid black;
   padding: 8px;
   text-align: center; /* Centra il testo orizzontalmente */
   vertical-align: middle; /* Centra il testo verticalmente */
