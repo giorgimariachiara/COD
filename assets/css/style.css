@@ -1449,21 +1449,30 @@ margin-bottom: -200px;
 }
 
 .giu{
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 /* Stili per la chart */
 #bubble_chart_div {
   width: 100%;
   height: 100%;
-  padding-bottom:30px;
-  padding-top:30px;
+  padding-bottom:20px;
+  padding-top:20px;
 }
 
 .article8{
   margin-bottom: 150px;
   margin-top: 10px;
+  text-align: justify;
   }
+
+
+  .article8s{
+    
+    margin-top: -75px;
+    text-align: justify;
+
+    }
 
   .titleart8 {
     font-size: 30px;
