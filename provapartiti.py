@@ -127,6 +127,26 @@ df_partito_totale_no_duplicati = df_partito_totale[["partito"]].drop_duplicates(
 listapartiti = df_partito_totale_no_duplicati["partito"].tolist()
 
 print(listapartiti)
+print(len(listapartiti))
+import pandas as pd
+
+# Leggi il file Excel e crea il DataFrame
+df_excel = pd.read_excel('Partiti.xlsx')
+listapartiti = [partito.lower().strip() for partito in listapartiti]
+df_excel['A'] = df_excel['A'].str.lower().str.strip()
+
+# Crea un dizionario dalla colonna A alla colonna B del DataFrame
+mappa_partiti = dict(zip(df_excel['A'], df_excel['B']))
+
+# Itera sulla lista dei partiti
+for i in range(len(listapartiti)):
+    partito = listapartiti[i]
+    if partito in mappa_partiti:
+        listapartiti[i] = mappa_partiti[partito]
+listapartiti = list(set(listapartiti)) 
+
+
+print(listapartiti)
 
 
 from wikidataintegrator import wdi_core
@@ -231,6 +251,8 @@ partiti_trovati = [result['Partito'] for result in results_list]
 
 print(partiti_trovati)
 
+
+
 partiti_trovati = df['Partito'].tolist()
 partiti_non_trovati = [partito for partito in listapartiti if partito not in partiti_trovati]
 df_filtered = df[df['Partito'].isin(listapartiti)]
@@ -317,11 +339,13 @@ df_filtered2 = df_risultati2[df_risultati2['Partito'].isin(listapartiti)]
 
 df_alignment_partiti = pd.concat([df_filtered, df_filtered2])
 
+#print(df_alignment_partiti)
+
 df_merged = df_partito_totale.merge(df_excel.assign(A=df_excel['A'].str.lower(), B=df_excel['B'].str.upper()), left_on=df_partito_totale['partito'].str.lower(), right_on='A', how='left')
 df_merged['partito'] = df_merged['B'].combine_first(df_merged['partito']).str.upper()
 df_merged = df_merged.drop(['A', 'B'], axis=1)
 
-
+print(df_merged)
 df_merged['partito'] = df_merged['partito'].str.upper()
 df_alignment_partiti['Partito'] = df_alignment_partiti['Partito'].str.upper()
 
@@ -329,5 +353,13 @@ df_completo_alignment = df_merged.merge(df_alignment_partiti, left_on='partito',
 df_completo_alignment.drop(columns=['Partito'], inplace=True)
 
 
+keyword_mapping = {
+    "repubblicanesimo": "centro",
+    "socialismo": "sinistra",
+    "conservatorismo": "destra",
+    "cristianesimo democratico": "centro"
+}
 
+df_completo_alignment['Allineamento Politico'] = df_completo_alignment['Allineamento Politico'].apply(lambda x: keyword_mapping.get(x, x))
+df_completo_alignment = df_completo_alignment[df_completo_alignment['partito'] != 'MISTO']
 print(df_completo_alignment)
