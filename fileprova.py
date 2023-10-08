@@ -8,7 +8,7 @@ endpoint = "https://dati.camera.it/sparql"
 pd.set_option('display.max_rows', None)
 
 
-#QUERY QUOTE ROSA 2018: UOMINI 2018 PER GRUPPO PARLAMENTARE 
+#QUERY QUOTE ROSA UOMINI
 
 uomini_2013 ="""SELECT ?gruppoPar (COUNT(DISTINCT ?d) AS ?numeroUomini)
 WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start
@@ -133,7 +133,7 @@ print(df_uomini_2022)
 
 
 
-#QUERY QUOTE ROSA 2013: DONNE 2018 PER GRUPPO PARLAMENTARE 
+#QUERY QUOTE ROSA DONNE
 
 donne_2013 ="""SELECT ?gruppoPar (COUNT(DISTINCT ?d) AS ?numeroDonne)
 WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start
@@ -257,21 +257,69 @@ df_donne_2022["gruppoPar"] = df_donne_2022["gruppoPar"].str.extract(r'^(.*?) \('
 df_donne_2022 = df_donne_2022.groupby("gruppoPar")["numeroDonne"].sum().reset_index()
 print(df_donne_2022)
 
+#QUERY PER CERCARE PRESIDENTESSE 
+
+presidentesse_gp ="""SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start "female" as ?gender
+WHERE {
+  ## deputato con attributi anagrafici
+  ?d a ocd:deputato; 
+     foaf:surname ?cognome; 
+     foaf:gender "female"; 
+     foaf:firstName ?nome;
+     ocd:rif_leg ?legislatura; 
+     ocd:rif_mandatoCamera ?mandato; 
+     ocd:aderisce ?gruppo.
+
+  ## data di inizio mandato
+  ?mandato ocd:startDate ?start.
+  
+  ## Filtra per le date che iniziano con "2018", "2022", o "2013"
+  FILTER (STRSTARTS(?start, "2018") || STRSTARTS(?start, "2022") || STRSTARTS(?start, "2013"))
+
+  ## etichetta del gruppo a cui aderisce il deputato
+  ?gruppo rdfs:label ?gruppoPar.
+
+  ## ruolo del deputato all'interno del gruppo
+  ?d ocd:rif_incarico ?incarico.
+  ?incarico ocd:ruolo "PRESIDENTE".
+}"""
+df_presidentesse_gp = get(endpoint, presidentesse_gp)
+df_presidentesse_gp = df_presidentesse_gp[~df_presidentesse_gp['gruppoPar'].str.startswith("MISTO")]
 
 
 
+presidenti_gp ="""SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start "male" as ?gender
+WHERE {
+  ## deputato con attributi anagrafici
+  ?d a ocd:deputato; 
+     foaf:surname ?cognome; 
+     foaf:gender "male"; 
+     foaf:firstName ?nome;
+     ocd:rif_leg ?legislatura; 
+     ocd:rif_mandatoCamera ?mandato; 
+     ocd:aderisce ?gruppo.
 
+  ## data di inizio mandato
+  ?mandato ocd:startDate ?start.
+  
+  ## Filtra per le date che iniziano con "2018", "2022", o "2013"
+  FILTER (STRSTARTS(?start, "2018") || STRSTARTS(?start, "2022") || STRSTARTS(?start, "2013"))
 
+  ## etichetta del gruppo a cui aderisce il deputato
+  ?gruppo rdfs:label ?gruppoPar.
 
+  ## ruolo del deputato all'interno del gruppo
+  ?d ocd:rif_incarico ?incarico.
+  ?incarico ocd:ruolo "PRESIDENTE".
+}"""
+df_presidenti_gp = get(endpoint, presidenti_gp)
+df_presidenti_gp = df_presidenti_gp[~df_presidenti_gp['gruppoPar'].str.startswith("MISTO")]
 
-
-
-
-
-
-
-
-
+quote_presidenti = pd.concat([df_presidentesse_gp, df_presidenti_gp])
+quote_presidenti= quote_presidenti[["nome","cognome","gender", "start", "gruppoPar"]]
+quote_presidenti['start'] = quote_presidenti['start'].astype(str).str[:4]
+quote_presidenti["gruppoPar"] = quote_presidenti["gruppoPar"].str.extract(r'^(.*?) \(')
+quote_presidenti.to_csv('quotepresidenti.csv', index=False)
 
 
 
@@ -516,3 +564,6 @@ WHERE {
     ?mandato ocd:tipoProclamazione ?proclamazione.
     ?proclamazione dc:type "Subentrato alla Camera"}}}
   """
+
+
+
