@@ -112,8 +112,10 @@
             </p>
         </div>
      
-        <div class="row ">
-            <div class="col-12"> qui andrà la chart sui presidenti dei gruppi parlmentari nella camera dei deputati</div>
+        <div class="row">
+            <div class="col-7">
+                <canvas id="barChartQ" width="50" height="50"></canvas>
+            </div>
         </div>
 
         <div class="row artQ3">
@@ -214,7 +216,42 @@
         
         
 
-
+        <script>
+            // Dati del grafico
+            var anni = [2018, 2022];
+            var conteggioUomini = [12, 7];
+            var conteggioDonne = [6, 3];
+    
+            // Crea un oggetto di contesto per il grafico
+            var ctx = document.getElementById('barChartQ').getContext('2d');
+    
+            // Crea il grafico a barre
+            var barChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: anni,
+                    datasets: [
+                        {
+                            label: 'Uomini',
+                            data: conteggioUomini,
+                            backgroundColor: 'purple'
+                        },
+                        {
+                            label: 'Donne',
+                            data: conteggioDonne,
+                            backgroundColor: 'green'
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
   </body>
 </html>
 
