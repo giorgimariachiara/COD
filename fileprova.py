@@ -11,7 +11,7 @@ pd.set_option('display.max_rows', None)
 #QUERY QUOTE ROSA UOMINI
 
 uomini_2013 ="""SELECT ?gruppoPar (COUNT(DISTINCT ?d) AS ?numeroUomini)
-WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start
+WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start "male" as ?gender
 WHERE {
   ## deputato con attributi anagrafici
   ?d a ocd:deputato; 
@@ -51,7 +51,7 @@ print("UOMINI NEL 2013")
 print(df_uomini_2013)
 
 uomini_2018 ="""SELECT ?gruppoPar (COUNT(DISTINCT ?d) AS ?numeroUomini)
-WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start
+WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start "male" as ?gender
 WHERE {
   ## deputato con attributi anagrafici
   ?d a ocd:deputato; 
@@ -87,12 +87,12 @@ WHERE {
 df_uomini_2018 = get(endpoint, uomini_2018)
 df_uomini_2018["gruppoPar"] = df_uomini_2018["gruppoPar"].str.extract(r'^(.*?) \(')
 df_uomini_2018 = df_uomini_2018.groupby("gruppoPar")["numeroUomini"].sum().reset_index()
-print("UOMINI NEL 2018")
-print(df_uomini_2018)
+#print("UOMINI NEL 2018")
+#print(df_uomini_2018)
 
 
 uomini_2022 ="""SELECT ?gruppoPar (COUNT(DISTINCT ?d) AS ?numeroUomini)
-WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start
+WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start "male" as ?gender
 WHERE {
   ## deputato con attributi anagrafici
   ?d a ocd:deputato; 
@@ -128,15 +128,15 @@ WHERE {
 df_uomini_2022 = get(endpoint, uomini_2022)
 df_uomini_2022["gruppoPar"] = df_uomini_2022["gruppoPar"].str.extract(r'^(.*?) \(')
 df_uomini_2022 = df_uomini_2022.groupby("gruppoPar")["numeroUomini"].sum().reset_index()
-print("UOMINI NEL 2022")
-print(df_uomini_2022)
+#print("UOMINI NEL 2022")
+#print(df_uomini_2022)
 
 
 
 #QUERY QUOTE ROSA DONNE
 
 donne_2013 ="""SELECT ?gruppoPar (COUNT(DISTINCT ?d) AS ?numeroDonne)
-WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start
+WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start "female" as ?gender
 WHERE {
   ## deputato con attributi anagrafici
   ?d a ocd:deputato; 
@@ -176,8 +176,8 @@ print("DONNE NEL 2013")
 print(df_donne_2013)
 
 
-donne_2018 ="""SELECT ?gruppoPar (COUNT(DISTINCT ?d) AS ?numeroDonne)
-WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start
+donne_2018 ="""SELECT ?gruppoPar (COUNT(DISTINCT ?d) AS ?numeroDonne) 
+WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start "female" as ?gender
 WHERE {
   ## deputato con attributi anagrafici
   ?d a ocd:deputato; 
@@ -214,12 +214,12 @@ df_donne_2018 = get(endpoint, donne_2018)
 df_donne_2018["gruppoPar"] = df_donne_2018["gruppoPar"].str.extract(r'^(.*?) \(')
 df_donne_2018 = df_donne_2018.groupby("gruppoPar")["numeroDonne"].sum().reset_index()
 #grouped_df_uomini_2018 = df_uomini_2018.groupby("gruppoPar")["numeroDonne"].sum().reset_index()
-print("DONNE NEL 2018")
-print(df_donne_2018)
+#print("DONNE NEL 2018")
+#print(df_donne_2018)
 
 
 donne_2022 ="""SELECT ?gruppoPar (COUNT(DISTINCT ?d) AS ?numeroDonne)
-WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start
+WHERE {SELECT DISTINCT ?d ?cognome ?nome ?legislatura ?gruppoPar ?start "female" as ?gender
 WHERE {
   ## deputato con attributi anagrafici
   ?d a ocd:deputato; 
@@ -255,7 +255,30 @@ WHERE {
 df_donne_2022 = get(endpoint, donne_2022)
 df_donne_2022["gruppoPar"] = df_donne_2022["gruppoPar"].str.extract(r'^(.*?) \(')
 df_donne_2022 = df_donne_2022.groupby("gruppoPar")["numeroDonne"].sum().reset_index()
-print(df_donne_2022)
+#print(df_donne_2022)
+
+
+
+
+#quote_2013= pd.concat([df_uomini_2013, df_donne_2013])
+quote_2013 = pd.merge(df_donne_2013, df_uomini_2013, on="gruppoPar", how="outer")
+quote_2013.fillna(0, inplace=True)
+quote_2013['numeroDonne'] = quote_2013['numeroDonne'].astype(int)
+quote_2013['numeroUomini'] = quote_2013['numeroUomini'].astype(int)
+quote_2013.to_csv('quote2013.csv', index=False)
+
+quote_2018=pd.concat([df_uomini_2018, df_donne_2018])
+quote_2018.fillna(0, inplace=True)
+quote_2018['numeroDonne'] = quote_2018['numeroDonne'].astype(int)
+quote_2018['numeroUomini'] = quote_2018['numeroUomini'].astype(int)
+quote_2018.to_csv('quote2018.csv', index=False)
+
+quote_2022=pd.concat([df_uomini_2022, df_donne_2022])
+quote_2022.fillna(0, inplace=True)
+quote_2022['numeroDonne'] = quote_2022['numeroDonne'].astype(int)
+quote_2022['numeroUomini'] = quote_2022['numeroUomini'].astype(int)
+quote_2022.to_csv('quote2022.csv', index=False)
+
 
 #QUERY PER CERCARE PRESIDENTESSE 
 
