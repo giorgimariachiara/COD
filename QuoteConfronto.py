@@ -35,6 +35,7 @@ def generate_chart(selected_years, selected_group):
     fig.update_layout(barmode="group", title="Confronto tra uomini e donne nei gruppi parlamentari")
     fig.update_xaxes(title_text="Gruppo Parlamentare", categoryorder="category ascending")  # Imposta l'ordine delle categorie sull'asse x
     fig.update_yaxes(title_text="Numero di Individui")
+    fig.update_xaxes(tickangle=90)
 
     return fig
 
