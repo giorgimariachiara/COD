@@ -29,9 +29,6 @@ WHERE {
   ## etichetta del gruppo a cui aderisce il deputato
   ?gruppo rdfs:label ?gruppoPar.
 
-  ## ruolo del deputato all'interno del gruppo
-  ?d ocd:rif_incarico ?incarico.
-  ?incarico ocd:ruolo ?gruppoParlamentare.
   FILTER (!STRSTARTS(?gruppoPar, "MISTO"))
 
   ## escludere i deputati che sono subentrati
@@ -68,10 +65,6 @@ WHERE {
 
   ## etichetta del gruppo a cui aderisce il deputato
   ?gruppo rdfs:label ?gruppoPar.
-
-  ## ruolo del deputato all'interno del gruppo
-  ?d ocd:rif_incarico ?incarico.
-  ?incarico ocd:ruolo ?gruppoParlamentare.
   FILTER (!STRSTARTS(?gruppoPar, "MISTO"))
 
   ## escludere i deputati che sono subentrati
@@ -110,9 +103,6 @@ WHERE {
   ## etichetta del gruppo a cui aderisce il deputato
   ?gruppo rdfs:label ?gruppoPar.
 
-  ## ruolo del deputato all'interno del gruppo
-  ?d ocd:rif_incarico ?incarico.
-  ?incarico ocd:ruolo ?gruppoParlamentare.
   FILTER (!STRSTARTS(?gruppoPar, "MISTO"))
 
   ## escludere i deputati che sono subentrati
@@ -154,9 +144,6 @@ WHERE {
   ## etichetta del gruppo a cui aderisce il deputato
   ?gruppo rdfs:label ?gruppoPar.
 
-  ## ruolo del deputato all'interno del gruppo
-  ?d ocd:rif_incarico ?incarico.
-  ?incarico ocd:ruolo ?gruppoParlamentare.
   FILTER (!STRSTARTS(?gruppoPar, "MISTO"))
 
   ## escludere i deputati che sono subentrati
@@ -195,9 +182,6 @@ WHERE {
   ## etichetta del gruppo a cui aderisce il deputato
   ?gruppo rdfs:label ?gruppoPar.
 
-  ## ruolo del deputato all'interno del gruppo
-  ?d ocd:rif_incarico ?incarico.
-  ?incarico ocd:ruolo ?gruppoParlamentare.
   FILTER (!STRSTARTS(?gruppoPar, "MISTO"))
 
   ## escludere i deputati che sono subentrati
@@ -237,9 +221,6 @@ WHERE {
   ## etichetta del gruppo a cui aderisce il deputato
   ?gruppo rdfs:label ?gruppoPar.
 
-  ## ruolo del deputato all'interno del gruppo
-  ?d ocd:rif_incarico ?incarico.
-  ?incarico ocd:ruolo ?gruppoParlamentare.
   FILTER (!STRSTARTS(?gruppoPar, "MISTO"))
 
   ## escludere i deputati che sono subentrati
@@ -267,13 +248,13 @@ quote_2013['numeroDonne'] = quote_2013['numeroDonne'].astype(int)
 quote_2013['numeroUomini'] = quote_2013['numeroUomini'].astype(int)
 quote_2013.to_csv('quote2013.csv', index=False)
 
-quote_2018=pd.concat([df_uomini_2018, df_donne_2018])
+quote_2018 = pd.merge(df_donne_2018, df_uomini_2018, on="gruppoPar", how="outer")
 quote_2018.fillna(0, inplace=True)
 quote_2018['numeroDonne'] = quote_2018['numeroDonne'].astype(int)
 quote_2018['numeroUomini'] = quote_2018['numeroUomini'].astype(int)
 quote_2018.to_csv('quote2018.csv', index=False)
 
-quote_2022=pd.concat([df_uomini_2022, df_donne_2022])
+quote_2022 = pd.merge(df_donne_2022, df_uomini_2022, on="gruppoPar", how="outer")
 quote_2022.fillna(0, inplace=True)
 quote_2022['numeroDonne'] = quote_2022['numeroDonne'].astype(int)
 quote_2022['numeroUomini'] = quote_2022['numeroUomini'].astype(int)
