@@ -371,3 +371,4 @@ df_completo_alignment.loc[df_completo_alignment['Allineamento Politico'] == 'sin
 dovesiete = df_completo_alignment[df_completo_alignment['Allineamento Politico'].isna()]
 print(dovesiete)
 #df_completo_alignment.to_csv('partyallineamento.csv', index=False)
+

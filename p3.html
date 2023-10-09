@@ -373,40 +373,40 @@
 
   // Create the Google Chart
   google.charts.setOnLoadCallback(drawChart);
+  
   function drawChart() {
     // Define the data
     var data = google.visualization.arrayToDataTable([
-  ['Gender', 'Graduated', {role: 'style'}, 'Non-Graduated', {role: 'style'}, 'Tot', {role: 'style'}],
-  ['Male', 3361, 'color:#00745E', 1865, 'color:#5FBBA2', 5226, 'color: #Ed7670'],
-  ['Female', 572, 'color: #94497E', 311, 'color: #B283A2', 883, 'color:  #Ed7670']
-]);
-
+      ['Gender', 'Graduated', {role: 'style'}, 'Non-Graduated', {role: 'style'}, 'Do Not Know', {role: 'style'}, 'Tot', {role: 'style'}],
+      ['Male', 3349, 'color:#00745E', 1794, 'color:#5FBBA2', 61, 'color: #FFD700', 5204, 'color: #Ed7670'],  // 100 is a placeholder for "Do Not Know" for Male
+      ['Female', 588, 'color: #94497E', 299, 'color: #B283A2', 18, 'color: #FFD700', 905, 'color:  #Ed7670']   // 50 is a placeholder for "Do Not Know" for Female
+    ]);
 
     // Set chart options
     var options = {
-     
-      title: 'Proportion of Graduated and Non-Graduated Deputies by Gender',
+      title: 'Proportion of Graduated, Non-Graduated and Do Not Know Deputies by Gender',
       backgroundColor: 'transparent',
-
       hAxis: {
         title: 'Gender',
       },
       vAxis: {
         title: 'Number of Deputies',
       },
-      isStacked: true, isStacked: true,
-  series: {
-    0: { color: '#00745E', label: 'Tot' },  // Colore verde per la serie 'Graduated'
-    1: { color: '#B283A2', label: 'Female'},  // Colore verde per la serie 'Non-Graduated'
-    2: { color: '#Ed7670', label: 'Male'}   // Colore verde per la serie 'Tot'
-  }
-};
+      isStacked: true,
+      series: {
+        0: { color: '#00745E', label: 'Graduated' },
+        1: { color: '#B283A2', label: 'Non-Graduated'},
+        2: { color: '#FFD700', label: 'Do Not Know' },  // Colore giallo per "Do Not Know"
+        3: { color: '#Ed7670', label: 'Tot'}
+      }
+    };
 
     // Create and draw the chart
     var chart = new google.visualization.ColumnChart(document.getElementById('mekkoChartot'));
     chart.draw(data, options);
   }
 </script>
+
   </body>
 </html>
 
