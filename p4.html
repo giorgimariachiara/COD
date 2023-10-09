@@ -58,7 +58,20 @@
 
       <div class="page">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 pyrchart">
+            <select id="spettroPoliticoFilter">
+              <option value="Tutti">Tutti</option>
+              <option value="Estrema-sinistra">Estrema sinistra</option>
+              <option value="Sinistra">Sinistra</option>
+              <option value="Centro-sinistra">Centro-sinistra</option>
+              <option value="Centro">Centro</option>
+              <option value="Centro-destra">Centro-destra</option>
+              <option value="Destra">Destra</option>
+              <option value="Trasversalismo">Trasversalismo</option>
+
+
+              <!-- Aggiungi altre opzioni per gli altri spettri politici -->
+            </select>
             <canvas id="pyramidChart"></canvas>         
         </div>
       </div>    
@@ -104,9 +117,9 @@
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
     var spettroPolitico = {
-    'PARTITO COMUNISTA ITALIANO': 'Estrema sinistra',
-    'DEMOCRAZIA PROLETARIA': 'Estrema sinistra',
-    'PARTITO DI UNITÀ PROLETARIA PER IL COMUNISMO': 'Estrema sinistra',
+    'PARTITO COMUNISTA ITALIANO': 'Estrema-sinistra',
+    'DEMOCRAZIA PROLETARIA': 'Estrema-sinistra',
+    'PARTITO DI UNITÀ PROLETARIA PER IL COMUNISMO': 'Estrema-sinistra',
     'PARTITO DELLA RIFONDAZIONE COMUNISTA - SINISTRA EUROPEA': 'Sinistra',
     'SINISTRA INDIPENDENTE': 'Sinistra',
     'PARTITO DEI COMUNISTI ITALIANI': 'Sinistra',
@@ -140,9 +153,9 @@
     'PARTITO POPOLARE ITALIANO': 'Centro-destra',
     'DEMOCRAZIA NAZIONALE - COSTITUENTE DI DESTRA': 'Centro-destra',
     'LEGA NORD': 'Centro-destra',
-    'PARTITO NAZIONALE MONARCHICO': 'Estrema destra',
-    'MOVIMENTO SOCIALE ITALIANO - DESTRA NAZIONALE': 'Estrema destra',
-    'FRONTE DELL\'UOMO QUALUNQUE': 'Estrema destra'
+    'PARTITO NAZIONALE MONARCHICO': 'Destra',
+    'MOVIMENTO SOCIALE ITALIANO - DESTRA NAZIONALE': 'Destra',
+    'FRONTE DELL\'UOMO QUALUNQUE': 'Destra'
 };
 
 var data = {
@@ -251,167 +264,30 @@ var options = {
     }
 };
 
-// Creazione del grafico
+document.getElementById('spettroPoliticoFilter').addEventListener('change', function() {
+  var selectedSpectrum = this.value;
 
-var ctx = document.getElementById('pyramidChart').getContext('2d');
-new Chart(ctx, {
+  // Filtra i dati in base allo spettro politico selezionato
+  var filteredData = data.labels.reduce(function(filtered, label, index) {
+    if (selectedSpectrum === 'Tutti' || spettroPolitico[label] === selectedSpectrum) {
+      filtered.labels.push(label);
+      filtered.datasets[0].data.push(data.datasets[0].data[index]);
+      filtered.datasets[1].data.push(data.datasets[1].data[index]);
+    }
+    return filtered;
+  }, { labels: [], datasets: [{}, {}] });
+
+  // Aggiorna il grafico con i dati filtrati
+  var ctx = document.getElementById('pyramidChart').getContext('2d');
+  var chart = new Chart(ctx, {
     type: 'bar',
-    data: data,
+    data: filteredData,
     options: options
+  });
 });
 </script>
 
-
-
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function() {
-var data = [
-  {x: 0, y: 1, r: 124, party: 'MOVIMENTO 5 STELLE', alignment: 'centro'},
-  {x: 1, y: 2, r: 151, party: 'MISTO', alignment: ''},
-  {x: 2, y: 3, r: 24, party: 'CENTRO DEMOCRATICO', alignment: 'centro-sinistra'},
-  {x: 3, y: 4, r: 182, party: 'PARTITO COMUNISTA ITALIANO', alignment: 'estrema sinistra'},
-  {x: 4, y: 5, r: 44, party: 'PARTITO POPOLARE ITALIANO', alignment: 'centro'},
-  {x: 5, y: 6, r: 21, party: 'DEMOCRAZIA CRISTIANA', alignment: 'centro'},
-  {x: 6, y: 7, r: 10, party: 'PARTITO RADICALE', alignment: 'centro'},
-  {x: 7, y: 8, r: 94, party: 'FORZA ITALIA', alignment: 'centro-destra'},
-  {x: 8, y: 9, r: 3, party: 'ROSA NEL PUGNO', alignment: 'centro-sinistra'},
-  {x: 9, y: 10, r: 36, party: 'PARTITO DELLA RIFONDAZIONE COMUNISTA - SINISTRA EUROPEA', alignment: 'estrema sinistra'},
-  {x: 10, y: 11, r: 3, party: 'DEMOCRAZIA PROLETARIA', alignment: 'estrema sinistra'},
-  {x: 11, y: 12, r: 1, party: 'PARTITO DI UNITÀ PROLETARIA PER IL COMUNISMO', alignment: 'estrema sinistra'},
-  {x: 12, y: 13, r: 9, party: 'SINISTRA INDIPENDENTE', alignment: 'sinistra'},
-  {x: 13, y: 14, r: 1, party: 'DEMOCRAZIA NAZIONALE - COSTITUENTE DI DESTRA', alignment: 'destra'},
-  {x: 14, y: 15, r: 7, party: 'MOVIMENTO SOCIALE ITALIANO - DESTRA NAZIONALE', alignment: 'destra'},
-  {x: 15, y: 16, r: 17, party: 'PARTITO SOCIALISTA ITALIANO', alignment: 'centro-sinistra'},
-  {x: 16, y: 17, r: 86, party: 'IL POPOLO DELLA LIBERTÀ', alignment: 'centro-destra'},
-  {x: 17, y: 18, r: 22, party: 'ALLEANZA NAZIONALE', alignment: 'destra'},
-  {x: 18, y: 19, r: 134, party: "L'ULIVO", alignment: 'centro-sinistra'},
-  {x: 19, y: 20, r: 8, party: 'FUTURO E LIBERTÀ PER L\'ITALIA', alignment: 'destra'},
-  {x: 20, y: 21, r: 3, party: 'POPOLO E TERRITORIO', alignment: 'centro-sinistra'},
-  {x: 21, y: 22, r: 39, party: 'PARTITO DEMOCRATICO DELLA SINISTRA', alignment: 'centro-sinistra'},
-  {x: 22, y: 23, r: 3, party: 'PARTITO REPUBBLICANO ITALIANO', alignment: 'centro'},
-  {x: 23, y: 24, r: 11, party: 'FEDERAZIONE DEI VERDI', alignment: 'sinistra'},
-  {x: 24, y: 25, r: 12, party: 'CENTRO CRISTIANO DEMOCRATICO', alignment: 'centro-destra'},
-  {x: 25, y: 26, r: 2, party: 'PARTITO DEI COMUNISTI ITALIANI', alignment: 'estrema sinistra'},
-  {x: 26, y: 27, r: 197, party: 'PARTITO DEMOCRATICO', alignment: 'centro-sinistra'},
-  {x: 27, y: 28, r: 99, party: 'LEGA NORD', alignment: 'destra'},
-  {x: 28, y: 29, r: 7, party: 'NUOVO CENTRODESTRA', alignment: 'centro-destra'},
-  {x: 29, y: 30, r: 5, party: 'UNIONE DI CENTRO (2002)', alignment: 'centro'},
-  {x: 30, y: 31, r: 18, party: 'SINISTRA ECOLOGIA LIBERTÀ', alignment: 'sinistra'},
-  {x: 31, y: 32, r: 5, party: 'PARTITO SOCIALISTA DEMOCRATICO ITALIANO', alignment: 'centro-sinistra'},
-  {x: 32, y: 33, r: 41, party: "FRATELLI D'ITALIA", alignment: 'destra'},
-  {x: 33, y: 34, r: 3, party: 'ITALIA DEI VALORI', alignment: 'centro-sinistra'},
-  {x: 34, y: 35, r: 27, party: 'LIBERI E UGUALI', alignment: 'sinistra'},
-  {x: 35, y: 36, r: 8, party: 'POPOLARI UDEUR', alignment: 'centro'},
-  {x: 36, y: 37, r: 15, party: 'SCELTA CIVICA', alignment: 'centro'},
-  {x: 37, y: 38, r: 4, party: 'RINNOVAMENTO ITALIANO', alignment: 'centro'},
-  {x: 38, y: 39, r: 1, party: 'PARTITO SOCIALISTA ITALIANO DI UNITÀ PROLETARIA', alignment: 'centro'},
-  {x: 39, y: 40, r: 3, party: 'PARTITO NAZIONALE MONARCHICO', alignment: 'centro-destra'},
-  {x: 41, y: 42, r: 1, party: 'PSI-PSDI UNIFICATI', alignment: 'centro'},
-  {x: 42, y: 43, r: 13, party: 'CORAGGIO ITALIA', alignment: 'centro-destra'},
-  {x: 43, y: 44, r: 23, party: 'ITALIA VIVA', alignment: 'centro'},
-  {x: 44, y: 45, r: 2, party: 'FRONTE DELL\'UOMO QUALUNQUE', alignment: 'destra'}
-];
-
-var minR = Number.POSITIVE_INFINITY;
-      var maxR = Number.NEGATIVE_INFINITY;
-
-      for (var i = 0; i < data.length; i++) {
-        var r = data[i].r;
-        if (r < minR) {
-          minR = r;
-        }
-        if (r > maxR) {
-          maxR = r;
-        }
-      }
-
-      var scale = 30 / (maxR - minR);
-
-      for (var i = 0; i < data.length; i++) {
-        data[i].r = (data[i].r - minR) * scale;
-      }
-
-
-      var options = {
-        scales: {
-          x: {
-            title: {
-              display: true,
-              text: 'Allineamento politico'
-            }
-          },
-          y: {
-            title: {
-              display: true,
-              text: 'Conto delle donne'
-            }
-          }
-        },
-        plugins: {
-          legend: {
-            display: true,
-            labels: {
-              generateLabels: function(chart) {
-                var labels = Chart.defaults.plugins.legend.labels.generateLabels(chart);
-                labels.forEach(function(label) {
-                  var alignment = data[label.index].alignment;
-                  if (alignment === 'estrema sinistra') {
-                    label.text += ' - Estrema Sinistra';
-                  } else if (alignment === 'sinistra') {
-                    label.text += ' - Sinistra';
-                  } else if (alignment === 'centro-sinistra') {
-                    label.text += ' - Centro Sinistra';
-                  } else if (alignment === 'centro') {
-                    label.text += ' - Centro';
-                  } else if (alignment === 'centro-destra') {
-                    label.text += ' - Centro Destra';
-                  } else if (alignment === 'destra') {
-                    label.text += ' - Destra';
-                  } else if (alignment === 'estrema destra') {
-                    label.text += ' - Estrema Destra';
-                  }
-                });
-                return labels;
-              }
-            }
-          }
-        }
-      };
-
-      var ctx = document.getElementById('chartbubble').getContext('2d');
-      new Chart(ctx, {
-        type: 'bubble',
-        data: {
-          datasets: [{
-            data: data,
-            backgroundColor: function(context) {
-              var alignment = context.dataset.data[context.dataIndex].alignment;
-              if (alignment === 'estrema sinistra') {
-                return 'blue';
-              } else if (alignment === 'sinistra') {
-                return 'red';
-              } else if (alignment === 'centro-sinistra') {
-                return 'green';
-              } else if (alignment === 'centro') {
-                return 'yellow';
-              } else if (alignment === 'centro-destra') {
-                return 'orange';
-              } else if (alignment === 'destra') {
-                return 'purple';
-              } else if (alignment === 'estrema destra') {
-                return 'pink';
-              }
-              
-              return 'gray';
-            }
-          }]
-        },
-        options: options
-      });
-    });
-</script>
-</body>
-
+  </body>
 </html>
+
+

@@ -4,12 +4,12 @@
 
 
 +++++++++++++++++++
-
+ """
 
 import pandas as pd
 
 # Carica i dati dal primo file CSV
-df1 = pd.read_csv('graduation.csv')
+df1 = pd.read_csv('OK3graduation.csv')
 
 # Carica i dati dal secondo file CSV
 df2 = pd.read_csv('deputatiperlegislatura.csv')
@@ -21,11 +21,11 @@ merged_df = pd.merge(df1, df2, on='Persona')
 merged_df = merged_df[['Persona', 'legislatura', 'graduated']]
 
 # Salva il risultato in un nuovo file CSV
-merged_df.to_csv('graduatedMA.csv', index=False)
+merged_df.to_csv('OK3graduatedMA.csv', index=False)
 
 
 
- """
+
 
 
 
@@ -114,13 +114,13 @@ print("File CSV creato correttamente per Google Charts.")
 """
 
 
-"""
-+++++++++WHAT: conta i nan +++++++
+
+
 
 import pandas as pd
 
 # Carica i dati dal file CSV
-df = pd.read_csv('graduationfemale.csv')
+df = pd.read_csv('OK3graduationFEMALE.csv')
 
 # Conta i valori NaN nella colonna 'graduated'
 nan_count = df['graduated'].isna().sum()
@@ -130,13 +130,15 @@ print("Numero di valori NaN nella colonna 'graduated':", nan_count)
 
 
 
-"""
+
 
 
 
 """
 
 +++++WHAT: prende i grdaduationMA.csv e graduationFE.csv per sistemare la formattazione delle legislature.  ++++++++
+
+"""
 
 """
 import pandas as pd
@@ -161,3 +163,4 @@ data.to_csv('graduatedFEMALE.csv', index=False)
 
 # Print a message indicating the process is complete
 print("CSV file with modified legislature names has been created.")
+"""
