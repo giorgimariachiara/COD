@@ -131,7 +131,7 @@ print(len(listapartiti))
 import pandas as pd
 
 # Leggi il file Excel e crea il DataFrame
-df_excel = pd.read_excel('Partiti.xlsx')
+df_excel = pd.read_excel('PartitiDefinitivo.xlsx')
 listapartiti = [partito.lower().strip() for partito in listapartiti]
 df_excel['A'] = df_excel['A'].str.lower().str.strip()
 
@@ -340,7 +340,7 @@ df_filtered2 = df_risultati2[df_risultati2['Partito'].isin(listapartiti)]
 df_alignment_partiti = pd.concat([df_filtered, df_filtered2])
 
 print(df_alignment_partiti)
-"""
+
 df_merged = df_partito_totale.merge(df_excel.assign(A=df_excel['A'].str.lower(), B=df_excel['B'].str.upper()), left_on=df_partito_totale['partito'].str.lower(), right_on='A', how='left')
 df_merged['partito'] = df_merged['B'].combine_first(df_merged['partito']).str.upper()
 df_merged = df_merged.drop(['A', 'B'], axis=1)
@@ -357,10 +357,17 @@ keyword_mapping = {
     "repubblicanesimo": "centro",
     "socialismo": "sinistra",
     "conservatorismo": "destra",
-    "cristianesimo democratico": "centro"
+    "cristianesimo democratico": "centro",
+    "monarchia":"destra"
 }
 
 df_completo_alignment['Allineamento Politico'] = df_completo_alignment['Allineamento Politico'].apply(lambda x: keyword_mapping.get(x, x))
 df_completo_alignment = df_completo_alignment[df_completo_alignment['partito'] != 'MISTO']
-print(df_completo_alignment)
-"""
+df_completo_alignment.loc[df_completo_alignment['partito'] == 'FEDERAZIONE DEI VERDI', 'Allineamento Politico'] = 'centro-sinistra'
+df_completo_alignment.loc[df_completo_alignment['partito'] == 'DEMOCRAZIA NAZIONALE - COSTITUENTE DI DESTRA', 'Allineamento Politico'] = 'destra'
+df_completo_alignment.loc[df_completo_alignment['partito'] == 'PSI-PSDI UNIFICATI', 'Allineamento Politico'] = 'centro-sinistra'
+df_completo_alignment.loc[df_completo_alignment['Allineamento Politico'] == 'sinistra radicale', 'Allineamento Politico'] = 'estrema sinistra'
+
+dovesiete = df_completo_alignment[df_completo_alignment['Allineamento Politico'].isna()]
+print(dovesiete)
+#df_completo_alignment.to_csv('partyallineamento.csv', index=False)
