@@ -239,8 +239,6 @@ df_donne_2022 = df_donne_2022.groupby("gruppoPar")["numeroDonne"].sum().reset_in
 #print(df_donne_2022)
 
 
-
-
 #quote_2013= pd.concat([df_uomini_2013, df_donne_2013])
 quote_2013 = pd.merge(df_donne_2013, df_uomini_2013, on="gruppoPar", how="outer")
 quote_2013.fillna(0, inplace=True)
@@ -373,8 +371,6 @@ WHERE {
   
   ## etichetta del gruppo a cui aderisce il deputato
   ?gruppo rdfs:label ?gruppoPar.
-
-  
 }
 """
 
