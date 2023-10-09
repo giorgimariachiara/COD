@@ -339,8 +339,8 @@ df_filtered2 = df_risultati2[df_risultati2['Partito'].isin(listapartiti)]
 
 df_alignment_partiti = pd.concat([df_filtered, df_filtered2])
 
-#print(df_alignment_partiti)
-
+print(df_alignment_partiti)
+"""
 df_merged = df_partito_totale.merge(df_excel.assign(A=df_excel['A'].str.lower(), B=df_excel['B'].str.upper()), left_on=df_partito_totale['partito'].str.lower(), right_on='A', how='left')
 df_merged['partito'] = df_merged['B'].combine_first(df_merged['partito']).str.upper()
 df_merged = df_merged.drop(['A', 'B'], axis=1)
@@ -363,3 +363,4 @@ keyword_mapping = {
 df_completo_alignment['Allineamento Politico'] = df_completo_alignment['Allineamento Politico'].apply(lambda x: keyword_mapping.get(x, x))
 df_completo_alignment = df_completo_alignment[df_completo_alignment['partito'] != 'MISTO']
 print(df_completo_alignment)
+"""
