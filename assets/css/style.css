@@ -19,7 +19,7 @@ body {
 }
 
 p{
-  text-align: justify;
+  text-align: justify!important;
 }
 
 a {
@@ -491,7 +491,8 @@ h5,
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  padding: 0 0 4rem 0;
+  padding: 0 0 6rem 0;
+  
 }
 
 .footer a {
@@ -1221,7 +1222,7 @@ text-align: justify;
 
 .rigas .article3su{
   margin-left: 10px;
-  margin-top:-250px;
+  margin-top:-240px;
 }
 
 .rigas .articlef{
@@ -1404,6 +1405,9 @@ margin-bottom: -200px;
   margin-bottom: 10px;
 }
 
+.article7{
+  margin-bottom:80px;
+}
 
 .piechart{
   width: 90%; /* Imposta la larghezza desiderata */
@@ -1412,6 +1416,8 @@ margin-bottom: -200px;
   margin-left: 30px;
   
 }
+
+
 
 /* Stili per la chart */
 .chart {
@@ -1449,21 +1455,30 @@ margin-bottom: -200px;
 }
 
 .giu{
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 /* Stili per la chart */
 #bubble_chart_div {
   width: 100%;
   height: 100%;
-  padding-bottom:30px;
-  padding-top:30px;
+  padding-bottom:20px;
+  padding-top:20px;
 }
 
 .article8{
   margin-bottom: 150px;
   margin-top: 10px;
+  text-align: justify;
   }
+
+
+  .article8s{
+    
+    margin-top: -75px;
+    text-align: justify;
+
+    }
 
   .titleart8 {
     font-size: 30px;
@@ -1647,32 +1662,36 @@ margin-bottom: -200px;
 
 
 .vignetta{
- margin-top: 70px;
-  margin-left: 10px;
+  margin-top: 50px;
   border: 3px solid black;
   padding:0;
   display: inline-block;
-}
+  width: fit-content
+} 
 
 .indexartdx{
   text-align: justify;
-  margin-top: 30px;
-  margin-left: 40px;
+  margin-top: 20px;
+  margin-left: -50px;
 }
 .indexartsx{
   text-align: justify;
+  margin-top: 20px;
+  margin-right: -50px;
+}
+.arthome2{
   margin-top: 30px;
-  margin-left:30px;
-
+  width: 30%;
 }
-
 .articlehome{
+  margin-top: -35px;
   text-align: justify;
-  margin-left: 30px;
-  margin-bottom: 30px;
+  width: 17%;
 }
 
-
+.arthomer{
+  margin-right:-5px;
+}
 .indexm{
   text-align: justify;
   margin-left: -40px;
@@ -1714,7 +1733,7 @@ margin-bottom: -200px;
 }
 
 .no-gutter{
-  margin-left:100px;
+  margin-left:200px;
   margin-right:100px;
 }
 
@@ -1724,6 +1743,7 @@ margin-bottom: -200px;
 .tableM{
   width: 80%;
   height: 80%;
+  margin-left:50px;
 }
 /* Stile per la tabella */
 table {
@@ -1753,7 +1773,7 @@ td {
 }
 
 th, td {
-  border: 1px solid #A34E1F;
+  border: 2px solid black;
   padding: 8px;
   text-align: center; /* Centra il testo orizzontalmente */
   vertical-align: middle; /* Centra il testo verticalmente */
@@ -1814,11 +1834,69 @@ th, td {
   display: block;
 }
 
+/* classi p9.html quote rosa*/
+
+.artQ{
+  margin-top:-100px;
+  margin-left:110px;
+}
+.artQ2 img {
+  margin-top: 10px;
+  width: 100%;
+  height:80%;
+}
+
+#barChartQ{
+  margin-top:-10px;
+  padding-top: 20px;
+  margin-left:-10px;
+  width: 100%;
+  height: 100%;
+
+}
+.artQ3{
+  margin-top: -50px;
+  margin-bottom:200px;
+  margin-left:110px;
+
+}
 
 
+.artQ4{
+  margin-top:55px;
+}
+
+.artQ5{
+  margin-bottom:200px;
+  margin-left:130px;
+  margin-top: -150px;
+}
+.Qchart{
+margin-top:-100px;
+border-bottom:1px solid black;
+
+}
+.Qchart2{
+  width: 200%;
+  height: 100%;
+  margin-bottom:50px;
+  background-color: #f9f7f1;
+}
+
+.flourish-embed .flourish-chart{
+  background-color: #f9f7f1;
+
+}
+#chartDivQ{
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid black;
+  border-bottom:2px solid black;
+  padding-top: 50px;
+padding-bottom: 50px;
+}
 
 
-
-
-
-
+h2{
+  text-align: center;
+}

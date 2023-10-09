@@ -49,7 +49,6 @@
         <li class="nav-item"><a href="p7.html" class="nav-link">VII</a></li>
         <li class="nav-item"><a href="p8.html" class="nav-link">VIII</a></li>
         <li class="nav-item"><a href="p9.html" class="nav-link">IX</a></li>
-        <li class="nav-item"><a href="p10.html" class="nav-link">X</a></li>
 
 
       </ul>
@@ -70,6 +69,7 @@
       <div class="col-md-2 giu">
             <h6>How Many <span class="red-text">Women</span> Have Served as <span class="red-text">Presidents of the Chamber of Deputies</span>? And How About Men?</h6>
             <p class="capital">
+              The eight research questions emerge as we delve into the landscapes of political leadership within the Italian Chamber of Deputies.
               In the realm of <span class="red-text"><b>political leadership</b></span>, the <span class="red-text"><b>Italian Chamber of Deputies</b></span> has long played a significant 
               role in shaping the nation's legislative landscape. The tenure of each president holds a unique story, 
               reflecting the challenges and triumphs of their respective eras.
@@ -93,42 +93,43 @@
   <div class="row">
     <div class="col-1">
     </div>
-    <div class="col-md-2 article8">
+    <div class="col-md-2 article8s">
           <p>
         Each bubble signifies an individual president, varying in size 
         to mirror the length of their tenure in office. The color palette further distinguishes between male and female presidents-shades of blue for male leaders and 
         hues of pink for female leaders. This visual demarcation underscores the disparities that have marked the course
-         of the Chamber's history.
+         of the Chamber's history. As we traverse the chart's landscape, it becomes evident that a palpable gender disparity has characterized the
+         role of the Italian Chamber of
         </p>
     </div>
     <div class="col-md-2 article8">
       <p>
-         As we traverse the chart's landscape, it becomes evident that a palpable gender disparity
-         has characterized the role of the Italian Chamber of Deputies' president. The prevalence of male presidents 
+         Deputies' president. The prevalence of male presidents 
          points to a historical discrepancy, prompting reflection on the societal dynamics that may have contributed to 
-         this gender gap. This exploration encourages us to consider 
+         this gender gap. This exploration encourages us to consider the historical factors influencing leadership selection 
+         and the challenges women may have faced in attaining this pinnacle of power.
     </p>
 </div>
     <div class="col-md-2 article8">
-      <p> the historical factors influencing leadership selection 
-      and the challenges women may have faced in attaining this pinnacle of power.
+      <p> 
       <h6>Duration of Leadership</h6>
           Beyond the gender lens, the visualization delves into the temporal dimension of leadership.
+          The bubble size directly corresponds to the length of each president's tenure, creating an engaging 
+          visual narrative of their time in office. 
           
       </p>
       </div>
       <div class="col-md-2 article8">
         <p>
            
-          The bubble size directly corresponds to the length of each president's tenure, creating an engaging 
-          visual narrative of their time in office. This feature invites us to compare the durations of male and female presidents, 
+          This feature invites us to compare the durations of male and female presidents, 
           shedding light on the diversity of leadership experience and the contributions made by leaders of all genders. 
-          One striking observation
+          One striking observation is that while the visual may initially emphasize a disparity in numbers, it also unveils a nuanced 
+          perspective. Female presidents, although fewer in 
         </p>
         </div>
         <div class="col-md-2 article8">
-          <p>  is that while the visual may initially emphasize a disparity in numbers, it also unveils a nuanced 
-            perspective. Female presidents, although fewer in number, have, in certain instances, showcased tenures that rival or even
+          <p>  number, have, in certain instances, showcased tenures that rival or even
              surpass those of their male counterparts. This underscores the significance of the individual's impact over the traditional 
              constraints of gender.
           </p>
@@ -136,13 +137,27 @@
   <div class="col-1">
   </div>
 </div>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="mb-1">&copy; Copyright The Champer of Deputies. All Rights Reserved</p>
+        <div class="credits">
+          <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=MyPortfolio
+        -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
  </div>
- 
- 
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <!-- Footer content -->
-  </footer>
+
   
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
@@ -261,9 +276,9 @@
     var size_scaling_factor = 2;
 
     var colori = {
-        'male': 'rgba(82, 108, 0, 1)',
-        'female': 'rgba(148, 73, 126, 0.7)'
-    };
+    'male': '#00745E',       // Verde
+    'female': '#94497E'      // Viola
+};
 
     var traces = [];
 
@@ -277,7 +292,7 @@ for (var i = 0; i < data.length; i++) {
         y: [data[i].Presidente],
         mode: 'markers',
         type: 'scatter',
-        text: 'Genere: ' + data[i].Gender + '<br>Durata: ' + durata + ' giorni',
+        text: 'Gender: ' + data[i].Gender + '<br>Length: ' + durata + ' days',
         hoverinfo: 'text',
         marker: {
             size: size,
@@ -293,10 +308,10 @@ for (var i = 0; i < data.length; i++) {
 }
 
 var layout = {
-        title: 'Presidenti della Camera dei Deputati',
-        xaxis: { title: 'Durata del mandato (giorni)' },
+        title: 'Presidents of the Chamber of Deputies',
+        xaxis: { title: 'Term length (days)' },
         yaxis: {
-            title: 'Presidente',
+            title: 'President',
             tickvals: data.map(entry => entry.Presidente),
             ticktext: data.map(entry => entry.Presidente),
             gridcolor: 'rgba(150, 150, 150, 0.3)',
