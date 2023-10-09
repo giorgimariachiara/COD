@@ -1,14 +1,20 @@
 import pandas as pd
 
-# Leggi il file CSV in un DataFrame
+# Carica il file CSV in un DataFrame
 df = pd.read_csv('partyallineamento.csv')
 
-# Raggruppa i dati per partito e allineamento politico e calcola il conteggio di uomini e donne in ciascun gruppo
-grouped = df.groupby(['partito', 'AllineamentoPolitico']).gender.value_counts().unstack(fill_value=0).reset_index()
+# Rinomina la colonna 'Allineamento Politico' senza spazi
+df = df.rename(columns={'Allineamento Politico': 'AllineamentoPolitico'})
+
+# Raggruppa il DataFrame per 'partito' e 'AllineamentoPolitico', quindi conta uomini e donne in ciascun gruppo
+grouped = df.groupby(['partito', 'AllineamentoPolitico', 'gender'])['gender'].count().unstack(fill_value=0)
+
+# Resetta l'indice per ottenere un DataFrame piatto
+grouped = grouped.reset_index()
 
 # Rinomina le colonne
-grouped.columns.name = None  # Rimuovi il nome delle colonne
-grouped.columns = ['partito', 'allineamentoPolitico', 'numeroDonne', 'numeroUomini']
+grouped.columns.name = None
+grouped = grouped.rename(columns={'male': 'numeroUomini', 'female': 'numeroDonne'})
 
-# Salva il DataFrame risultante in un nuovo file CSV
-grouped.to_csv('output.csv', index=False)
+# Salva il nuovo DataFrame in un nuovo file CSV
+grouped.to_csv('conteggio_generi_per_partito.csv', index=False)
