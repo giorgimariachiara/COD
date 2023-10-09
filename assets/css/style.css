@@ -1404,6 +1404,9 @@ margin-bottom: -200px;
   margin-bottom: 10px;
 }
 
+.article7{
+  margin-bottom:80px;
+}
 
 .piechart{
   width: 90%; /* Imposta la larghezza desiderata */
@@ -1412,6 +1415,8 @@ margin-bottom: -200px;
   margin-left: 30px;
   
 }
+
+
 
 /* Stili per la chart */
 .chart {
@@ -1731,6 +1736,7 @@ margin-bottom: -200px;
 .tableM{
   width: 80%;
   height: 80%;
+  margin-left:50px;
 }
 /* Stile per la tabella */
 table {
