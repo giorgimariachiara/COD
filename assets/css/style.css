@@ -1849,8 +1849,19 @@ margin-bottom:200px;
   margin-left:50px;
 }
 .Qchart{
-  width: 100%;
+  background-color: #f9f7f1;
+
+}
+.Qchart2{
+  width: 200%;
   height: 100%;
+  margin-bottom:50px;
+  background-color: #f9f7f1;
+}
+
+.flourish-embed .flourish-chart{
+  background-color: #f9f7f1;
+
 }
 #chartDivQ{
   width: 100%;

@@ -202,25 +202,17 @@
         </div>    
         <div class="row">
         <div class="col-12 Qchart">
-            <h6>Percentuale di uomini e donne nei gruppi parlamentari</h6>
-           
-            <div id="filterControls">
-                <label for="yearDropdown">Seleziona l'anno:</label>
-                <select id="yearDropdown" onchange="updateChart()">
-                    <option value="both">Entrambi</option>
-                    <option value="2018">2018</option>
-                    <option value="2022">2022</option>
-                </select>
-            
-                <label for="groupDropdown">Seleziona il gruppo parlamentare:</label>
-                <select id="groupDropdown" onchange="updateChart()">
-                    <!-- Opzioni del gruppo parlamentare qui -->
-                </select>
-            </div>
-            
-           </div>
-      </div>
-    </div>
+            <h6>Percentuale di uomini e donne nei gruppi parlamentari <br> 2018</h6>
+            <div class="flourish-embed flourish-chart" data-src="visualisation/15289959"><script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>     
+         </div>
+      <div class="row">
+        <div class="col-12 Qchart2">
+            <h6>2022</h6>
+            <div class="flourish-embed flourish-chart" data-src="visualisation/15290233"><script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>        
+         </div>
+  
 
         <script src="assets/vendor/aos/aos.js"></script>
         <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -273,90 +265,6 @@
         </script>
 
 
-<script>
-    // Dati di esempio (sostituisci con i tuoi dati)
-    var data = [
-        { anno: '2018', gruppoPar: 'CORAGGIO ITALIA', numeroUomini: 17, numeroDonne: 8 },
-        { anno: '2018', gruppoPar: 'FORZA ITALIA - BERLUSCONI PRESIDENTE', numeroUomini: 41, numeroDonne: 73 },
-        { anno: '2018', gruppoPar: 'FRATELLI D\'ITALIA', numeroUomini: 31, numeroDonne: 11 },
-        { anno: '2018', gruppoPar: 'INSIEME PER IL FUTURO', numeroUomini: 34, numeroDonne: 20 },
-        { anno: '2018', gruppoPar: 'ITALIA VIVA', numeroUomini: 12, numeroDonne: 24 },
-        { anno: '2018', gruppoPar: 'LEGA - SALVINI PREMIER', numeroUomini: 95, numeroDonne: 39 },
-        { anno: '2018', gruppoPar: 'LIBERI E UGUALI', numeroUomini: 11, numeroDonne: 5 },
-        { anno: '2018', gruppoPar: 'MOVIMENTO 5 STELLE', numeroUomini: 136, numeroDonne: 97 },
-        { anno: '2018', gruppoPar: 'PARTITO DEMOCRATICO', numeroUomini: 81, numeroDonne: 40 },
-        { anno: '2022', gruppoPar: 'ALLEANZA VERDI E SINISTRA', numeroUomini: 4, numeroDonne: 8 },
-        { anno: '2022', gruppoPar: 'AZIONE - ITALIA VIVA - RENEW EUROPE', numeroUomini: 12, numeroDonne: 9 },
-        { anno: '2022', gruppoPar: 'FORZA ITALIA - BERLUSCONI PRESIDENTE', numeroUomini: 32, numeroDonne: 12 },
-        { anno: '2022', gruppoPar: 'FRATELLI D\'ITALIA', numeroUomini: 81, numeroDonne: 37 },
-        { anno: '2022', gruppoPar: 'LEGA - SALVINI PREMIER', numeroUomini: 48, numeroDonne: 18 },
-        { anno: '2022', gruppoPar: 'MOVIMENTO 5 STELLE', numeroUomini: 25, numeroDonne: 23 },
-        { anno: '2022', gruppoPar: 'NOI MODERATI', numeroUomini: 7, numeroDonne: 3 },
-        { anno: '2022', gruppoPar: 'PARTITO DEMOCRATICO - ITALIA DEMOCRATICA E PROGRESSISTA,', numeroUomini: 47, numeroDonne: 22 },
-    ];
-    
-      
-     // Estrai la lista unica dei gruppi parlamentari dai dati
-     var uniqueGroups = [...new Set(data.map(item => item.gruppoPar))];
-
-// Layout del grafico
-var layout = {
-    grid: { rows: 1, columns: 2 },
-    title: 'Percentuale di uomini e donne nei gruppi parlamentari',
-    showlegend: true,
-    legend: { x: 0.7, y: 1.1 },
-    margin: { l: 20, r: 20, t: 50, b: 50 }
-};
-
-// Funzione per aggiornare il grafico
-function updateChart() {
-    var selectedYear = document.getElementById('yearDropdown').value;
-    var selectedGroup = document.getElementById('groupDropdown').value;
-
-    var traceData = [];
-    var filteredData = data;
-
-    if (selectedYear !== 'both') {
-        filteredData = data.filter(item => item.anno === selectedYear);
-    }
-
-    if (selectedGroup !== 'Tutti') {
-        filteredData = filteredData.filter(d => d.gruppoPar === selectedGroup);
-    }
-
-    var totalUomini = filteredData.reduce((acc, cur) => acc + cur.numeroUomini, 0);
-    var totalDonne = filteredData.reduce((acc, cur) => acc + cur.numeroDonne, 0);
-
-    traceData.push({
-    x: ['Uomini', 'Donne'],
-    y: [totalUomini, totalDonne],
-    type: 'bar',
-    name: selectedYear,
-    marker: { color: ['green', 'purple'] },
-    });
-
-
-    var chartLayout = Object.assign({}, layout);
-    if (selectedGroup !== 'Tutti') {
-        chartLayout.title = `Percentuale di uomini e donne nel gruppo parlamentare "${selectedGroup}"`;
-    }
-
-    Plotly.newPlot('chartDivQ', traceData, chartLayout);
-}
-
-// Crea dinamicamente le opzioni del menu a tendina per il gruppo
-var groupDropdown = document.getElementById('groupDropdown');
-
-uniqueGroups.forEach(function (group) {
-    var option = document.createElement('option');
-    option.value = group;
-    option.text = group;
-    groupDropdown.appendChild(option);
-});
-
-// Chiama la funzione updateChart inizialmente
-updateChart();
-</script>
 </body>
 </html>
 
