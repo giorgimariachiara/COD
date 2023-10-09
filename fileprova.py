@@ -8,6 +8,36 @@ endpoint = "https://dati.camera.it/sparql"
 pd.set_option('display.max_rows', None)
 
 
+from sparql_dataframe import sparql_dataframe
+import pandas as pd
+from sparql_dataframe import get
+
+endpoint = "https://dati.camera.it/sparql"
+
+queryministri = """SELECT DISTINCT ?legislatura ?governoLabel ?membroLabel ?nome ?cognome ?gender
+
+WHERE { ?legislatura rdf:type ocd:legislatura;
+                      rdfs:label ?legislaturaLabel;
+                     ocd:rif_governo ?governo.
+              ?governo rdfs:label ?governoLabel;
+                     ocd:rif_membroGoverno ?membro.
+       ?membro rdfs:label ?membroLabel;
+              foaf:firstName ?nome;
+            foaf:surname ?cognome;
+               ocd:rif_persona ?persona.
+       ?persona foaf:gender ?gender.
+        FILTER(contains(lcase(str(?membroLabel)), "ministro"))
+} """
+
+df_ministri_legislature = get(endpoint, queryministri)
+
+df_ministri_legislature['governoLabel'] = df_ministri_legislature['governoLabel'].str.split('(', n=1).str[0].str.strip()
+df_ministri_legislature['membroLabel'] = df_ministri_legislature['membroLabel'].str.split('(', n=1).str[0].str.strip()
+df_ministri_legislature = df_ministri_legislature.rename(columns={'governoLabel': 'Governo'})
+df_ministri_legislature = df_ministri_legislature.rename(columns={'membroLabel': 'Ministro'})
+df_ministri_legislature = df_ministri_legislature[["Governo", "Ministro", "nome","cognome", "gender", "legislatura"]].drop_duplicates()
+
+df_ministri_legislature.to_csv("ministrilegislature.csv",  index=False, index_label=False)
 #QUERY QUOTE ROSA UOMINI
 
 uomini_2013 ="""SELECT ?gruppoPar (COUNT(DISTINCT ?d) AS ?numeroUomini)
