@@ -19,7 +19,7 @@ df_male = pd.read_csv('incaricoMALE.csv')
 app = dash.Dash(__name__)
 
 # Definisci i valori possibili per il filtro dinamico a tendina
-legislatures_list = ['Costituente', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']
+legislature_list = ['Costituente', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']
 
 # Layout dell'applicazione
 app.layout = html.Div([
