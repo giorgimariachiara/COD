@@ -185,23 +185,7 @@ SELECT DISTINCT ?party ?partyLabel ?al WHERE {
   }
   UNION
   {
-    ?party wdt:P31 wd:Q6138528;
-           rdfs:label ?partyLabel;
-           wdt:P17 wd:Q38.
-    ?party wdt:P1387 ?alignment.
-    ?alignment rdfs:label ?al.
-  }
-  UNION
-  {
     ?party wdt:P31 wd:Q233591;
-           rdfs:label ?partyLabel;
-           wdt:P17 wd:Q38.
-    ?party wdt:P1387 ?alignment.
-    ?alignment rdfs:label ?al.
-  }
-  UNION
-  {
-    ?party wdt:P31 wd:Q388602;
            rdfs:label ?partyLabel;
            wdt:P17 wd:Q38.
     ?party wdt:P1387 ?alignment.
@@ -249,14 +233,12 @@ for partito in listapartiti:
 df = pd.DataFrame(results_list)
 partiti_trovati = [result['Partito'] for result in results_list]
 
-print(partiti_trovati)
-
-
+#print(partiti_trovati)
 
 partiti_trovati = df['Partito'].tolist()
 partiti_non_trovati = [partito for partito in listapartiti if partito not in partiti_trovati]
 df_filtered = df[df['Partito'].isin(listapartiti)]
-
+print(df_filtered)
 from urllib.parse import urlencode
 @sleep_and_retry
 @limits(calls=1, period=2)
@@ -276,7 +258,7 @@ def run_sparql_query(query):
     except json.JSONDecodeError as e:
         print(f'Errore nella decodifica della risposta JSON: {str(e)}')
 
-# Definizione del template della query
+# Definizione della query
 query_template2 = '''
 SELECT DISTINCT ?party ?partyLabel ?result WHERE {{
   ?party wdt:P31 wd:Q7278;
@@ -305,7 +287,7 @@ for partito in partiti_non_trovati:
 
     query = query_template2.format(search_term=partito)
     # Esegui la query SPARQL e ottieni i risultati
-    # Assumi che tu abbia una funzione `run_sparql_query()` che esegue la query SPARQL
+   
     results = run_sparql_query(query)
 
     print(f"Risultati per il partito: {partito}")
@@ -335,17 +317,20 @@ df_risultati2 = pd.DataFrame(results_list2)
 
 partiti_trovati = df_risultati2['Partito'].tolist()
 partiti_non_trovati = [partito for partito in listapartiti if partito not in partiti_trovati]
+
+print("partiti non trovati")
+print(partiti_non_trovati)
 df_filtered2 = df_risultati2[df_risultati2['Partito'].isin(listapartiti)]
 
 df_alignment_partiti = pd.concat([df_filtered, df_filtered2])
 
-print(df_alignment_partiti)
+#print(df_alignment_partiti)
 
 df_merged = df_partito_totale.merge(df_excel.assign(A=df_excel['A'].str.lower(), B=df_excel['B'].str.upper()), left_on=df_partito_totale['partito'].str.lower(), right_on='A', how='left')
 df_merged['partito'] = df_merged['B'].combine_first(df_merged['partito']).str.upper()
 df_merged = df_merged.drop(['A', 'B'], axis=1)
 
-print(df_merged)
+#print(df_merged)
 df_merged['partito'] = df_merged['partito'].str.upper()
 df_alignment_partiti['Partito'] = df_alignment_partiti['Partito'].str.upper()
 
@@ -368,6 +353,5 @@ df_completo_alignment.loc[df_completo_alignment['partito'] == 'DEMOCRAZIA NAZION
 df_completo_alignment.loc[df_completo_alignment['partito'] == 'PSI-PSDI UNIFICATI', 'Allineamento Politico'] = 'centro-sinistra'
 df_completo_alignment.loc[df_completo_alignment['Allineamento Politico'] == 'sinistra radicale', 'Allineamento Politico'] = 'estrema sinistra'
 
-dovesiete = df_completo_alignment[df_completo_alignment['Allineamento Politico'].isna()]
-print(dovesiete)
-#df_completo_alignment.to_csv('partyallineamento.csv', index=False)
+df_completo_alignment.to_csv('partyallineamento.csv', index=False)
+

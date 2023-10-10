@@ -1160,11 +1160,17 @@ text-align: justify;
 }
 
 .article3m{
-  margin-top:-100px;
+  margin-top:-40px;
   margin-left: 5px;
   margin-right: 5px;
   text-align: justify;
   }
+  .article3mm{
+    margin-top:-13px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: justify;
+    }
 
   .article3f{
     margin-top:-100px;
@@ -1222,7 +1228,7 @@ text-align: justify;
 
 .rigas .article3su{
   margin-left: 10px;
-  margin-top:-240px;
+  margin-top:-247px;
 }
 
 .rigas .articlef{
@@ -1282,7 +1288,8 @@ padding-bottom: 50px;
 }
 .imgscala{
   width: 130%;
-  height: 70%;
+  height: 65%;
+  margin-top: -10px;
 
 }
 
@@ -1452,6 +1459,7 @@ margin-bottom: -200px;
 .special-border8 {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
+  margin-bottom: 40px;
 }
 
 .giu{
@@ -1883,10 +1891,14 @@ border-bottom:1px solid black;
   background-color: #f9f7f1;
 }
 
+.div .flourish-embed .flourish-chart{
+  background-color: #f9f7f1;
+}
+
 .flourish-embed .flourish-chart{
   background-color: #f9f7f1;
-
 }
+
 #chartDivQ{
   width: 100%;
   height: 100%;
@@ -1899,4 +1911,20 @@ padding-bottom: 50px;
 
 h2{
   text-align: center;
+}
+
+
+.pyrchart #pyramidChart{
+  width: 100%;
+  width: 100%;
+}
+
+
+.party{
+  text-align: justify;
+margin-left: 100px;
+}
+
+.party1{
+  margin-top:-18px;
 }
