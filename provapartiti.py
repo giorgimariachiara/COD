@@ -353,5 +353,5 @@ df_completo_alignment.loc[df_completo_alignment['partito'] == 'DEMOCRAZIA NAZION
 df_completo_alignment.loc[df_completo_alignment['partito'] == 'PSI-PSDI UNIFICATI', 'Allineamento Politico'] = 'centro-sinistra'
 df_completo_alignment.loc[df_completo_alignment['Allineamento Politico'] == 'sinistra radicale', 'Allineamento Politico'] = 'estrema sinistra'
 
-df_completo_alignment.to_csv('partyallineamento4.csv', index=False)
+df_completo_alignment.to_csv('partyallineamento.csv', index=False)
 
