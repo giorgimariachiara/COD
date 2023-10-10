@@ -18,14 +18,14 @@ grouped.columns.name = None
 grouped = grouped.rename(columns={'male': 'numeroUomini', 'female': 'numeroDonne'})
 
 # Salva il nuovo DataFrame in un nuovo file CSV
-grouped.to_csv('conteggio_generi_per_partito.csv', index=False)
+grouped.to_csv('countParty.csv', index=False)
+"""
 """
 
-"""
 import pandas as pd
 
 # Carica il file CSV in un DataFrame
-df = pd.read_csv('conteggio_generi_per_partito.csv')
+df = pd.read_csv('countParty.csv')
 
 # Calcola la colonna 'PercentualeDonne' e arrotonda al numero intero
 df['PercentualeDonne'] = ((df['numeroDonne'] / (df['numeroDonne'] + df['numeroUomini'])) * 100).round().astype(int)
@@ -34,25 +34,63 @@ df['PercentualeDonne'] = ((df['numeroDonne'] / (df['numeroDonne'] + df['numeroUo
 df['PercentualeUomini'] = ((df['numeroUomini'] / (df['numeroDonne'] + df['numeroUomini'])) * 100).round().astype(int)
 
 # Salva il DataFrame aggiornato in un nuovo file CSV
-df.to_csv('percentagePartiti.csv', index=False)
+df.to_csv('percParty.csv', index=False)
+
 """
-
-
+"""
 import pandas as pd
 
 # Carica il file CSV in un DataFrame
-df = pd.read_csv('percentagePartiti.csv.csv')
+df = pd.read_csv('percParty.csv')
 
-# Raggruppa il DataFrame per 'AllineamentoPolitico' e calcola la media delle percentuali di donne
-media_percentuali_donne = df.groupby('AllineamentoPolitico')['PercentualeDonne'].mean()
+# Calcola la media delle percentuali di donne per ciascun AllineamentoPolitico
+media_percentuali_donne = df.groupby('AllineamentoPolitico')['PercentualeDonne'].mean().reset_index()
 
-# Trova l'allineamento politico con la percentuale di donne più alta
-allineamento_con_più_donne = media_percentuali_donne.idxmax()
-percentuale_più_donne = media_percentuali_donne.max()
+# Ordina il DataFrame in base alle percentuali di donne in ordine decrescente
+classifica_orientamenti = media_percentuali_donne.sort_values(by='PercentualeDonne', ascending=False)
 
-# Trova l'allineamento politico con la percentuale di donne più bassa
-allineamento_con_meno_donne = media_percentuali_donne.idxmin()
-percentuale_meno_donne = media_percentuali_donne.min()
+# Stampa la classifica
+print("Classifica degli orientamenti politici da più donne a meno donne:")
+print(classifica_orientamenti)
 
-print(f"Allineamento politico con più donne: {allineamento_con_più_donne} ({percentuale_più_donne:.2f}%)")
-print(f"Allineamento politico con meno donne: {allineamento_con_meno_donne} ({percentuale_meno_donne:.2f}%)")
+  AllineamentoPolitico  PercentualeDonne
+7       trasversalismo         41.000000
+6             sinistra         20.666667
+1        centro-destra         18.400000
+5     estrema sinistra         16.200000
+2      centro-sinistra         14.200000
+0               centro         11.714286
+3               destra          9.777778
+4       estrema destra          3.000000
+
+
+"""
+"""
+import pandas as pd
+
+# Carica il file CSV in un DataFrame
+df = pd.read_csv('countParty.csv')
+
+# Calcola la colonna 'PercentualeDonne' e arrotonda al numero intero
+df['PercentualeDonne'] = ((df['numeroDonne'] / (df['numeroDonne'] + df['numeroUomini'])) * 100).round().astype(int)
+
+# Ordina il DataFrame in base alla percentuale di donne in ordine decrescente
+df_sorted = df.sort_values(by='PercentualeDonne', ascending=False)
+
+# Prendi i primi 5 partiti con la percentuale più alta di donne
+top_5_partiti_con_donne = df_sorted.head(5)
+
+# Stampa i risultati
+print("I 5 partiti con la percentuale più alta di donne sono:")
+print(top_5_partiti_con_donne)
+"""
+"""utput 
+I 5 partiti con la percentuale più alta di donne sono:
+                partito  ... PercentualeDonne
+20   MOVIMENTO 5 STELLE  ...               41
+16          ITALIA VIVA  ...               39
+4       CORAGGIO ITALIA  ...               35
+27  PARTITO DEMOCRATICO  ...               34
+3    CENTRO DEMOCRATICO  ...               30
+
+"""
