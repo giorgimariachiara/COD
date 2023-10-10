@@ -1,3 +1,4 @@
+"""
 import pandas as pd
 
 # Carica il file CSV in un DataFrame
@@ -18,3 +19,18 @@ grouped = grouped.rename(columns={'male': 'numeroUomini', 'female': 'numeroDonne
 
 # Salva il nuovo DataFrame in un nuovo file CSV
 grouped.to_csv('conteggio_generi_per_partito.csv', index=False)
+"""
+
+import pandas as pd
+
+# Carica il file CSV in un DataFrame
+df = pd.read_csv('conteggio_generi_per_partito.csv')
+
+# Calcola la colonna 'PercentualeDonne' e arrotonda al numero intero
+df['PercentualeDonne'] = ((df['numeroDonne'] / (df['numeroDonne'] + df['numeroUomini'])) * 100).round().astype(int)
+
+# Calcola la colonna 'PercentualeUomini' e arrotonda al numero intero
+df['PercentualeUomini'] = ((df['numeroUomini'] / (df['numeroDonne'] + df['numeroUomini'])) * 100).round().astype(int)
+
+# Salva il DataFrame aggiornato in un nuovo file CSV
+df.to_csv('percentuali_generi_per_partito.csv', index=False)
