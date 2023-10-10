@@ -7,7 +7,7 @@ from dash import dcc
 from dash.dependencies import Input, Output
 
 # Lista delle legislature
-legislatures_list = ['costituente', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']
+legislatures_list = ['Costituente', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']
 
 # Lista degli incarichi
 labels = ['CAPOGRUPPO', 'SEGRETARIO', 'PRESIDENTE', 'VICEPRESIDENTE', 'RELATORE', 'QUESTORE', 'DELEGATO ALLA PRESIDENZA']
@@ -19,7 +19,7 @@ df_male = pd.read_csv('incaricoMALE.csv')
 app = dash.Dash(__name__)
 
 # Definisci i valori possibili per il filtro dinamico a tendina
-legislature_list = ['costituente', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']
+legislatures_list = ['Costituente', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19']
 
 # Layout dell'applicazione
 app.layout = html.Div([
@@ -27,7 +27,7 @@ app.layout = html.Div([
     dcc.Dropdown(
         id='legislatura-dropdown',
         options=[{'label': legislatura, 'value': legislatura} for legislatura in legislatures_list],
-        value='costituente'  # Valore predefinito
+        value='Costituente'  # Valore predefinito
     ),
     dcc.Graph(id='bar-chart')
 ])
