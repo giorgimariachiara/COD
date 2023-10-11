@@ -1839,8 +1839,8 @@ th, td {
 /* classi p9.html quote rosa*/
 
 .artQ{
-  margin-top:-100px;
-  margin-left:110px;
+  margin-top:-50px;
+ 
 }
 .artQ2 img {
   margin-top: 10px;
@@ -1857,10 +1857,7 @@ th, td {
 
 }
 .artQ3{
-  margin-top: -50px;
   margin-bottom:200px;
-  margin-left:110px;
-
 }
 
 
@@ -1870,7 +1867,7 @@ th, td {
 
 .artQ5{
   margin-bottom:200px;
-  margin-left:130px;
+  
   margin-top: -150px;
 }
 .Qchart{
@@ -1879,8 +1876,7 @@ border-bottom:1px solid black;
 
 }
 .Qchart2{
-  width: 200%;
-  height: 100%;
+ 
   margin-bottom:50px;
   background-color: #f9f7f1;
 }
