@@ -23,6 +23,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
@@ -39,9 +40,11 @@
 
     <div class="container">
         <div class="row">
-          <div class="col-12 headersec">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto headersec">
            <h11>Chamber of deputies</h11>
-           <p>  Power </p>
+           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto order-md-2">
+            <p>Power</p>
+        </div>
           </div> 
           </div>
     </div>
@@ -57,6 +60,7 @@
           <li class="nav-item"><a href="p6.html" class="nav-link">VI</a></li>
           <li class="nav-item"><a href="p7.html" class="nav-link">VII</a></li>
           <li class="nav-item"><a href="p8.html" class="nav-link">VIII</a></li>
+          <li class="nav-item"><a href="conclusions.html" class="nav-link">Conclusions</a></li>
   
   
         </ul>
@@ -64,7 +68,7 @@
 
       <div class="page">
         <div class="row rigasu2">
-          <div class="col-md-12">
+          <div class="col-lg-12 col-md-8 mx-auto">
             <div class="titleart2">
             <h7>Analyzing Gender Disparities in Leadership Roles: </h7> <br>
             <h8>Deputies in Italy's Chamber of Deputies</h8>
@@ -72,9 +76,9 @@
           </div>
         </div>
         <div class="row">
-            <div class="col-md-1">
+            <div class="col-lg-1 col-md-8 col-sm-8 col-8 mx-auto">
             </div>
-            <div class="col-md-2 article6">
+            <div class="col-lg-2 col-md-8 col-sm-8 col-8 mx-auto article6">
               <h6>How many of the <span class="red-text">Presidents of the Council</span> have been women, and how many have been men?</h6>
                 <p class="capital">The sixth research question focuses on <span class="red-text"><b>the gender distribution of prime ministers in Italy</b></span>, highlighting 
                   the concept of the "glass ceiling" theory. It aims to determine the number of female prime ministers compared to their male 
@@ -86,12 +90,12 @@
                    historical trend and the persistence of gender
                 </p>
           </div>
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-8 col-sm-8  col-8 mx-auto">
               <div class="piechart special-border6">
               <div id="piechart"></div>
             </div>
             </div>
-            <div class="col-md-2 article6">
+            <div class="col-lg-2 col-md-8 col-sm-8 col-8 mx-auto article6">
               <p>  
                  inequality in leadership roles. This underrepresentation of women in the highest political office aligns with the glass ceiling theory, which suggests
                   that invisible barriers, such as societal norms, stereotypes, and structural obstacles, impede women's progress and limit their access to
@@ -107,7 +111,7 @@
                   </div>
               </p>
         </div>
-            <div class="col-md-1">
+            <div class="col-lg-1 col-md-8 col-sm-8 col-8 mx-auto ">
             </div>
             
           </div>
@@ -144,7 +148,7 @@
   <script src="assets/js/main.js"></script>
 
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   
     <script type="text/javascript">
       google.charts.load("current", { packages: ["corechart"] });
       google.charts.setOnLoadCallback(drawChart);
@@ -211,14 +215,6 @@
         chart.draw(data, options);
       }
     </script>
-
-
-
-  
-
-
-
-
 </body>
 
 </html>
