@@ -410,12 +410,9 @@ h5,
     padding-left: 0;
   }
 }
-
 .custom-navbar .navbar-brand {
   font-size: 1.7rem;
 }
-
-
 
 /* Burger */
 .burger {
@@ -610,9 +607,6 @@ header{
   line-height: 72px;
   text-align: center;
   padding: 12px 12px 12px 12px;
-  
-  
-
 }
 .headp{
   text-align: center;
@@ -625,10 +619,7 @@ header{
   margin-top: 30px;
   padding-top: 20px;
   padding-bottom: 140px;
-  
 } 
-
-
 .head{
   text-align: center;
   position: block;
@@ -1050,6 +1041,10 @@ h6{
 
 }
 
+
+
+
+
 .capital::first-letter{
   font-size: 2rem; /* Dimensione più grande della prima lettera */
 }
@@ -1423,7 +1418,6 @@ margin-bottom: -200px;
   margin-left: 30px;
   
 }
-
 
 
 /* Stili per la chart */
@@ -1929,7 +1923,13 @@ margin-left: 100px;
   margin-top:-18px;
 }
 
-
 #portfolio-grid{
   margin-top:50px;
 }
+
+@media (max-width: 768px){
+  .svgContainer .camerasvg{
+display: none;
+  }
+}
+
