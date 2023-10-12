@@ -57,7 +57,7 @@
       <div class="container">
         <div class="head">
         <div class="row align-items-center">
-          <div class="col-lg-12 col-md-5 col-sm-3 mx-auto camerasvg" data-aos="fade-up">
+          <div class="text-lg text-md text-sm mx-auto camerasvg" data-aos="fade-up">
            <header>Chamber of deputies</header>
            <div class="chamberimg">
             <div id="svgContainer"></div>        
@@ -245,45 +245,60 @@
   
   
   
-  <script>
-    const svgContainer = document.getElementById('svgContainer');
-  
-  fetch('./assets/img/chamber.svg')
-    .then(response => response.text())
-    .then(svgText => {
-      svgContainer.innerHTML = svgText;
-  
-      const svgElement = svgContainer.querySelector('svg');
-      svgElement.setAttribute('style', 'background-color: transparent;');
-  
-      const seats = svgContainer.querySelectorAll('circle');
-  
-      seats.forEach((seat) => {
-        const originalRadius = seat.getAttribute('r');
-        const originalFill = seat.getAttribute('fill');
-        const scaleFactor = 1.5; // Fattore di scala per l'ingrandimento
-  
-        seat.addEventListener('mouseover', () => {
-          if (originalFill === 'rgb(0, 116, 94)') {
-            const newRadius = originalRadius * scaleFactor;
-            seat.setAttribute('r', newRadius);
-          } else {
-            seat.setAttribute('fill', 'transparent');
+    <script>
+      const svgContainer = document.getElementById('svgContainer');
+      let svgLoaded = false; // Verifica se l'immagine è stata caricata
+    
+      function loadAndAnimateSVG() {
+        if (window.innerWidth >= 992) {
+          if (!svgLoaded) {
+            fetch('./assets/img/chamber.svg')
+              .then(response => response.text())
+              .then(svgText => {
+                svgContainer.innerHTML = svgText;
+    
+                const svgElement = svgContainer.querySelector('svg');
+                svgElement.setAttribute('style', 'background-color: transparent;');
+    
+                const seats = svgContainer.querySelectorAll('circle');
+    
+                seats.forEach((seat) => {
+                  const originalRadius = seat.getAttribute('r');
+                  const originalFill = seat.getAttribute('fill');
+                  const scaleFactor = 1.5; // Fattore di scala per l'ingrandimento
+    
+                  seat.addEventListener('mouseover', () => {
+                    if (originalFill === 'rgb(0, 116, 94)') {
+                      const newRadius = originalRadius * scaleFactor;
+                      seat.setAttribute('r', newRadius);
+                    } else {
+                      seat.setAttribute('fill', 'transparent');
+                    }
+                  });
+    
+                  seat.addEventListener('mouseout', () => {
+                    if (originalFill === 'rgb(0, 116, 94)') {
+                      seat.setAttribute('r', originalRadius);
+                    } else {
+                      seat.setAttribute('fill', 'transparent');
+                    }
+                  });
+                });
+    
+                svgLoaded = true; // Segna che l'immagine è stata caricata
+              });
           }
-        });
-  
-        seat.addEventListener('mouseout', () => {
-          if (originalFill === 'rgb(0, 116, 94)') {
-            seat.setAttribute('r', originalRadius);
-          } else {
-            seat.setAttribute('fill', 'transparent');
-          }
-        });
-      });
-    });
-  
-  </script>
-  
+        } else {
+          svgContainer.innerHTML = ''; // Rimuovi l'immagine se la finestra è troppo piccola
+          svgLoaded = false; // Segna che l'immagine è stata rimossa
+        }
+      }
+    
+      // Esegui la funzione inizialmente e quando la finestra si ridimensiona
+      loadAndAnimateSVG();
+      window.addEventListener('resize', loadAndAnimateSVG);
+    </script>
+    
   </body>
   
   </html>

@@ -23,8 +23,7 @@ p{
 }
 
 a {
-  color: #Ed7670;
-  font-weight: 600;
+  color: #777;
   text-decoration: none;
 }
 
@@ -488,36 +487,11 @@ h5,
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-@media (max-width: 576px) {
- 
-  .footer {
-    padding: 0 0 15rem 0; 
-  }
-}
-@media (min-width: 577px) and (max-width: 700px) {
- 
-  .footer {
-    padding: 0 0 13rem 0; 
-  }
+.footer {
+  padding: 0 0 6rem 0;
+  
 }
 
-@media (min-width: 701px) and (max-width: 992px) {
- 
-  .footer {
-    padding: 0 0 12rem 0; 
-  }
-}
-
-@media (min-width:992px) and (max-width: 1200px){
-  .footer {
-    padding: 0 0 10rem 0; 
-  }
-}
-@media (min-width: 1200px) {
-  .footer {
-    padding: 0 0 8rem 0; 
-  }
-}
 .footer a {
   color: #2f2f2f;}
 
@@ -627,13 +601,18 @@ padding-top: 20px;
 header{
   font-family: 'Playfair Display', serif;
   font-weight:900;
-  font-size: 70px;
   text-transform: uppercase;
   display: inline;
-  line-height: 72px;
   text-align: center;
-  padding: 12px 12px 12px 12px;
 }
+
+
+.camerasvg.text-md {
+  font-size: 65px; /* Aumenta la dimensione del testo per schermi di dimensioni medie */
+  line-height: 60px; /* Regola il line-height per una migliore leggibilità */
+}
+
+
 .headp{
   text-align: center;
   position: block;
@@ -691,9 +670,6 @@ header{
   
 }
 
-.camerasvg{
-  margin-bottom: -120px;
-}
 
 /* Stile della barra di ricerca */
 .my-search-input {
@@ -710,9 +686,6 @@ header{
   width: 120%;
   height: 170%;
 }
-
-
-
 
 .chart #regions_div {
   width: 100%;
@@ -1159,7 +1132,7 @@ h10{
 }
 
 .article2{
-  
+  margin-top: -10px;
   text-align: justify;
   }
  
@@ -1458,12 +1431,24 @@ margin-bottom: -200px;
   position: relative;
 }
 
-.special-border6 {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  margin-bottom: 40px;
+.piechart.special-border6::before,
+.piechart.special-border6::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
+.piechart.special-border6::before {
+  top: 0;
+}
+
+.piechart.special-border6::after {
+  bottom: 0;
+}
 /* classi p8.html presidenti camera*/
 
 /* Stili per il contenitore della chart */
@@ -1940,33 +1925,6 @@ h2{
   margin-top:50px;
 }
 
-@media (max-width: 768px){
-  .svgContainer .camerasvg{
-display: none;
-  }
-}
-
-.journalistic-button {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 2px solid #000;
-  background-color: transparent;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #000;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-  cursor: pointer;
-
-}
-
-.journalistic-button:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-.centered-button {
-  text-align: center;
-  margin-top: 1rem;  
-  margin-bottom: 1rem;
+#svgContainer{
+  margin-top: 50px;
 }
