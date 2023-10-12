@@ -487,11 +487,36 @@ h5,
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.footer {
-  padding: 0 0 6rem 0;
-  
+@media (max-width: 576px) {
+ 
+  .footer {
+    padding: 0 0 15rem 0; 
+  }
+}
+@media (min-width: 577px) and (max-width: 700px) {
+ 
+  .footer {
+    padding: 0 0 13rem 0; 
+  }
 }
 
+@media (min-width: 701px) and (max-width: 992px) {
+ 
+  .footer {
+    padding: 0 0 12rem 0; 
+  }
+}
+
+@media (min-width:992px) and (max-width: 1200px){
+  .footer {
+    padding: 0 0 10rem 0; 
+  }
+}
+@media (min-width: 1200px) {
+  .footer {
+    padding: 0 0 8rem 0; 
+  }
+}
 .footer a {
   color: #2f2f2f;}
 
