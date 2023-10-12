@@ -1,23 +1,3 @@
 # COD
-The contents of this data analysis project are made available for informational purposes only.
-                     The project is not intended to provide professional or expert advice, and any use of this project is at the user's own risk.
-
-                    The information contained in this project is based on publicly available data sources and is provided 
-                    "as is" without warranty of any kind, express or implied. The project may contain errors, inaccuracies, 
-                    or outdated information, and the authors make no representation or warranty as to the accuracy, completeness, 
-                    or reliability of the information presented.
-
-                    Additionally, please note that this project was developed for the final exam of the course "Information Visualization"
-                     (a.y. 2022/2023) held by Prof. Marilena Daquino @ Alma Mater Studiorum - University of Bologna, MA "DHDK."
-                      The project was carried out by <a href="https://github.com/giorgimariachiara">Maria Chiara Giorgi</a> and <a href="https://github.com/elizastuglik">Eliza Stuglik</a>.
-                      
-
-                      The foundational data for this project was sourced from <a href="https://dati.camera.it">dati.camera.it</a>, which operates under the 
-                      <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a> license. 
-                      Proper attribution is hereby given to <a href="https://dati.camera.it">dati.camera.it</a> for providing the initial dataset.
-
-                      To enhance the dataset and fill in missing or incomplete data, additional information was integrated from Wikipedia and Wikidata. Contents from Wikipedia are licensed under the 
-        <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a> license. 
-        Wikidata operates under the <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 License</a>, dedicating its contents to the public domain.
-
-        Accordingly, any derivative work from this project that integrates data from these sources should respect and adhere to the terms of the respective licenses.
+This data analysis is provided purely for informational purposes and is not intended to offer professional or expert advice. Users are advised to approach the content at their own risk. Based on publicly accessible data sources, the information is presented "as is", without any warranties, either explicit or implicit. While every effort has been made to ensure accuracy, the authors cannot guarantee the absence of errors, inaccuracies, or outdated details. It's noteworthy that this endeavor was undertaken as a final examination for the "Information Visualization" course during the academic year 2022/2023, supervised by Prof. Marilena Daquino at Alma Mater Studiorum - University of Bologna, MA "DHDK". The contributors to this analysis are <a href="https://github.com/giorgimariachiara">Maria Chiara Giorgi</a> and <a href="https://github.com/elizastuglik">Eliza Stuglik</a>. The core data was sourced from <a href="https://dati.camera.it">dati.camera.it</a>, licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. To supplement and address gaps in the primary dataset, information from Wikipedia and Wikidata was also incorporated. Wikipedia's content falls under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a> license, while Wikidata's data aligns with the <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 License</a>. Consequently, any adaptations of this analysis that draw from these sources should ensure compliance with the terms specified in the respective licenses.
+    
