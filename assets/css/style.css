@@ -1954,3 +1954,27 @@ display: none;
   }
 }
 
+.journalistic-button {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #000;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+
+}
+
+.journalistic-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.centered-button {
+  text-align: center;
+  margin-top: 1rem;  
+  margin-bottom: 1rem;
+}
