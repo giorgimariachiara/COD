@@ -711,6 +711,9 @@ header{
   height: 170%;
 }
 
+
+
+
 .chart #regions_div {
   width: 100%;
   height: 500px;
@@ -1156,7 +1159,7 @@ h10{
 }
 
 .article2{
-  margin-top: -10px;
+  
   text-align: justify;
   }
  
@@ -1455,24 +1458,12 @@ margin-bottom: -200px;
   position: relative;
 }
 
-.piechart.special-border6::before,
-.piechart.special-border6::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background-color: black;
-  position: absolute;
-  left: 0;
-  right: 0;
+.special-border6 {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin-bottom: 40px;
 }
 
-.piechart.special-border6::before {
-  top: 0;
-}
-
-.piechart.special-border6::after {
-  bottom: 0;
-}
 /* classi p8.html presidenti camera*/
 
 /* Stili per il contenitore della chart */
