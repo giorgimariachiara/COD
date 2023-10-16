@@ -1323,8 +1323,6 @@ padding-bottom: 50px;
 
 /* classi p4.html partiti*/
 
-
-
 /* classi p5.html tot deputies incarico */
 .article5i{
   text-align: justify;
@@ -1357,9 +1355,9 @@ padding-bottom: 50px;
 }
 
 .filteradar{
-margin-left: 100px;
-margin-bottom: 50px;
-}
+  margin-left: 100px;
+  margin-bottom: 50px;
+  }
 .riga2 .article5i{
   margin-left:100px;
   margin-top:50px;
