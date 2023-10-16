@@ -606,6 +606,14 @@ header{
   text-align: center;
 }
 
+/* Use a media query for smaller screens */
+@media (max-width: 1000px) {
+  .headersec p {
+      text-align: center;
+      margin-left: 0;
+  }
+}
+
 
 .camerasvg.text-md {
   font-size: 65px; /* Aumenta la dimensione del testo per schermi di dimensioni medie */
@@ -1315,8 +1323,6 @@ padding-bottom: 50px;
 
 /* classi p4.html partiti*/
 
-
-
 /* classi p5.html tot deputies incarico */
 .article5i{
   text-align: justify;
@@ -1349,9 +1355,9 @@ padding-bottom: 50px;
 }
 
 .filteradar{
-margin-left: 100px;
-margin-bottom: 50px;
-}
+  margin-left: 100px;
+  margin-bottom: 50px;
+  }
 .riga2 .article5i{
   margin-left:100px;
   margin-top:50px;
