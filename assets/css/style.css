@@ -1,4 +1,4 @@
-/**
+/*
 * Template Name: MyPortfolio
 * Updated: May 30 2023 with Bootstrap v5.3.0
 * Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
@@ -918,24 +918,14 @@ div.row {
 
 
 .article1in{
-  margin-left: 100px;
-  margin-right: 5px;
   text-align: justify;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-top:-150px;
-  text-align: justify;
+  margin-top: -20px;
 }
 
-.article1out{
-  margin-left: 5px;
-  margin-right: 100px;
-  text-align: justify;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-top:-150px;
-  text-align: justify;
+.custom-column {
+  margin-right: -20px; /* Aggiungi spazio tra le colonne */
 }
+
 .article1{
   margin-left: 5px;
   margin-right: 5px;
@@ -975,10 +965,6 @@ div.row {
 #chart_div{
   border-bottom: 2px solid black;
   border-top:  2px solid black;
-  margin-left:400px;
-  margin-right:400px;
-  
-  
 }
 
 .mybutton{
@@ -998,25 +984,24 @@ div.row {
   font-family:'Lucida Sans';
   color:#2f2f2f;
   background-color:transparent;
-
+margin-top: -50px;
 }
 
 
   #filter_div input.hover{
-    border-color:#2f2f2f
+    border-color:#2f2f2f;
   }
   #total_chart_div{
-    height: 50%;
-    width: 50%;
+    height: 80%;
+    width: 80%;
+    margin-bottom: 300px;
     
   }
   
   .total_chart_div{ 
-    margin-left:1050px;
-    height: 50%;
-    width: 50%;
-    margin-top:-540px;
-    position:static;
+
+    height: 80%;
+    width: 80%;
   
   }
   
@@ -1927,4 +1912,10 @@ h2{
 
 #svgContainer{
   margin-top: 50px;
+}
+
+
+.flourish-embed .flourish-parliament{
+  width: 50%;
+  height: auto;
 }
