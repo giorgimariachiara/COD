@@ -606,6 +606,14 @@ header{
   text-align: center;
 }
 
+/* Use a media query for smaller screens */
+@media (max-width: 1000px) {
+  .headersec p {
+      text-align: center;
+      margin-left: 0;
+  }
+}
+
 
 .camerasvg.text-md {
   font-size: 65px; /* Aumenta la dimensione del testo per schermi di dimensioni medie */
