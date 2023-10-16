@@ -1,4 +1,4 @@
-/**
+/*
 * Template Name: MyPortfolio
 * Updated: May 30 2023 with Bootstrap v5.3.0
 * Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
@@ -410,12 +410,9 @@ h5,
     padding-left: 0;
   }
 }
-
 .custom-navbar .navbar-brand {
   font-size: 1.7rem;
 }
-
-
 
 /* Burger */
 .burger {
@@ -604,16 +601,18 @@ padding-top: 20px;
 header{
   font-family: 'Playfair Display', serif;
   font-weight:900;
-  font-size: 70px;
   text-transform: uppercase;
   display: inline;
-  line-height: 72px;
   text-align: center;
-  padding: 12px 12px 12px 12px;
-  
-  
-
 }
+
+
+.camerasvg.text-md {
+  font-size: 65px; /* Aumenta la dimensione del testo per schermi di dimensioni medie */
+  line-height: 60px; /* Regola il line-height per una migliore leggibilità */
+}
+
+
 .headp{
   text-align: center;
   position: block;
@@ -625,10 +624,7 @@ header{
   margin-top: 30px;
   padding-top: 20px;
   padding-bottom: 140px;
-  
 } 
-
-
 .head{
   text-align: center;
   position: block;
@@ -674,9 +670,6 @@ header{
   
 }
 
-.camerasvg{
-  margin-bottom: -120px;
-}
 
 /* Stile della barra di ricerca */
 .my-search-input {
@@ -925,24 +918,14 @@ div.row {
 
 
 .article1in{
-  margin-left: 100px;
-  margin-right: 5px;
   text-align: justify;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-top:-150px;
-  text-align: justify;
+  margin-top: -20px;
 }
 
-.article1out{
-  margin-left: 5px;
-  margin-right: 100px;
-  text-align: justify;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-top:-150px;
-  text-align: justify;
+.custom-column {
+  margin-right: -20px; /* Aggiungi spazio tra le colonne */
 }
+
 .article1{
   margin-left: 5px;
   margin-right: 5px;
@@ -982,10 +965,6 @@ div.row {
 #chart_div{
   border-bottom: 2px solid black;
   border-top:  2px solid black;
-  margin-left:400px;
-  margin-right:400px;
-  
-  
 }
 
 .mybutton{
@@ -1005,25 +984,24 @@ div.row {
   font-family:'Lucida Sans';
   color:#2f2f2f;
   background-color:transparent;
-
+margin-top: -50px;
 }
 
 
   #filter_div input.hover{
-    border-color:#2f2f2f
+    border-color:#2f2f2f;
   }
   #total_chart_div{
-    height: 50%;
-    width: 50%;
+    height: 80%;
+    width: 80%;
+    margin-bottom: 300px;
     
   }
   
   .total_chart_div{ 
-    margin-left:1050px;
-    height: 50%;
-    width: 50%;
-    margin-top:-540px;
-    position:static;
+
+    height: 80%;
+    width: 80%;
   
   }
   
@@ -1049,6 +1027,10 @@ h6{
   
 
 }
+
+
+
+
 
 .capital::first-letter{
   font-size: 2rem; /* Dimensione più grande della prima lettera */
@@ -1337,7 +1319,6 @@ padding-bottom: 50px;
 
 /* classi p5.html tot deputies incarico */
 .article5i{
-  margin-left:100px;
   text-align: justify;
   margin-top:-100px;
 }
@@ -1366,6 +1347,7 @@ padding-bottom: 50px;
 
   margin-bottom:-50px;
 }
+
 .filteradar{
 margin-left: 100px;
 margin-bottom: 50px;
@@ -1423,7 +1405,6 @@ margin-bottom: -200px;
   margin-left: 30px;
   
 }
-
 
 
 /* Stili per la chart */
@@ -1845,8 +1826,8 @@ th, td {
 /* classi p9.html quote rosa*/
 
 .artQ{
-  margin-top:-100px;
-  margin-left:110px;
+  margin-top:-50px;
+ 
 }
 .artQ2 img {
   margin-top: 10px;
@@ -1863,10 +1844,7 @@ th, td {
 
 }
 .artQ3{
-  margin-top: -50px;
   margin-bottom:200px;
-  margin-left:110px;
-
 }
 
 
@@ -1876,7 +1854,7 @@ th, td {
 
 .artQ5{
   margin-bottom:200px;
-  margin-left:130px;
+  
   margin-top: -150px;
 }
 .Qchart{
@@ -1885,8 +1863,7 @@ border-bottom:1px solid black;
 
 }
 .Qchart2{
-  width: 200%;
-  height: 100%;
+ 
   margin-bottom:50px;
   background-color: #f9f7f1;
 }
@@ -1922,14 +1899,23 @@ h2{
 
 .party{
   text-align: justify;
-margin-left: 100px;
+
 }
 
 .party1{
   margin-top:-18px;
 }
 
-
 #portfolio-grid{
   margin-top:50px;
+}
+
+#svgContainer{
+  margin-top: 50px;
+}
+
+
+.flourish-embed .flourish-parliament{
+  width: 50%;
+  height: auto;
 }
