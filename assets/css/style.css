@@ -487,9 +487,37 @@ h5,
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.footer {
-  padding: 0 0 6rem 0;
-  
+
+
+@media (max-width: 576px) {
+ 
+  .footer {
+    padding: 0 0 15rem 0; 
+  }
+}
+@media (min-width: 577px) and (max-width: 700px) {
+ 
+  .footer {
+    padding: 0 0 13rem 0; 
+  }
+}
+
+@media (min-width: 701px) and (max-width: 992px) {
+ 
+  .footer {
+    padding: 0 0 12rem 0; 
+  }
+}
+
+@media (min-width:992px) and (max-width: 1200px){
+  .footer {
+    padding: 0 0 10rem 0; 
+  }
+}
+@media (min-width: 1200px) {
+  .footer {
+    padding: 0 0 8rem 0; 
+  }
 }
 
 .footer a {
@@ -1301,7 +1329,6 @@ padding-bottom: 50px;
 /* classi p5.html tot deputies incarico */
 .article5i{
   text-align: justify;
-
 }
 
 .article5m{
@@ -1310,18 +1337,17 @@ padding-bottom: 50px;
 
 }
 
-.radar{
-  padding-top: 80px;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-}
-
 #radarChart{
   width: 120%;
-  height: 120%;
+  height: 150%;
   margin-left: 20px;
   margin-right: 30px;
+  border-bottom: 2px solid black;
+  padding-top:40px;
 }
+.radar{border-top: 2px solid black;
+margin-top:90px;}
+
 
 .riga2 .article5i{
   margin-left:100px;
@@ -1887,4 +1913,29 @@ h2{
 .flourish-embed .flourish-parliament{
   width: 50%;
   height: auto;
+}
+
+.journalistic-button {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #000;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+
+}
+
+.journalistic-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.centered-button {
+  text-align: center;
+  margin-top: 1rem;  
+  margin-bottom: 1rem;
 }
