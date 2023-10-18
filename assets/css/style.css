@@ -9,6 +9,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+body, * {
+  cursor: url('../img/femenine.png'), auto;
+}
+
 body {
   font-family: 'Droid Serif', serif;
   font-size: 15px;
