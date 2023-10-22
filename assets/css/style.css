@@ -1066,7 +1066,6 @@ h6{
 
 
 
-
 .capital::first-letter{
   font-size: 2rem; /* Dimensione più grande della prima lettera */
 }
@@ -1947,3 +1946,29 @@ h2{
   margin-top: 1rem;  
   margin-bottom: 1rem;
 }
+
+
+.row.concl{
+  margin-left:5rem;
+  margin-right:5rem;
+  margin-top: 5rem;
+  border-top:solid 2px black;
+  padding-top:3rem;
+}
+
+.row.concl2{
+  margin-left:5rem;
+  margin-right:5rem;
+  margin-top: 2rem;
+  padding-bottom:3rem;
+
+}
+
+
+.capitalcenter{
+  font-size: 2rem;
+margin-left: 8rem;
+color: #Ed7670;
+font-weight: 900;
+}
+
