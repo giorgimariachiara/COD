@@ -987,6 +987,12 @@ div.row {
       
     }
 
+.row.p1{
+  margin-right:5rem;
+  margin-left:5rem;
+  margin-top:-6rem;
+ 
+}
 .chart #chart_div {
   width: 90%;
   height: 100%;
@@ -1000,6 +1006,7 @@ div.row {
 #chart_div{
   border-bottom: 2px solid black;
   border-top:  2px solid black;
+  padding-bottom: 10rem;
 }
 
 .mybutton{
@@ -1019,9 +1026,8 @@ div.row {
   font-family:'Lucida Sans';
   color:#2f2f2f;
   background-color:transparent;
-margin-top: -50px;
+   margin-top: -13rem;
 }
-
 
   #filter_div input.hover{
     border-color:#2f2f2f;
@@ -1039,7 +1045,9 @@ margin-top: -50px;
     width: 80%;
   
   }
-  
+.row.p12 {
+margin-top:5rem;
+}  
 
 h8{
   font-family: "Arial", sans-serif;
