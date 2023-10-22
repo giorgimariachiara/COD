@@ -1071,6 +1071,21 @@ h6{
 
 }
 
+h9{
+  font-family: 'Times New Roman', serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333; /* Colore del testo */
+  text-transform: uppercase;
+  text-align: center;
+  margin-right:20px;
+  margin-left:20px;
+  
+  
+  
+
+}
+
 
 
 
