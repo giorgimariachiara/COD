@@ -189,11 +189,11 @@
     <script>
         // Dati per gli incarichi delle donne
         var dataDonne = {
-          labels: ['CAPOGRUPPO', 'SEGRETARIO', 'PRESIDENTE', 'VICEPRESIDENTE', 'RELATORE', 'QUESTORE', 'DELEGATO ALLA PRESIDENZA'],
+          labels: ['CAPOGRUPPO', 'SEGRETARIO', 'PRESIDENTE', 'VICEPRESIDENTE', 'RELATORE', 'QUESTORE'],
           datasets: [
             {
               label: 'Donne',
-              data: [322, 285, 87, 162, 0, 4, 1], // Inserire qui i dati degli incarichi delle donne
+              data: [322, 285, 87, 162, 0, 4], // Inserire qui i dati degli incarichi delle donne
               backgroundColor: 'rgba( 148, 73, 126, 0.2 )',
               borderColor: 'rgba( 148, 73, 126, 1 )',
               borderWidth: 2,
@@ -208,7 +208,7 @@
           datasets: [
             {
               label: 'Uomini',
-              data: [1019, 1293, 777, 1185, 7, 63, 0], // Inserire qui i dati degli incarichi degli uomini
+              data: [1019, 1293, 777, 1185, 7, 63], // Inserire qui i dati degli incarichi degli uomini
               backgroundColor: 'rgba(0, 116, 94, 0.2)',
               borderColor: 'rgba(0, 116, 94, 1)',
               pointBackgroundColor: 'rgba(0, 116, 94, 1)',
@@ -243,13 +243,13 @@
 
           if (selectedLegislatura === 'costituente') {
             donneFilteredData = [0, 3, 0, 0, 0, 0]; // Filtered data of women for legislatura costituente
-            uominiFilteredData = [0, 31, 21, 31, 3, 0 ]; // Dati filtrati degli uomini per legislatura costituente
+            uominiFilteredData = [0, 31, 21, 31, 0, 0 ]; // Dati filtrati degli uomini per legislatura costituente
           } else if (selectedLegislatura === '1') {
             donneFilteredData = [0, 8, 0, 0, 0, 0]; // Filtered data of women for legislatura 1
             uominiFilteredData = [0, 74, 41, 73, 7, 5]; // Dati filtrati degli uomini per legislatura 1
           } else if (selectedLegislatura === '2') {
             donneFilteredData = [0, 8, 0, 1, 0, 0]; // Filtered data of women for legislatura 2
-            uominiFilteredData = [0, 87, 63, 80, 0, 3]; // Dati filtrati degli uomini per legislatura 2
+            uominiFilteredData = [0, 87, 37, 80, 0, 3]; // Dati filtrati degli uomini per legislatura 2
           } else if (selectedLegislatura === '3') {
             donneFilteredData = [0, 5, 0, 1, 0, 0]; // Filtered data of women for legislatura 3
             uominiFilteredData = [0, 64, 43, 63, 0, 3]; // Dati filtrati degli uomini per legislatura 3
