@@ -1086,6 +1086,7 @@ h9{
 
 }
 
+.giu2{margin-top:50px;}
 
 
 
@@ -1155,7 +1156,7 @@ figcaption{
   height: 600px;
   margin-top: 10px;
   padding-top:50px;
-  padding-bottom:50px;
+  padding-bottom:100px;
   border-top: 2px solid black;
   border-bottom:2px solid black;
   
@@ -1375,14 +1376,15 @@ padding-bottom: 50px;
   padding-top:40px;
 }
 .radar{
-  width: auto;
-  height: auto;
-border-top: 2px solid black;
+
+
 padding-top:8rem;
 
-margin-top:105px;}
+}
 
-
+h2 .spostare{
+  margin-bottom:40px;
+}
 .riga2 .article5i{
   margin-left:100px;
   margin-top:50px;
@@ -1978,7 +1980,7 @@ h2{
 .row.concl{
   margin-left:5rem;
   margin-right:5rem;
-  margin-top: 5rem;
+  margin-top: -5rem;
   border-top:solid 2px black;
   padding-top:3rem;
 }
