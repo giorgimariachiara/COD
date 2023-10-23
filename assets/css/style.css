@@ -1056,6 +1056,17 @@ h8{
   letter-spacing: 0.5px;
 }
 
+h5{
+  font-family: 'Times New Roman', serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333; /* Colore del testo */
+  text-transform: uppercase;
+  text-align: center;
+  margin-right:20px;
+  margin-left:20px;
+  margin-bottom:2rem;
+}
 h6{
   font-family: 'Times New Roman', serif;
   font-size: 1rem;
@@ -1067,7 +1078,6 @@ h6{
   margin-left:20px;
   padding-bottom: 10px;
   border-bottom: 1px solid black ;
-  
 
 }
 
@@ -1376,9 +1386,9 @@ padding-bottom: 50px;
   padding-top:40px;
 }
 .radar{
-
-
-padding-top:8rem;
+border-top:2px solid black;
+border-bottom: 2px solid black;
+padding-top:5rem;
 
 }
 
@@ -1926,11 +1936,16 @@ h2{
   width: 100%;
   width: 100%;
 }
-
-
+.row.party{
+  margin-bottom:4rem;
+}
+.pyramid{
+  width: 90%;
+  height: 90%;
+}
 .party{
   text-align: justify;
-
+  
 }
 
 .party1{
